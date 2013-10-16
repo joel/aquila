@@ -1,3 +1,8 @@
+production:
+  sessions:
+    default:
+      uri: <%= ENV['MONGOHQ_URL'] %>
+
 development:
   # Configure available database sessions. (required)
   sessions:
