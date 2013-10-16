@@ -51,7 +51,7 @@ gem 'sendgrid'
 gem 'simple_form', '>= 3.0.0.rc'
 gem 'slim'
 gem 'therubyracer', :platform=>:ruby
-gem 'twitter-bootstrap-rails'
+gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 
 gem 'mongoid', git: 'git://github.com/mongoid/mongoid.git'
 
