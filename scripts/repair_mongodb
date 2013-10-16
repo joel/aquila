@@ -1,0 +1,2 @@
+mv /usr/local/var/mongodb/mongod.lock /tmp/
+mongod --dbpath /usr/local/var/mongodb/members_development --repair --repairpath /usr/local/var/mongodb/members_development.0

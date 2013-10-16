@@ -1,0 +1,2 @@
+mongod run --config /usr/local/etc/mongod.conf &
+open http://localhost.com:27017/

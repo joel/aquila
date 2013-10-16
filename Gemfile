@@ -41,3 +41,47 @@ gem 'jbuilder', '~> 1.2'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+gem 'cancan'
+gem 'devise'
+gem 'figaro'
+gem 'less-rails'
+gem 'rolify'
+gem 'sendgrid'
+gem 'simple_form', '>= 3.0.0.rc'
+gem 'slim'
+gem 'therubyracer', :platform=>:ruby
+gem 'twitter-bootstrap-rails'
+
+gem 'mongoid', git: 'git://github.com/mongoid/mongoid.git'
+
+group :development do
+  gem 'guard', '2.0.5'
+  gem 'spork', '~> 1.0rc'
+  gem 'guard-spork'
+  gem 'guard-rspec'
+  gem 'haml-rails'
+  gem 'haml2slim'
+  gem 'html2haml'
+  gem 'hub', :require=>nil
+  gem 'quiet_assets'
+  gem 'rb-fchange', :require=>false
+  gem 'rb-fsevent', :require=>false
+  gem 'rb-inotify', :require=>false
+end
+
+group :development, :test do
+  gem 'factory_girl_rails'
+  gem 'rspec-rails'
+end
+
+group :production do
+  gem 'puma'
+end
+
+group :test do
+  gem 'capybara'
+  gem 'database_cleaner', '1.0.1'
+  gem 'email_spec'
+end
+
