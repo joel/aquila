@@ -1,20 +1,20 @@
 - model_class = Vault
 .page-header
-  %h1=t '.title', :default => model_class.model_name.human.pluralize.titleize
-%table.table.table-striped
-  %thead
-    %tr
-      %th= model_class.human_attribute_name(:id)
-      %th= model_class.human_attribute_name(:title)
-      %th= model_class.human_attribute_name(:subdomain)
-      %th=t '.actions', :default => t("helpers.actions")
-  %tbody
+  h1=t '.title', :default => model_class.model_name.human.pluralize.titleize
+table.table.table-striped
+  thead
+    tr
+      th= model_class.human_attribute_name(:id)
+      th= model_class.human_attribute_name(:title)
+      th= model_class.human_attribute_name(:subdomain)
+      th=t '.actions', :default => t("helpers.actions")
+  tbody
     - @vaults.each do |vault|
-      %tr
-        %td= link_to vault.id, vault_path(vault)
-        %td= vault.title
-        %td= vault.subdomain
-        %td
+      tr
+        td= link_to vault.id, vault_path(vault)
+        td= vault.title
+        td= vault.subdomain
+        td
           = link_to t('.edit', :default => t("helpers.links.edit")), edit_vault_path(vault), :class => 'btn btn-mini'
           = link_to t('.destroy', :default => t("helpers.links.destroy")), vault_path(vault), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-mini btn-danger'
 

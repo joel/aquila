@@ -1,14 +1,14 @@
 - model_class = Vault
 .page-header
-  %h1=t '.title', :default => model_class.model_name.human.titleize
+  h1=t '.title', :default => model_class.model_name.human.titleize
 
-%p
-  %strong= model_class.human_attribute_name(:title) + ':'
-  %br
+p
+  strong= model_class.human_attribute_name(:title) + ':'
+  br
   = @vault.title
-%p
-  %strong= model_class.human_attribute_name(:subdomain) + ':'
-  %br
+p
+  strong= model_class.human_attribute_name(:subdomain) + ':'
+  br
   = @vault.subdomain
 
 .form-actions
