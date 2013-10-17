@@ -1,6 +1,11 @@
 Aquila::Application.routes.draw do
   resources :vaults
 
+  match 'cyborg', to: 'pages#cyborg', via: :get
+  match 'readable', to: 'pages#readable', via: :get
+
+  post 'themes/:theme' => 'themes#setting', as: :set_theme
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -41,7 +46,7 @@ Aquila::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'
