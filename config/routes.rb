@@ -1,4 +1,6 @@
 Aquila::Application.routes.draw do
+  resources :goldbricks
+
   resources :vaults
 
   match 'cyborg', to: 'pages#cyborg', via: :get

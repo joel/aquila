@@ -1,4 +1,6 @@
 class VaultsController < ApplicationController
+  skip_around_filter :scope_current_vault
+
   before_action :set_vault, only: [:show, :edit, :update, :destroy]
 
   # GET /vaults
@@ -69,6 +71,6 @@ class VaultsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def vault_params
-      params.require(:vault).permit(:title, :subdomain)
+      params.require(:vault).permit(:name, :subdomain)
     end
 end

@@ -3,7 +3,7 @@ require 'spec_helper'
 describe "vaults/show" do
   before(:each) do
     @vault = assign(:vault, stub_model(Vault,
-      :title => "Title",
+      :name => "Title",
       :subdomain => "Subdomain"
     ))
   end

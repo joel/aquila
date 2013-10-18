@@ -4,11 +4,11 @@ describe "vaults/index" do
   before(:each) do
     assign(:vaults, [
       stub_model(Vault,
-        :title => "Title",
+        :name => "Title",
         :subdomain => "Subdomain"
       ),
       stub_model(Vault,
-        :title => "Title",
+        :name => "Title",
         :subdomain => "Subdomain"
       )
     ])

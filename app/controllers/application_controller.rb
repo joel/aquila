@@ -12,4 +12,26 @@ class ApplicationController < ActionController::Base
     session[:theme] ||= 'cyborg'
   end
   helper_method :current_theme
+
+  around_filter :scope_current_vault
+
+private
+
+  # def current_user
+  #   @current_user ||= User.find(session[:user_id]) if session[:user_id]
+  # end
+  # helper_method :current_user
+
+  def current_vault
+    Vault.where(subdomain: request.subdomain).first || raise('no vault found')
+  end
+  helper_method :current_vault
+
+  def scope_current_vault
+    Vault.current_id = current_vault.id
+    yield
+  ensure
+    Vault.current_id = nil
+  end
+
 end

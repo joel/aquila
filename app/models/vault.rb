@@ -1,6 +1,6 @@
 class Vault
   include Mongoid::Document
-  field :title, type: String
+  field :name, type: String
   field :subdomain, type: String
 
   def self.current_id=(id)
