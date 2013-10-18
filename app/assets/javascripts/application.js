@@ -12,3 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require cyborg/loader
+//= require cyborg/bootswatch
+//= require readable/loader
+//= require readable/bootswatch
