@@ -2,6 +2,10 @@ production:
   sessions:
     default:
       uri: <%= ENV['MONGOHQ_URL'] %>
+      # database: aquila_development
+      # hosts:
+      #   - localhost:27017
+      # uri: <%= ENV['MONGOHQ_URL'] %>
 
 development:
   # Configure available database sessions. (required)
