@@ -4,7 +4,7 @@ class GoldbricksController < ApplicationController
   # GET /goldbricks
   # GET /goldbricks.json
   def index
-    @goldbricks = Goldbrick.all
+    @goldbricks = current_vault.goldbricks.all
   end
 
   # GET /goldbricks/1
@@ -14,7 +14,7 @@ class GoldbricksController < ApplicationController
 
   # GET /goldbricks/new
   def new
-    @goldbrick = Goldbrick.new
+    @goldbrick = current_vault.goldbricks.new
   end
 
   # GET /goldbricks/1/edit
@@ -24,11 +24,11 @@ class GoldbricksController < ApplicationController
   # POST /goldbricks
   # POST /goldbricks.json
   def create
-    @goldbrick = Goldbrick.new(goldbrick_params)
+    @goldbrick = current_vault.goldbricks.new(goldbrick_params)
 
     respond_to do |format|
       if @goldbrick.save
-        format.html { redirect_to @goldbrick, notice: 'Goldbrick was successfully created.' }
+        format.html { redirect_to @goldbrick, notice: 'current_vault.goldbricks was successfully created.' }
         format.json { render action: 'show', status: :created, location: @goldbrick }
       else
         format.html { render action: 'new' }
@@ -42,7 +42,7 @@ class GoldbricksController < ApplicationController
   def update
     respond_to do |format|
       if @goldbrick.update(goldbrick_params)
-        format.html { redirect_to @goldbrick, notice: 'Goldbrick was successfully updated.' }
+        format.html { redirect_to @goldbrick, notice: 'current_vault.goldbricks was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -64,7 +64,7 @@ class GoldbricksController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_goldbrick
-      @goldbrick = Goldbrick.find(params[:id])
+      @goldbrick = current_vault.goldbricks.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

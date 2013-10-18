@@ -3,6 +3,8 @@ class Vault
   field :name, type: String
   field :subdomain, type: String
 
+  has_many :goldbricks
+
   def self.current_id=(id)
     Thread.current[:vault_id] = id
   end
