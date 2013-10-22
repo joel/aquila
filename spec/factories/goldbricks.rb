@@ -2,6 +2,7 @@
 
 FactoryGirl.define do
   factory :goldbrick do
+    association :vault, strategy: :build
     name "MyString"
     login "MyString"
     password "MyString"

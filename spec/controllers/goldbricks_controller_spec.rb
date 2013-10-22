@@ -29,13 +29,13 @@ describe GoldbricksController do
   # in order to pass any filters (e.g. authentication) defined in
   # GoldbricksController. Be sure to keep this updated too.
   let(:valid_session) { {} }
-  
+
   let(:vault) { create :vault }
   before { controller.stub current_vault: vault }
 
   describe "GET index" do
     it "assigns all goldbricks as @goldbricks" do
-      goldbrick = Goldbrick.create! valid_attributes
+      goldbrick = vault.goldbricks.create! valid_attributes
       get :index, {}, valid_session
       assigns(:goldbricks).should eq([goldbrick])
     end
@@ -43,7 +43,7 @@ describe GoldbricksController do
 
   describe "GET show" do
     it "assigns the requested goldbrick as @goldbrick" do
-      goldbrick = Goldbrick.create! valid_attributes
+      goldbrick = vault.goldbricks.create! valid_attributes
       get :show, {:id => goldbrick.to_param}, valid_session
       assigns(:goldbrick).should eq(goldbrick)
     end
@@ -58,7 +58,7 @@ describe GoldbricksController do
 
   describe "GET edit" do
     it "assigns the requested goldbrick as @goldbrick" do
-      goldbrick = Goldbrick.create! valid_attributes
+      goldbrick = vault.goldbricks.create! valid_attributes
       get :edit, {:id => goldbrick.to_param}, valid_session
       assigns(:goldbrick).should eq(goldbrick)
     end
@@ -104,7 +104,7 @@ describe GoldbricksController do
   describe "PUT update" do
     describe "with valid params" do
       it "updates the requested goldbrick" do
-        goldbrick = Goldbrick.create! valid_attributes
+        goldbrick = vault.goldbricks.create! valid_attributes
         # Assuming there are no other goldbricks in the database, this
         # specifies that the Goldbrick created on the previous line
         # receives the :update_attributes message with whatever params are
@@ -114,13 +114,13 @@ describe GoldbricksController do
       end
 
       it "assigns the requested goldbrick as @goldbrick" do
-        goldbrick = Goldbrick.create! valid_attributes
+        goldbrick = vault.goldbricks.create! valid_attributes
         put :update, {:id => goldbrick.to_param, :goldbrick => valid_attributes}, valid_session
         assigns(:goldbrick).should eq(goldbrick)
       end
 
       it "redirects to the goldbrick" do
-        goldbrick = Goldbrick.create! valid_attributes
+        goldbrick = vault.goldbricks.create! valid_attributes
         put :update, {:id => goldbrick.to_param, :goldbrick => valid_attributes}, valid_session
         response.should redirect_to(goldbrick)
       end
@@ -128,7 +128,7 @@ describe GoldbricksController do
 
     describe "with invalid params" do
       it "assigns the goldbrick as @goldbrick" do
-        goldbrick = Goldbrick.create! valid_attributes
+        goldbrick = vault.goldbricks.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
         Goldbrick.any_instance.stub(:save).and_return(false)
         put :update, {:id => goldbrick.to_param, :goldbrick => { "name" => "invalid value" }}, valid_session
@@ -136,7 +136,7 @@ describe GoldbricksController do
       end
 
       it "re-renders the 'edit' template" do
-        goldbrick = Goldbrick.create! valid_attributes
+        goldbrick = vault.goldbricks.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
         Goldbrick.any_instance.stub(:save).and_return(false)
         put :update, {:id => goldbrick.to_param, :goldbrick => { "name" => "invalid value" }}, valid_session
@@ -147,14 +147,14 @@ describe GoldbricksController do
 
   describe "DELETE destroy" do
     it "destroys the requested goldbrick" do
-      goldbrick = Goldbrick.create! valid_attributes
+      goldbrick = vault.goldbricks.create! valid_attributes
       expect {
         delete :destroy, {:id => goldbrick.to_param}, valid_session
       }.to change(Goldbrick, :count).by(-1)
     end
 
     it "redirects to the goldbricks list" do
-      goldbrick = Goldbrick.create! valid_attributes
+      goldbrick = vault.goldbricks.create! valid_attributes
       delete :destroy, {:id => goldbrick.to_param}, valid_session
       response.should redirect_to(goldbricks_url)
     end
