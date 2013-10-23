@@ -1,4 +1,5 @@
 Aquila::Application.routes.draw do
+  devise_for :users
   resources :goldbricks
 
   resources :vaults

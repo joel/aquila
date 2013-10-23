@@ -1,4 +1,5 @@
 class VaultsController < ApplicationController
+  before_filter :authenticate_user!
   skip_around_filter :scope_current_vault
 
   before_action :set_vault, only: [:show, :edit, :update, :destroy]
