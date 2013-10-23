@@ -48,7 +48,8 @@ gem 'figaro'
 gem 'less-rails'
 gem 'rolify'
 gem 'sendgrid'
-gem 'simple_form', '>= 3.0.0.rc'
+gem 'simple_form', git: 'https://github.com/stephenprater/simple_form.git', branch: 'classes_on_use'
+# gem 'simple_form', '>= 3.0.0.rc'
 gem 'slim'
 gem 'therubyracer', :platform=>:ruby
 # gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
@@ -65,11 +66,11 @@ group :development do
   gem 'haml-rails'
   gem 'haml2slim'
   gem 'html2haml'
-  gem 'hub', :require=>nil
+  gem 'hub', require: nil
   gem 'quiet_assets'
-  gem 'rb-fchange', :require=>false
-  gem 'rb-fsevent', :require=>false
-  gem 'rb-inotify', :require=>false
+  gem 'rb-fchange', require: false
+  gem 'rb-fsevent', require: false
+  gem 'rb-inotify', require: false
 end
 
 group :development, :test do
