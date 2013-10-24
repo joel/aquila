@@ -1,28 +1,6 @@
 .container
   .jumbotron
     h1 Sign in
-  form accept-charset='UTF-8' action='/users/sign_in' class='simple_form form-horizontal new_user' id='new_user' method='post' novalidate='novalidate'
-    .form-group
-      label.col-lg-2.control-label
-        | Email
-      .col-lg-10
-        input type='email' class='form-control' id='inputEmail1' placeholder='Email'
-    .form-group
-      label.col-lg-2.control-label
-        | Password
-      .col-lg-10
-        input type='password' class='form-control' id='inputPassword1' placeholder='Password'
-    .form-group
-      .col-lg-offset-2.col-lg-10
-        .checkbox
-          label
-            input type='checkbox'
-              | Remember me
-    .form-group
-      .col-lg-offset-2.col-lg-10
-        input type="submit" value="Sign In" class='btn btn-default'
-
-  h2 Sign in
   = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
     = f.input :email, autofocus: true, as: :string
     = f.input :password, as: :string
