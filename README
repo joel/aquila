@@ -2,3 +2,31 @@ RECIPES
 ["apps4", "controllers", "core", "email", "extras", "frontend", "gems", "git", "init", "models", "prelaunch", "railsapps", "readme", "routes", "saas", "setup", "testing", "views"]
 PREFERENCES
 {:git=>true, :apps4=>"none", :dev_webserver=>"webrick", :prod_webserver=>"puma", :database=>"mongodb", :fail=>"continue", :templates=>"slim", :unit_test=>"rspec", :integration=>"rspec-capybara", :continuous_testing=>"guard", :fixtures=>"factory_girl", :frontend=>"bootstrap", :bootstrap=>"less", :email=>"sendgrid", :authentication=>"devise", :devise_modules=>"confirmable", :authorization=>"cancan", :form_builder=>"simple_form", :starter_app=>"admin_app"}
+
+
+* https://github.com/plataformatec/simple_form#custom-inputs
+* https://github.com/rafaelfranca/simple_form-bootstrap/issues/26
+* https://github.com/plataformatec/simple_form/pull/337
+* https://github.com/plataformatec/simple_form/pull/622
+*
+*
+
+Je me suis arrété sur l'ecriture du wrapper pour le button
+
+  config.wrappers :button_wrapper, tag: 'div', class: 'form-group' do |b|
+    b.use :html5
+    b.wrapper tag: 'div', class: 'col-lg-offset-2 col-lg-10' do |input|
+      input.use :submit, class: ['btn-default']
+    end
+  end
+
+  Pour obtenir :
+
+  # .form-group
+  #   .col-lg-offset-2.col-lg-10
+  #     button type='submit' class='btn btn-default'
+  #       | Sign in
+
+  La directive wrapper: :button_wrapper ne semble pas avoir d'effet
+
+  = f.button :submit, 'Sign in', wrapper: :button_wrapper
