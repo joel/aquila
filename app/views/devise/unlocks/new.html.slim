@@ -4,6 +4,7 @@ h2 Resend unlock instructions
   = f.full_error :unlock_token
   .form-inputs
     = f.input :email, :required => true, :autofocus => true
-  .form-actions
-    = f.button :submit, "Resend unlock instructions"
+  .form-group
+    .col-lg-offset-2.col-lg-10
+      = f.button :submit, "Resend unlock instructions"
 = render "devise/shared/links"

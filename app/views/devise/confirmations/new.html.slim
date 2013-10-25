@@ -4,6 +4,7 @@ h2 Resend confirmation instructions
   = f.full_error :confirmation_token
   .form-inputs
     = f.input :email, :required => true, :autofocus => true
-  .form-actions
-    = f.button :submit, "Resend confirmation instructions"
+  .form-group
+    .col-lg-offset-2.col-lg-10
+      = f.button :submit, "Resend confirmation instructions"
 = render "devise/shared/links"

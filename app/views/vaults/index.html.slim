@@ -1,25 +1,16 @@
 - model_class = Vault
-.container.theme-showcase
-  /! Main jumbotron for a primary marketing message or call to action
-  .jumbotron
-    h1 Hello, world!
-    p This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.
-    p
-      a.btn.btn-primary.btn-lg Learn more &raquo;
-  .page-header
-    h1=t '.name', default: model_class.model_name.human.pluralize.titleize
+.container
+  h1=t '.name', default: model_class.model_name.human.pluralize.titleize
   table.table.table-striped
     thead
       tr
         th= model_class.human_attribute_name(:id)
-        th= model_class.human_attribute_name(:title)
         th= model_class.human_attribute_name(:subdomain)
         th=t '.actions', default: t('helpers.actions')
     tbody
       - @vaults.each do |vault|
         tr
           td= link_to vault.id, vault_path(vault)
-          td= vault.name
           td= vault.subdomain
           td
             = link_to t('.edit', default: t('helpers.links.edit')), edit_vault_path(vault), class: 'btn btn-mini'

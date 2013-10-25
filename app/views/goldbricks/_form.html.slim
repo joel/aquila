@@ -3,6 +3,7 @@
   = f.input :login
   = f.input :password
   = f.input :content, as: :text
-  .form-actions
-    = f.button :submit, :class => 'btn btn-primary'
+  .form-group
+    .col-lg-offset-2.col-lg-10
+      = f.button :submit, :class => 'btn btn-primary'
     = link_to t('.cancel', :default => t("helpers.links.cancel")), goldbricks_path, :class => 'btn'
