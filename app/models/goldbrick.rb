@@ -6,5 +6,7 @@ class Goldbrick
   field :content, type: String
 
   belongs_to :vault
-
+  validates :vault, presence: true
+  validates_associated :vault
+  
 end
