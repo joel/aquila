@@ -1,5 +1,22 @@
 require 'spec_helper'
 
 describe Vault do
-  pending "add some examples to (or delete) #{__FILE__}"
+  context 'factorty validation' do
+    let(:vault) { build :vault }
+
+    subject { vault }
+
+    describe 'testing validations' do
+      it { should be_valid }
+      it { subject.save.should be_true }
+
+      context 'attributes_for' do
+        it { expect { attributes_for(:vault) }.to_not raise_error }
+      end
+
+      context 'build_stubbed' do
+        it { expect { build_stubbed(:vault) }.to_not raise_error }
+      end
+    end
+  end
 end

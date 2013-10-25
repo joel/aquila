@@ -25,6 +25,8 @@ Spork.prefork do
 
     config.include(EmailSpec::Helpers)
     config.include(EmailSpec::Matchers)
+
+    config.include Devise::TestHelpers, type: :controller
     # ## Mock Framework
     #
     # If you prefer to use mocha, flexmock or RR, uncomment the appropriate line:

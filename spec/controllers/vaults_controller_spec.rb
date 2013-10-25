@@ -23,7 +23,7 @@ describe VaultsController do
   # This should return the minimal set of attributes required to create a valid
   # Vault. As you add validations to Vault, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) { { "name" => "MyString" } }
+  let(:valid_attributes) { { "subdomain" => "MyString" } }
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
@@ -88,14 +88,14 @@ describe VaultsController do
       it "assigns a newly created but unsaved vault as @vault" do
         # Trigger the behavior that occurs when invalid params are submitted
         Vault.any_instance.stub(:save).and_return(false)
-        post :create, {:vault => { "name" => "invalid value" }}, valid_session
+        post :create, {:vault => { "subdomain" => "invalid value" }}, valid_session
         assigns(:vault).should be_a_new(Vault)
       end
 
       it "re-renders the 'new' template" do
         # Trigger the behavior that occurs when invalid params are submitted
         Vault.any_instance.stub(:save).and_return(false)
-        post :create, {:vault => { "name" => "invalid value" }}, valid_session
+        post :create, {:vault => { "subdomain" => "invalid value" }}, valid_session
         response.should render_template("new")
       end
     end
@@ -109,8 +109,8 @@ describe VaultsController do
         # specifies that the Vault created on the previous line
         # receives the :update_attributes message with whatever params are
         # submitted in the request.
-        Vault.any_instance.should_receive(:update).with({ "name" => "MyString" })
-        put :update, {:id => vault.to_param, :vault => { "name" => "MyString" }}, valid_session
+        Vault.any_instance.should_receive(:update).with({ "subdomain" => "MyString" })
+        put :update, {:id => vault.to_param, :vault => { "subdomain" => "MyString" }}, valid_session
       end
 
       it "assigns the requested vault as @vault" do
@@ -131,7 +131,7 @@ describe VaultsController do
         vault = Vault.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
         Vault.any_instance.stub(:save).and_return(false)
-        put :update, {:id => vault.to_param, :vault => { "name" => "invalid value" }}, valid_session
+        put :update, {:id => vault.to_param, :vault => { "subdomain" => "invalid value" }}, valid_session
         assigns(:vault).should eq(vault)
       end
 
@@ -139,7 +139,7 @@ describe VaultsController do
         vault = Vault.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
         Vault.any_instance.stub(:save).and_return(false)
-        put :update, {:id => vault.to_param, :vault => { "name" => "invalid value" }}, valid_session
+        put :update, {:id => vault.to_param, :vault => { "subdomain" => "invalid value" }}, valid_session
         response.should render_template("edit")
       end
     end

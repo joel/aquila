@@ -2,7 +2,6 @@
 
 FactoryGirl.define do
   factory :vault do
-    name "MyString"
-    subdomain "MyString"
+    subdomain { generate(:subdomain) }
   end
 end
