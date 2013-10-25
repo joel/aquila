@@ -27,5 +27,9 @@ Aquila::Application.configure do
   # number of complex assets.
   config.assets.debug = true
 
+  config.to_prepare do
+    Devise::RegistrationsController.send(:include, DeviseRegistrationsControllerDecorator)
+  end
+
   Slim::Engine.set_default_options pretty: true, sort_attrs: false
 end
