@@ -70,5 +70,6 @@ SimpleForm.setup do |config|
   # to learn about the different styles for forms and inputs,
   # buttons and other elements.
   config.default_wrapper = :bootstrap
-  config.wrapper_mappings = { boolean: :checkbox_wrapper, string: :text_wrapper }
+  # https://github.com/plataformatec/simple_form#available-input-types-and-defaults-for-each-column-type
+  config.wrapper_mappings = { boolean: :checkbox_wrapper, string: :text_wrapper, password: :text_wrapper }
 end
