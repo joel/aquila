@@ -4,14 +4,12 @@
   table.table.table-striped
     thead
       tr
-        th= model_class.human_attribute_name(:id)
         th= model_class.human_attribute_name(:subdomain)
         th=t '.actions', default: t('helpers.actions')
     tbody
       - @vaults.each do |vault|
         tr
-          td= link_to vault.id, vault_path(vault)
-          td= vault.subdomain
+          td= link_to vault.subdomain, goldbricks_url(subdomain: vault.subdomain)
           td
             = link_to t('.edit', default: t('helpers.links.edit')), edit_vault_path(vault), class: 'btn btn-mini'
             = destroy_button vault_path(vault)

@@ -9,6 +9,10 @@ Aquila::Application.routes.draw do
   match 'readable', to: 'pages#readable', via: :get
   post 'themes/:theme' => 'themes#setting', as: :set_theme
 
+  constraints(Subdomain) do
+    match '/' => 'vaults#show', via: [:get]
+  end
+
   root controller: 'static', action: '/'
 
   # The priority is based upon order of creation: first created -> highest priority.

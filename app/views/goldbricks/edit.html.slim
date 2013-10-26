@@ -1,12 +1,4 @@
 - model_class = Goldbrick
-.container.theme-showcase
-  /! Main jumbotron for a primary marketing message or call to action
-  .jumbotron
-    h1 Hello, world!
-    p This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.
-    p
-      a.btn.btn-primary.btn-lg Learn more &raquo;
-
-  .page-header
-    h1=t '.title', :default => t('helpers.titles.edit', :model => model_class.model_name.human, :default => "Edit # model_class.model_name.human ")
-  = render :partial => "form"
+.page-header
+  h1=t '.title', default: t('helpers.titles.new', model: model_class.model_name.human, default: 'Edit # model_class.model_name.human ')
+= render 'form'

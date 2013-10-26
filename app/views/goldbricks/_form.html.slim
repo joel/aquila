@@ -1,9 +1,10 @@
-= simple_form_for @goldbrick, :html => { :class => 'form-horizontal' } do |f|
+= simple_form_for @goldbrick, html: { class: 'form-horizontal' } do |f|
   = f.input :name
+  = f.input :link
   = f.input :login
-  = f.input :password
-  = f.input :content, as: :text
+  = f.input :password, as: :string
+  = f.input :content, as: :string
   .form-group
     .col-lg-offset-2.col-lg-10
-      = f.button :submit, :class => 'btn btn-primary'
-    = link_to t('.cancel', :default => t("helpers.links.cancel")), goldbricks_path, :class => 'btn'
+      = f.button :submit, class: 'btn btn-primary'
+    = link_to t('.cancel', default: t("helpers.links.cancel")), goldbricks_path, class: 'btn'
