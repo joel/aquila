@@ -3,11 +3,11 @@
     h1 Sign in
   = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
     = f.input :email, autofocus: true, as: :string
-    = f.input :password, as: :string
+    = f.input :password, as: :password
     = f.input :remember_me, as: :boolean
     .form-group
       .col-lg-offset-2.col-lg-10
-        = f.button :submit, 'Sign in'
+        = f.button :submit, I18n.t('devise.shared.sign_in')
   = render 'devise/shared/links'
 
 

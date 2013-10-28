@@ -1,8 +1,8 @@
 Aquila::Application.routes.draw do
+
   devise_for :users
 
   resources :goldbricks
-
   resources :vaults
 
   match 'cyborg', to: 'pages#cyborg', via: :get

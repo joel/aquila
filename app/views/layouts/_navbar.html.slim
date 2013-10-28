@@ -16,7 +16,7 @@
             a href="#about"  About
           li
             - if current_user
-              = link_to 'Sign Out', destroy_user_session_path, method: :delete
+              = link_to "#{current_user.email} Sign Out", destroy_user_session_path, method: :delete
           li.dropdown
             a.dropdown-toggle data-toggle="dropdown" href="#"
               | Dropdown

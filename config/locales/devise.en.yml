@@ -2,6 +2,9 @@
 
 en:
   devise:
+    shared:
+      sign_up: Sign Up
+      sign_in: Sign In
     confirmations:
       confirmed: "Your account was successfully confirmed."
       confirmed_and_signed_in: "Your account was successfully confirmed. You are now signed in."

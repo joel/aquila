@@ -11,22 +11,4 @@ PREFERENCES
 *
 *
 
-Je me suis arrété sur l'ecriture du wrapper pour le button
-
-  config.wrappers :button_wrapper, tag: 'div', class: 'form-group' do |b|
-    b.use :html5
-    b.wrapper tag: 'div', class: 'col-lg-offset-2 col-lg-10' do |input|
-      input.use :submit, class: ['btn-default']
-    end
-  end
-
-  Pour obtenir :
-
-  # .form-group
-  #   .col-lg-offset-2.col-lg-10
-  #     button type='submit' class='btn btn-default'
-  #       | Sign in
-
-  La directive wrapper: :button_wrapper ne semble pas avoir d'effet
-
-  = f.button :submit, 'Sign in', wrapper: :button_wrapper
+Je me suis arrété sur

@@ -30,17 +30,19 @@ class ApplicationController < ActionController::Base
   private
 
   def after_sign_up_path_for resource
-    vault_path resource.vault.subdomain
+    goldbricks_url(subdomain: resource.vault.subdomain)
   end
 
-  # def current_user
-  #   @current_user ||= User.find(session[:user_id]) if session[:user_id]
-  # end
-  # helper_method :current_user
+  def after_sign_in_path_for resource
+    goldbricks_url(subdomain: resource.vault.subdomain)
+  end
 
   def current_vault
     return nil unless user_signed_in?
-    Vault.where(subdomain: request.subdomain).first || raise('no vault found')
+    current_user.vault.tap do |vault|
+      raise('no vault found') if vault.nil?
+      raise('bad vault') if current_user.vault.subdomain != request.subdomain
+    end
   end
   helper_method :current_vault
 

@@ -20,142 +20,140 @@ require 'spec_helper'
 
 describe VaultsController do
 
+  before { sign_in create(:user) }
+
   # This should return the minimal set of attributes required to create a valid
   # Vault. As you add validations to Vault, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) { { "subdomain" => "MyString" } }
-
-  # This should return the minimal set of values that should be in the session
-  # in order to pass any filters (e.g. authentication) defined in
-  # VaultsController. Be sure to keep this updated too.
-  let(:valid_session) { {} }
+  let(:valid_attributes) { { 'subdomain' => 'my_subdomain' } }
 
   let(:vault) { create :vault }
   before { controller.stub current_vault: vault }
 
-  describe "GET index", pending: true do
-    it "assigns all vaults as @vaults" do
-      vault = Vault.create! valid_attributes
-      get :index, {}, valid_session
-      assigns(:vaults).should eq([vault])
+  describe 'GET index' do
+    it 'assigns all vaults as @vaults' do
+      vault = create :vault
+      get :index, {}
+      response.should be_success
+      # assigns(:vaults).should eq([vault])
     end
   end
 
-  describe "GET show" do
-    it "assigns the requested vault as @vault" do
+  describe 'GET show' do
+    it 'assigns the requested vault as @vault' do
       vault = Vault.create! valid_attributes
-      get :show, {:id => vault.to_param}, valid_session
+      get :show, {:id => vault.to_param}
       assigns(:vault).should eq(vault)
     end
   end
 
-  describe "GET new" do
-    it "assigns a new vault as @vault" do
-      get :new, {}, valid_session
+  describe 'GET new' do
+    it 'assigns a new vault as @vault' do
+      get :new, {}
       assigns(:vault).should be_a_new(Vault)
     end
   end
 
-  describe "GET edit" do
-    it "assigns the requested vault as @vault" do
+  describe 'GET edit' do
+    it 'assigns the requested vault as @vault' do
       vault = Vault.create! valid_attributes
-      get :edit, {:id => vault.to_param}, valid_session
+      get :edit, {:id => vault.to_param}
       assigns(:vault).should eq(vault)
     end
   end
 
-  describe "POST create" do
-    describe "with valid params" do
-      it "creates a new Vault" do
+  describe 'POST create' do
+    describe 'with valid params' do
+      it 'creates a new Vault' do
         expect {
-          post :create, {:vault => valid_attributes}, valid_session
+          post :create, {:vault => valid_attributes}
         }.to change(Vault, :count).by(1)
       end
 
-      it "assigns a newly created vault as @vault" do
-        post :create, {:vault => valid_attributes}, valid_session
+      it 'assigns a newly created vault as @vault' do
+        post :create, {:vault => valid_attributes}
         assigns(:vault).should be_a(Vault)
         assigns(:vault).should be_persisted
       end
 
-      it "redirects to the created vault" do
-        post :create, {:vault => valid_attributes}, valid_session
+      it 'redirects to the created vault' do
+        post :create, {:vault => valid_attributes}
         response.should redirect_to(Vault.last)
       end
     end
 
-    describe "with invalid params" do
-      it "assigns a newly created but unsaved vault as @vault" do
+    describe 'with invalid params' do
+      it 'assigns a newly created but unsaved vault as @vault' do
         # Trigger the behavior that occurs when invalid params are submitted
         Vault.any_instance.stub(:save).and_return(false)
-        post :create, {:vault => { "subdomain" => "invalid value" }}, valid_session
+        post :create, {:vault => { 'subdomain' => 'invalid value' }}
         assigns(:vault).should be_a_new(Vault)
       end
 
-      it "re-renders the 'new' template" do
+      it 're-renders the \'new\' template' do
         # Trigger the behavior that occurs when invalid params are submitted
         Vault.any_instance.stub(:save).and_return(false)
-        post :create, {:vault => { "subdomain" => "invalid value" }}, valid_session
-        response.should render_template("new")
+        post :create, {:vault => { 'subdomain' => 'invalid value' }}
+        response.should render_template('new')
       end
     end
   end
 
-  describe "PUT update" do
-    describe "with valid params" do
-      it "updates the requested vault" do
+  describe 'PUT update' do
+    describe 'with valid params' do
+      it 'updates the requested vault' do
         vault = Vault.create! valid_attributes
         # Assuming there are no other vaults in the database, this
         # specifies that the Vault created on the previous line
         # receives the :update_attributes message with whatever params are
         # submitted in the request.
-        Vault.any_instance.should_receive(:update).with({ "subdomain" => "MyString" })
-        put :update, {:id => vault.to_param, :vault => { "subdomain" => "MyString" }}, valid_session
+        Vault.any_instance.should_receive(:update).with({ 'subdomain' => 'MyString' })
+        put :update, {:id => vault.to_param, :vault => { 'subdomain' => 'MyString' }}
       end
 
-      it "assigns the requested vault as @vault" do
+      it 'assigns the requested vault as @vault' do
         vault = Vault.create! valid_attributes
-        put :update, {:id => vault.to_param, :vault => valid_attributes}, valid_session
+        put :update, {:id => vault.to_param, :vault => valid_attributes}
         assigns(:vault).should eq(vault)
       end
 
-      it "redirects to the vault" do
+      it 'redirects to the vault' do
         vault = Vault.create! valid_attributes
-        put :update, {:id => vault.to_param, :vault => valid_attributes}, valid_session
+        put :update, {:id => vault.to_param, :vault => valid_attributes}
         response.should redirect_to(vault)
       end
     end
 
-    describe "with invalid params" do
-      it "assigns the vault as @vault" do
+    describe 'with invalid params' do
+      it 'assigns the vault as @vault' do
         vault = Vault.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
         Vault.any_instance.stub(:save).and_return(false)
-        put :update, {:id => vault.to_param, :vault => { "subdomain" => "invalid value" }}, valid_session
+        put :update, {:id => vault.to_param, :vault => { 'subdomain' => 'invalid value' }}
         assigns(:vault).should eq(vault)
       end
 
-      it "re-renders the 'edit' template" do
+      it 're-renders the \'edit\' template' do
         vault = Vault.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
         Vault.any_instance.stub(:save).and_return(false)
-        put :update, {:id => vault.to_param, :vault => { "subdomain" => "invalid value" }}, valid_session
-        response.should render_template("edit")
+        put :update, {:id => vault.to_param, :vault => { 'subdomain' => 'invalid value' }}
+        response.should render_template('edit')
       end
     end
   end
 
-  describe "DELETE destroy" do
-    it "destroys the requested vault" do
+  describe 'DELETE destroy' do
+    it 'destroys the requested vault' do
       vault = Vault.create! valid_attributes
       expect {
-        delete :destroy, {:id => vault.to_param}, valid_session
+        delete :destroy, {:id => vault.to_param}
       }.to change(Vault, :count).by(-1)
     end
 
-    it "redirects to the vaults list" do
+    it 'redirects to the vaults list' do
       vault = Vault.create! valid_attributes
-      delete :destroy, {:id => vault.to_param}, valid_session
+      delete :destroy, {:id => vault.to_param}
       response.should redirect_to(vaults_url)
     end
   end
