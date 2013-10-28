@@ -5,7 +5,7 @@
     = f.error_notification
     = f.simple_fields_for :vault, resource.vault do |vault_fields|
       = vault_fields.input :subdomain, autofocus: true, as: :string
-    = f.input :email, as: :string
+    = f.input :email, as: :email
     = f.input :password, as: :password
     = f.input :password_confirmation, as: :password
     .form-group
