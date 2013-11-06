@@ -51,7 +51,8 @@ gem 'sendgrid'
 gem 'simple_form', git: 'https://github.com/stephenprater/simple_form.git', branch: 'classes_on_use'
 # gem 'simple_form', '>= 3.0.0.rc'
 gem 'slim'
-gem 'therubyracer', :platform=>:ruby
+# gem 'slim-rails'
+gem 'therubyracer', platform: :ruby
 # gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 gem 'twitter-bootswatch-rails', '~> 3.0.0'
 gem 'twitter-bootswatch-rails-helpers'
@@ -81,11 +82,14 @@ end
 group :production do
   gem 'unicorn'
   gem 'rails_12factor'
+  gem 'rails3_serve_static_assets', github: 'heroku/rails3_serve_static_assets'
+  gem 'rails_log_stdout',           github: 'heroku/rails_log_stdout'
 end
 
 group :test do
   gem 'capybara'
   gem 'database_cleaner', '1.0.1'
   gem 'email_spec'
+  gem 'mongoid-rspec', '>= 1.6.0', github: 'evansagge/mongoid-rspec'
 end
 
