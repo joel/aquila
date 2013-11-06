@@ -27,5 +27,18 @@ module Aquila
 
     # less-rails gem (default all generators)
     config.app_generators.stylesheet_engine :less
+    # config.app_generators.template_engine :slim
+
+    config.generators do |g|
+
+      g.test_framework :rspec, fixture: true
+      g.fixture_replacement :factory_girl, dir: 'spec/factories'
+
+      g.view_specs true
+      g.helper_specs true
+
+      g.template_engine :slim
+    end
+
   end
 end
