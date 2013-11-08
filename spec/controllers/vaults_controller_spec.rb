@@ -25,7 +25,7 @@ describe VaultsController do
   # This should return the minimal set of attributes required to create a valid
   # Vault. As you add validations to Vault, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) { { 'subdomain' => 'my_subdomain' } }
+  let(:valid_attributes) { { 'subdomain' => 'my-subdomain' } }
 
   let(:vault) { create :vault }
   before { controller.stub current_vault: vault }
