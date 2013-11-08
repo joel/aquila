@@ -37,11 +37,15 @@ class ApplicationController < ActionController::Base
     goldbricks_url(subdomain: resource.vault.subdomain)
   end
 
+  def after_sign_out_path_for resource
+    sign_out current_user
+    root_url(subdomain: 'www', protocol: :http)
+  end
+
   def current_vault
     return nil unless user_signed_in?
     current_user.vault.tap do |vault|
       raise('no vault found') if vault.nil?
-      raise('bad vault') if current_user.vault.subdomain != request.subdomain
     end
   end
   helper_method :current_vault
