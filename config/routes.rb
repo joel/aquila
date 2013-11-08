@@ -2,7 +2,6 @@ Aquila::Application.routes.draw do
 
   devise_for :users
 
-  resources :goldbricks
   resources :vaults
 
   match 'cyborg', to: 'pages#cyborg', via: :get
@@ -11,9 +10,12 @@ Aquila::Application.routes.draw do
 
   constraints(Subdomain) do
     match '/' => 'vaults#show', via: [:get]
+    resources :goldbricks
   end
 
-  root controller: 'static', action: '/'
+  root controller: 'home', action: 'index'
+
+  # root controller: 'static', action: '/'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
