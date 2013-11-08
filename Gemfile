@@ -66,7 +66,7 @@ group :development do
   gem 'guard-rspec'
   gem 'haml-rails'
   gem 'haml2slim'
-  gem 'html2haml'
+  gem 'html2haml', '2.0.0.beta.1'
   gem 'hub', require: nil
   gem 'quiet_assets'
   gem 'rb-fchange', require: false
