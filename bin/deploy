@@ -1,0 +1,59 @@
+#!/usr/bin/env ruby
+
+# ./deploy.rb
+
+class Deploy < Struct.new(:stack, :web, :worker, :branch, :force, :stash)
+
+  REMOTE = { 'aquila-vault' => 'heroku' }
+
+  # attr_accessor :stack, :web, :worker, :branch, :force, :stash, :clean
+
+  def initialize stack, web, worker, branch, force, stash
+    @stack = stack || 'aquila-vault'
+    @web = web || 1
+    @worker = worker || 0
+    @branch = branch || 'master'
+    @force = force || ''
+    @stash = stash || true
+  end
+
+  def start
+    puts "Start deployment of #{branch} on #{stack} with #{web} dynos web and #{worker} Resque worker"
+    sleep 1
+
+    if stash
+      puts 'Clean Branch'
+      system 'git add .'
+      system "git stash save \"Deployment #{Time.now}\""
+      system 'git fetch origin && git checkout master && git pull origin master'
+    end
+
+    puts "heroku maintenance:on -a #{stack}"
+    system "heroku maintenance:on -a #{stack}"
+
+    puts   'switch off keroku app'
+    system "heroku maintenance:on -a #{stack}"
+    system "heroku ps:scale web=0 -a #{stack}"
+    system "heroku ps:scale worker=0 -a #{stack}"
+
+    puts   'copy Gemfile.lock on public directory'
+    system 'cp -v Gemfile.lock public/'
+
+    puts   'deployment !'
+    puts   "git push #{REMOTE[stack]} #{branch}:master #{force}"
+    sleep 1
+    system "git push #{REMOTE[stack]} #{branch}:master #{force}"
+
+    puts   'migrate'
+    system "heroku run rake db:migrate --trace -a #{stack}"
+
+    puts   'switch on keroku app'
+    system "heroku ps:scale web=#{web} -a #{stack}"
+    system "heroku ps:scale worker=#{worker} -a #{stack}"
+    system "heroku maintenance:off -a #{stack}"
+
+    puts   'deployed !'
+  end
+end
+
+Deploy.new(*ARGV).start
