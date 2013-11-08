@@ -32,4 +32,6 @@ Aquila::Application.configure do
   end
 
   Slim::Engine.set_default_options pretty: true, sort_attrs: false
+
+  config.middleware.use 'CustomDomainCookie', '.lvh.me'
 end
