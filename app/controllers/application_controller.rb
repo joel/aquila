@@ -25,7 +25,7 @@ class ApplicationController < ActionController::Base
   end
   helper_method :current_theme
 
-  around_filter :scope_current_vault, except: [:authenticate_user!] # if user_signed_in?
+  around_filter :scope_current_vault, unless: :devise_controller?
 
   private
 
@@ -46,6 +46,7 @@ class ApplicationController < ActionController::Base
     return nil unless user_signed_in?
     current_user.vault.tap do |vault|
       raise('no vault found') if vault.nil?
+      raise('bad vault') if current_user.vault.subdomain != request.subdomain
     end
   end
   helper_method :current_vault
