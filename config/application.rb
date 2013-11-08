@@ -40,5 +40,6 @@ module Aquila
       g.template_engine :slim
     end
 
+    config.action_dispatch.rescue_responses['ApplicationController::Forbidden'] = :forbidden
   end
 end
