@@ -2,19 +2,19 @@
 
 # ./deploy.rb
 
-class Deploy < Struct.new(:stack, :web, :worker, :branch, :force, :stash)
+class Deploy
 
   REMOTE = { 'aquila-vault' => 'heroku' }
 
-  # attr_accessor :stack, :web, :worker, :branch, :force, :stash, :clean
+  attr_accessor :stack, :web, :worker, :branch, :force, :stash
 
-  def initialize stack, web, worker, branch, force, stash
-    @stack = stack || 'aquila-vault'
-    @web = web || 1
-    @worker = worker || 0
-    @branch = branch || 'master'
-    @force = force || ''
-    @stash = stash || true
+  def initialize stack='aquila-vault', web=1, worker=0, branch='master', force=nil, stash=true
+    @stack = stack
+    @web = web
+    @worker = worker
+    @branch = branch
+    @force = force
+    @stash = stash
   end
 
   def start
