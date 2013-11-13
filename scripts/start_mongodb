@@ -1,2 +1,0 @@
-/usr/local/Cellar/mongodb/2.4.1-x86_64/mongod run --config /usr/local/etc/mongod.conf &
-open http://127.0.01:28017
