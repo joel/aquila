@@ -3,4 +3,5 @@
  *= require_self
  *= require cyborg/loader
  *= require cyborg/bootswatch
+ *= require cyborg/font-awesome
 */
