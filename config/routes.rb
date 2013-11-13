@@ -9,7 +9,7 @@ Aquila::Application.routes.draw do
   post 'themes/:theme' => 'themes#setting', as: :set_theme
 
   constraints(Subdomain) do
-    match '/' => 'vaults#show', via: [:get]
+    match '/' => 'goldbricks#index', via: [:get]
     resources :goldbricks
   end
 

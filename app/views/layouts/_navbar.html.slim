@@ -10,30 +10,9 @@
         = link_to 'Aquila', root_path, class: 'navbar-brand'
       .navbar-collapse.collapse
         ul.nav.navbar-nav
-          li.active
-            = link_to 'Vaults', vaults_path
-          li
-            a href="#about"  About
           li
             - if current_user
               = link_to "#{current_user.email} Sign Out", destroy_user_session_path, method: :delete
-          li.dropdown
-            a.dropdown-toggle data-toggle="dropdown" href="#"
-              | Dropdown
-              b.caret
-            ul.dropdown-menu
-              li
-                a href="#"  Action
-              li
-                a href="#"  Another action
-              li
-                a href="#"  Something else here
-              li.divider
-              li.dropdown-header Nav header
-              li
-                a href="#"  Separated link
-              li
-                a href="#"  One more separated link
         ul.nav.navbar-nav.navbar-right
           li.dropdown
             a.dropdown-toggle data-toggle="dropdown" href="#"
