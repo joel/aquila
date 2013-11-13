@@ -6,6 +6,10 @@ Aquila::Application.routes.draw do
 
   match 'cyborg', to: 'pages#cyborg', via: :get
   match 'readable', to: 'pages#readable', via: :get
+  match 'cosmo', to: 'pages#cosmo', via: :get
+  match 'simplex', to: 'pages#simplex', via: :get
+  match 'flatly', to: 'pages#flatly', via: :get
+
   post 'themes/:theme' => 'themes#setting', as: :set_theme
 
   constraints(Subdomain) do

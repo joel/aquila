@@ -12,10 +12,22 @@ class PagesController < ApplicationController
     render :index
   end
 
+  def cosmo
+    render :index
+  end
+
+  def flatly
+    render :index
+  end
+
+  def simplex
+    render :index
+  end
+
   private
 
   def theme_names
-    @themes ||= %w[cyborg readable]
+    @themes ||= %w[cyborg readable cosmo flatly simplex]
   end
 
 end

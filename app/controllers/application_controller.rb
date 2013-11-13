@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
   end
 
   def themes
-    @themes ||= %w[cyborg readable]
+    @themes ||= %w[cyborg readable cosmo flatly simplex]
   end
   helper_method :themes
 
