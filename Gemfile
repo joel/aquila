@@ -61,6 +61,7 @@ gem 'twitter-bootswatch-rails-helpers'
 gem 'mongoid', git: 'git://github.com/mongoid/mongoid.git'
 
 gem 'gemnasium'
+gem 'coveralls', require: false
 
 group :development do
   gem 'guard'
