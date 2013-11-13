@@ -61,7 +61,7 @@ gem 'twitter-bootswatch-rails-helpers'
 gem 'mongoid', git: 'git://github.com/mongoid/mongoid.git'
 
 group :development do
-  gem 'guard', '2.0.5'
+  gem 'guard'
   gem 'spork', '~> 1.0rc'
   gem 'guard-spork'
   gem 'guard-rspec'
@@ -89,7 +89,7 @@ end
 
 group :test do
   gem 'capybara'
-  gem 'database_cleaner', '1.0.1'
+  gem 'database_cleaner'
   gem 'email_spec'
   gem 'mongoid-rspec', '>= 1.6.0', github: 'evansagge/mongoid-rspec'
 end
