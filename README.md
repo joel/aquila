@@ -4,6 +4,8 @@
 
 ![Semaphore](https://semaphoreapp.com/api/v1/projects/5c562530197d4298ebd093cd7a997d3a0864a65d/103878/shields_badge.png)
 
+[![Dependency Status](https://gemnasium.com/joel/aquila.png)](https://gemnasium.com/joel/aquila)
+
 Aquila is a simple rails app that allows you to share passwords, notes with your team like [Roswell](https://github.com/blahed/roswell)
 
 Please use it on [vaultypass.com](http://www.vaultypass.com/)

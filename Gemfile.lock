@@ -114,6 +114,7 @@ GEM
       bundler (~> 1.0)
       rails (>= 3, < 5)
     formatador (0.2.4)
+    gemnasium (2.0.1)
     guard (2.2.3)
       formatador (>= 0.2.4)
       listen (~> 2.1)
@@ -308,6 +309,7 @@ DEPENDENCIES
   email_spec
   factory_girl_rails
   figaro
+  gemnasium
   guard
   guard-rspec
   guard-spork

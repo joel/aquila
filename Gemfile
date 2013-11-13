@@ -60,6 +60,8 @@ gem 'twitter-bootswatch-rails-helpers'
 
 gem 'mongoid', git: 'git://github.com/mongoid/mongoid.git'
 
+gem 'gemnasium'
+
 group :development do
   gem 'guard'
   gem 'spork', '~> 1.0rc'
