@@ -39,7 +39,7 @@
               | Themes
               b.caret
             ul.dropdown-menu
-              - @themes.each do |theme|
+              - themes.each do |theme|
                 li= link_to theme.capitalize, controller: 'pages', action: theme.downcase
       /! /.nav-collapse
   .container.theme-showcase
