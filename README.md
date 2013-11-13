@@ -6,6 +6,10 @@
 
 [![Dependency Status](https://gemnasium.com/joel/aquila.png)](https://gemnasium.com/joel/aquila)
 
+[![Build Status](https://travis-ci.org/joel/aquila.png?branch=master)](https://travis-ci.org/joel/aquila)
+
+[![Coverage Status](https://coveralls.io/repos/joel/aquila/badge.png)](https://coveralls.io/r/joel/aquila)
+
 Aquila is a simple rails app that allows you to share passwords, notes with your team like [Roswell](https://github.com/blahed/roswell)
 
 Please use it on [vaultypass.com](http://www.vaultypass.com/)
