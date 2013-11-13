@@ -60,7 +60,11 @@ Aquila::Application.configure do
   # Precompile additional assets.
   # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
   # config.assets.precompile += %w( search.js )
-  config.assets.precompile += %w(readable.js readable.css cyborg.js cyborg.css simplex.js simplex.css flatly.js flatly.css cosmo.js cosmo.css)
+  config.assets.precompile += %w( readable.js readable.css
+                                  cyborg.js cyborg.css
+                                  simplex.js simplex.css
+                                  flatly.js flatly.css
+                                  cosmo.js cosmo.css )
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.

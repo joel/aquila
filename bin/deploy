@@ -46,9 +46,6 @@ class Deploy
     sleep 1
     system "git push #{REMOTE[stack]} #{branch}:master #{force}"
 
-    puts   'migrate'
-    system "heroku run rake db:migrate --trace -a #{stack}"
-
     puts   'switch on keroku app'
     system "heroku ps:scale web=#{web} -a #{stack}"
     system "heroku ps:scale worker=#{worker} -a #{stack}"
