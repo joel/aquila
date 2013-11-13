@@ -2,7 +2,7 @@
 
 [![Code Climate](https://codeclimate.com/github/joel/aquila.png)](https://codeclimate.com/github/joel/aquila)
 
-![Semaphore](https://semaphoreapp.com/api/v1/projects/5c562530197d4298ebd093cd7a997d3a0864a65d/103878/shields_badge.png) (Semaphore)
+[![Semaphore](https://semaphoreapp.com/api/v1/projects/5c562530197d4298ebd093cd7a997d3a0864a65d/103878/shields_badge.png)](https://semaphoreapp.com) (Semaphore)
 
 [![Dependency Status](https://gemnasium.com/joel/aquila.png)](https://gemnasium.com/joel/aquila)
 
