@@ -64,7 +64,7 @@ group :development do
   gem 'guard'
   gem 'spork', '~> 1.0rc'
   gem 'guard-spork'
-  gem 'guard-rspec'
+  gem 'guard-rspec', require: false
   gem 'haml-rails'
   gem 'haml2slim'
   gem 'html2haml', '2.0.0.beta.1'
