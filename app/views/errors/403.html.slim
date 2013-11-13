@@ -1,0 +1,6 @@
+h1 Forbidden.
+- if @exception
+  p= @exception.message
+  = link_to 'Go back', goldbricks_url(subdomain: current_user.vault.subdomain)
+- else
+  p You are not authorized to perform that action.

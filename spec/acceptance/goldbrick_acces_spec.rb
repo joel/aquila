@@ -1,19 +1,21 @@
 require File.dirname(__FILE__) + '/acceptance_helper'
 
 feature 'sign in/up' do
-  let!(:user) { create :user }
-  let(:legitime_goldbrick) { create :goldbrick, name: 'legitime_goldbrick', vault: user.vault }
-  let(:forbiden_goldbrick) { create :goldbrick, name: 'forbiden_goldbrick' }
+  let(:legitime_user)        { create :user, name: "Legitime User #{rand(10000)}" }
+  let(:forbidden_user)       { create :user, name: "Forbidden User #{rand(10000)}" }
+  let!(:legitime_goldbrick)  { create :goldbrick, name: 'legitime_goldbrick', vault: legitime_user.vault }
+  let!(:forbidden_goldbrick) { create :goldbrick, name: 'forbidden_goldbrick', vault: forbidden_user.vault }
 
-  before { login_as user }
+  before { login_as legitime_user }
 
   scenario 'should have acces to your own goldbricks' do
-    visit goldbricks_url(subdomain: legitime_goldbrick.vault.subdomain)
+    visit goldbricks_url(subdomain: legitime_user.vault.subdomain)
     page.should have_link legitime_goldbrick.name
-    page.should_not have_link forbiden_goldbrick.name
+    page.should_not have_link forbidden_goldbrick.name
   end
 
-  # scenario 'should not have acces to foreigner goldbricks', pending: true do
-  #   expect { visit goldbricks_url(subdomain: forbiden_goldbrick.vault.subdomain) }.to raise_error
-  # end
+  scenario 'should not have acces to foreigner goldbricks' do
+    visit goldbricks_url(subdomain: forbidden_user.vault.subdomain)
+    expect(page).to have_text('Forbidden.')
+  end
 end

@@ -17,6 +17,8 @@ Aquila::Application.routes.draw do
     resources :goldbricks
   end
 
+  get '(errors)/:status', to: 'errors#show', constraints: { status: /\d{3}/ }, as: :errors
+
   root controller: 'home', action: 'index'
 
   # root controller: 'static', action: '/'
