@@ -42,8 +42,7 @@ gem 'jbuilder', '~> 1.2'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem 'cancan'
-gem 'devise', '3.2.0'
+gem 'devise', '>= 3.2.1'
 gem 'figaro'
 gem 'less-rails'
 gem 'rolify'

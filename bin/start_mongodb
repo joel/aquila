@@ -24,6 +24,13 @@ class StartMongodb
 
 end
 
+if ARGV.length != 1 or !['start', 'stop'].include?(ARGV[0])
+  puts 'HELP: '
+  puts '$ bin/start_mongodb start'
+  puts '$ bin/start_mongodb stop'
+  exit 0
+end
+
 start_mongodb = StartMongodb.new
 start_mongodb.send ARGV[0].to_sym
 
