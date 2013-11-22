@@ -15,7 +15,8 @@ feature 'sign in/up' do
   end
 
   scenario 'should not have acces to foreigner goldbricks' do
-    visit goldbricks_url(subdomain: forbidden_user.vault.subdomain)
-    expect(page).to have_text('Forbidden.')
+    expect { visit goldbricks_url(subdomain: forbidden_user.vault.subdomain) }.to raise_error
+    # visit goldbricks_url(subdomain: forbidden_user.vault.subdomain)
+    # expect(page).to have_text('Forbidden.')
   end
 end
