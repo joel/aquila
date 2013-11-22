@@ -45,4 +45,13 @@ class User
   validates :vault, presence: true
   validates_associated :vault
   accepts_nested_attributes_for :vault
+
+  before_destroy :protect_last_user
+
+  private
+
+  def protect_last_user
+    raise 'You can not remove last user' if self.vault.users.count < 2
+  end
+
 end

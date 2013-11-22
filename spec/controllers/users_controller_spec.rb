@@ -106,6 +106,14 @@ describe UsersController do
   end
 
   describe "DELETE destroy" do
+
+    it 'forbidden remove last user' do
+      vault.users.count.should eql 1
+      expect {
+        delete :destroy, { :id => user.to_param }, valid_session
+      }.to_not change(User, :count)
+    end
+
     it "destroys the requested user" do
       user = vault.users.create! valid_create_attributes
       expect {

@@ -29,4 +29,27 @@ describe User do
       end
     end
   end
+
+  context 'destroy' do
+    let(:user) { create :user }
+
+    context 'with only one remained user' do
+      it 'should not remove user' do
+        user.vault.users.count.should eql 1
+        expect {
+          user.vault.users.first.destroy
+        }.to raise_error
+      end
+    end
+
+    context 'with one more one user' do
+      it 'should be remove user' do
+        user.vault.users << create(:user)
+        user.vault.users.count.should eql 2
+        expect {
+          user.vault.users.first.destroy
+        }.to change(User, :count).by(-1)
+      end
+    end
+  end
 end
