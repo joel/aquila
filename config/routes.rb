@@ -2,6 +2,8 @@ Aquila::Application.routes.draw do
 
   devise_for :users
 
+  resources :users, except: [:new, :create]
+
   resources :vaults
 
   match 'cyborg', to: 'pages#cyborg', via: :get

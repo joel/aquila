@@ -9,10 +9,15 @@
           span.icon-bar
         = link_to 'Aquila', root_path, class: 'navbar-brand'
       .navbar-collapse.collapse
-        ul.nav.navbar-nav
-          li
-            - if current_user
-              = link_to "#{current_user.email} Sign Out", destroy_user_session_path, method: :delete
+        - if current_user
+          ul.nav.navbar-nav
+            li.dropdown
+              a.dropdown-toggle data-toggle="dropdown" href="#"
+                = 'Mon Compte'
+                b.caret
+              ul.dropdown-menu
+                li= link_to current_user.email, user_path(current_user)
+                li= link_to 'Sign Out', destroy_user_session_path, method: :delete
         ul.nav.navbar-nav.navbar-right
           li.dropdown
             a.dropdown-toggle data-toggle="dropdown" href="#"

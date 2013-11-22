@@ -1,17 +1,18 @@
 require 'spec_helper'
 
 describe GoldbricksController do
+  let(:user)  { create :user }
+  let(:vault) { user.vault }
 
-  before { sign_in create(:user) }
+  before do
+    sign_in create(:user)
+    controller.stub current_vault: vault
+  end
 
   # This should return the minimal set of attributes required to create a valid
   # Goldbrick. As you add validations to Goldbrick, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) { { 'login' => 'my_login' } }
-
-  let(:vault) { create :vault }
-
-  before { controller.stub current_vault: vault }
 
   describe 'GET index' do
     it 'assigns all goldbricks as @goldbricks' do
