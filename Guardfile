@@ -20,7 +20,7 @@ guard 'spork', :rspec_env => { 'RAILS_ENV' => 'test' },
 end
 
 guard 'rspec',
-  :cmd => 'rspec',
+  :cmd => 'rspec --require support/formatters/txmt_formatter --color --format TxmtFormatter --fail-fast --drb',
   :notification => true, # don't display Growl (or Libnotify) notification after the specs are done running, default: true
   :all_after_pass => true, # don't run all specs after changed specs pass, default: true
   :all_on_start => true,   # don't run all the specs at startup, default: true
