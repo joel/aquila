@@ -11,6 +11,16 @@ namespace :sync do
     system cmd
   end
 
+  task :reload do |t, args|
+    file_name = "mongodump.#{Time.now.strftime('%Y%m%d')}"
+    app_name = 'app18709586'
+    cmd = "mongorestore -v -h localhost " \
+      "--port 27017 " \
+      "--db aquila_development " \
+      "--drop tmp/#{file_name}/#{app_name}"
+    system cmd
+  end
+
   task :backup do |t, args|
     file_name = "mongodump.#{Time.now.strftime('%Y%m%d')}"
     cmd = "mongodump -h paulo.mongohq.com:10031 " \
