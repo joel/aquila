@@ -1,6 +1,6 @@
 Aquila::Application.routes.draw do
 
-  devise_for :users
+  devise_for :users, path: 'auth'
 
   resources :users, except: [:new, :create]
 
