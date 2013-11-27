@@ -14,8 +14,11 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) do |u|
-      u.permit(:username, :email, :password, :password_confirmation, vault_attributes: [:subdomain])
+      u.permit(:email, :password, :password_confirmation, vault_attributes: [:subdomain])
     end
+
+    devise_parameter_sanitizer.for(:invite).concat [:vault_id]
+    devise_parameter_sanitizer.for(:accept_invitation).concat [:vault_id]
   end
 
   def themes

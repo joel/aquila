@@ -7,16 +7,15 @@ if Rails.env.production?
     :domain    => 'heroku.com',
     :authentication => :plain
   }
-  ActionMailer::Base.delivery_method = :smtp
-  ActionMailer::Base.default_url_options = { host: ENV['BASE_URL'] }
+  ActionMailer::Base.delivery_method     = :smtp
 elsif Rails.env.development?
-  ActionMailer::Base.delivery_method = :smtp
-  ActionMailer::Base..smtp_settings  = { address: 'localhost', port: 1025 }
-  ActionMailer::Base.default_url_options = { host: ENV['BASE_URL'] }
+  ActionMailer::Base.delivery_method     = :smtp
+  ActionMailer::Base..smtp_settings      = { address: '127.0.0.1', port: 1025 }
 elsif Rails.env.test?
-  ActionMailer::Base.delivery_method = :test
-  ActionMailer::Base.default_url_options = { host: ENV['BASE_URL'] }
+  ActionMailer::Base.delivery_method     = :test
 end
+
+ActionMailer::Base.default_url_options = { host: ENV['BASE_URL'] }
 
 # Sample of Sendgrid configuration
 

@@ -29,6 +29,7 @@ Aquila::Application.configure do
 
   config.to_prepare do
     Devise::RegistrationsController.send(:include, DeviseRegistrationsControllerDecorator)
+    Devise::InvitationsController.send(:include, DeviseInvitationsControllerDecorator)
   end
 
   Slim::Engine.set_default_options pretty: true, sort_attrs: false
