@@ -2,8 +2,8 @@ class User
   include Mongoid::Document
   include Mongoid::Timestamps
   # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
+  #  :lockable, :timeoutable and :omniauthable
+  devise :confirmable, :invitable, :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
   ## Database authenticatable
@@ -37,6 +37,15 @@ class User
 
   ## Token authenticatable
   field :authentication_token, type: String
+
+  field :invitation_token, type: String
+  field :invitation_created_at, type: Time
+  field :invitation_sent_at, type: Time
+  field :invitation_accepted_at, type: Time
+  field :invitation_limit, type: Integer
+
+  index( {invitation_token: 1}, {:background => true} )
+  index( {invitation_by_id: 1}, {:background => true} )
 
   ## Extra Fields
   field :name, type: String, default: ''

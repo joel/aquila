@@ -46,6 +46,9 @@ class Deploy
     sleep 1
     system "git push #{REMOTE[stack]} #{branch}:master #{force}"
 
+    puts   'Create Mongo Index'
+    system "heroku run rake db:mongoid:create_indexes -a #{stack}"
+
     puts   'switch on keroku app'
     system "heroku ps:scale web=#{web} -a #{stack}"
     system "heroku ps:scale worker=#{worker} -a #{stack}"
