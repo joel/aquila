@@ -81,7 +81,10 @@ group :development do
   gem 'rb-fchange', require: false
   gem 'rb-fsevent', require: false
   gem 'rb-inotify', require: false
-  gem 'mailcatcher'
+  # mailcatcher 0.5.12 May 30, 2013 (121 KB)
+  # mailcatcher (>= 0.5.12) ruby depends on
+  #   activesupport (~> 3.0) ruby
+  gem 'mailcatcher', git: 'git@github.com:sj26/mailcatcher.git'
 end
 
 group :development, :test do
