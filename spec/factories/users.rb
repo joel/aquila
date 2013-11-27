@@ -7,5 +7,7 @@ FactoryGirl.define do
     email { generate(:email) }
     password 'secret'
     password_confirmation 'secret'
+
+    after :create, &:confirm!
   end
 end

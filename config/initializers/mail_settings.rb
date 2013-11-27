@@ -15,6 +15,7 @@ elsif Rails.env.development?
   ActionMailer::Base.default_url_options = { host: ENV['BASE_URL'] }
 elsif Rails.env.test?
   ActionMailer::Base.delivery_method = :test
+  ActionMailer::Base.default_url_options = { host: ENV['BASE_URL'] }
 end
 
 # Sample of Sendgrid configuration
