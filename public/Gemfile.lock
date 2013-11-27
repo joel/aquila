@@ -30,11 +30,11 @@ GIT
       tzinfo (~> 0.3.37)
 
 GIT
-  remote: https://github.com/stephenprater/simple_form.git
-  revision: afd5daee7789f2cb1f69ed72f21d97920f7ad0ed
+  remote: git://github.com/stephenprater/simple_form.git
+  revision: 5f29ada736b0bb01cace48604de033cc5a7bd6a6
   branch: classes_on_use
   specs:
-    simple_form (3.0.0.rc)
+    simple_form (3.0.0)
       actionpack (>= 4.0.0, < 4.1)
       activemodel (>= 4.0.0, < 4.1)
 
