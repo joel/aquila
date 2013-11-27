@@ -43,6 +43,7 @@ gem 'jbuilder', '~> 1.2'
 # gem 'debugger', group: [:development, :test]
 
 gem 'devise', '>= 3.2.1'
+gem 'mandrill-api'
 gem 'figaro'
 gem 'less-rails'
 gem 'rolify'
@@ -75,6 +76,7 @@ group :development do
   gem 'rb-fchange', require: false
   gem 'rb-fsevent', require: false
   gem 'rb-inotify', require: false
+  gem 'mailcatcher'
 end
 
 group :development, :test do
@@ -94,5 +96,6 @@ group :test do
   gem 'database_cleaner'
   gem 'email_spec'
   gem 'mongoid-rspec', '>= 1.6.0', github: 'evansagge/mongoid-rspec'
+  gem 'timecop'
 end
 
