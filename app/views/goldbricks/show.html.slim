@@ -2,6 +2,9 @@
 .page-header
   h1=t '.title', default: model_class.model_name.human
 p
+  strong= model_class.human_attribute_name(:link) + ': '
+  = link_to @goldbrick.link, @goldbrick.link, target: '_blank'
+p
   strong= model_class.human_attribute_name(:name) + ': '
   = @goldbrick.name
 p

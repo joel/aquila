@@ -11,6 +11,6 @@ table.table.table-striped
     - @goldbricks.each do |goldbrick|
       tr
         td= link_to (goldbrick.name.blank? ? 'undefined' : goldbrick.name), goldbrick_path(goldbrick)
-        td= goldbrick.login
+        td= link_to goldbrick.login, goldbrick.link, target: '_blank'
         td= goldbrick.password
 = link_to t('.new', default: t('helpers.links.new')), new_goldbrick_path, class: 'btn btn-primary'
