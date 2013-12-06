@@ -9,7 +9,7 @@ module ApplicationHelper
   private
 
   def destroy_data
-    { confirm: t('.confirm', default: t('helpers.links.confirm', default: 'Are you sure?')) }
+    { confirm: t('.confirm', default: t('helpers.links.confirm')) }
   end
 
 end

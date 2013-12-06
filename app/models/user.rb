@@ -60,7 +60,7 @@ class User
   private
 
   def protect_last_user
-    raise 'You can not remove last user' if self.vault.users.count < 2
+    raise I18n.t('model.user.destroy') if self.vault.users.count < 2
   end
 
 end

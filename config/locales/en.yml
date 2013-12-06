@@ -20,4 +20,56 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  app:
+    name: Aquila
+  home:
+    title: VaultyPass
+    content: The easy way for keep all passwords always with you!
+  text:
+    forbidden:
+      title: Forbidden
+      content: You are not authorized to perform that action.
+  helpers:
+    links:
+      top: Back to top
+      account: My Account
+      theme: 'Themes : %{current_theme}'
+    submit:
+      user:
+        update:
+          password: Change my password
+  exception:
+    forbidden: You have not permitted to access on this subdomain
+  controller:
+    goldbricks:
+      create:
+        success: Goldbrick was successfully created.
+      update:
+        success: Goldbrick was successfully updated.
+    users:
+      update:
+        success: User was successfully updated.
+      destroy:
+        success: User removed
+        failure: You can not remove last user
+    vaults:
+      create:
+        success: Vault was successfully created.'
+      update:
+        success: Vault was successfully updated.
+  model:
+    user:
+     destroy: You can not remove last user
+  activerecord:
+    models:
+      vault: Vault
+    attributes:
+      subdomain: subdomain
+    errors:
+      models:
+        vault:
+          attributes:
+            subdomain:
+              format: must be lowercase alphanumerics only
+              length: exceeds maximum of 32 characters
+              exclusion: is not available

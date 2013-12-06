@@ -28,7 +28,7 @@ class GoldbricksController < ApplicationController
 
     respond_to do |format|
       if @goldbrick.save
-        format.html { redirect_to @goldbrick, notice: 'Goldbrick was successfully created.' }
+        format.html { redirect_to @goldbrick, notice: I18n.t('controller.goldbricks.create.success') }
         format.json { render action: 'show', status: :created, location: @goldbrick }
       else
         format.html { render action: 'new' }
@@ -42,7 +42,7 @@ class GoldbricksController < ApplicationController
   def update
     respond_to do |format|
       if @goldbrick.update(goldbrick_params)
-        format.html { redirect_to @goldbrick, notice: 'Goldbrick was successfully updated.' }
+        format.html { redirect_to @goldbrick, notice: I18n.t('controller.goldbricks.update.success')  }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

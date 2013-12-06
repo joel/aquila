@@ -52,7 +52,7 @@ class ApplicationController < ActionController::Base
     return nil unless user_signed_in?
     current_user.vault.tap do |vault|
       if current_user.vault.subdomain != request.subdomain
-        raise Forbidden, "You have not permitted to access on this subdomain"
+        raise Forbidden, I18n.t('exception.forbidden')
       end
     end
   end

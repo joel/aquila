@@ -13,4 +13,5 @@ table.table.table-striped
         td= link_to (goldbrick.name.blank? ? 'undefined' : goldbrick.name), goldbrick_path(goldbrick)
         td= link_to goldbrick.login, goldbrick.link, target: '_blank'
         td= goldbrick.password
+        
 = link_to t('.new', default: t('helpers.links.new')), new_goldbrick_path, class: 'btn btn-primary'

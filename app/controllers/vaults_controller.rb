@@ -31,7 +31,7 @@ class VaultsController < ApplicationController
 
     respond_to do |format|
       if @vault.save
-        format.html { redirect_to @vault, notice: 'Vault was successfully created.' }
+        format.html { redirect_to @vault, notice: I18n.t('controller.vaults.create.success') }
         format.json { render action: 'show', status: :created, location: @vault }
       else
         format.html { render action: 'new' }
@@ -45,7 +45,7 @@ class VaultsController < ApplicationController
   def update
     respond_to do |format|
       if @vault.update(vault_params)
-        format.html { redirect_to @vault, notice: 'Vault was successfully updated.' }
+        format.html { redirect_to @vault, notice: I18n.t('controller.vaults.update.success') }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

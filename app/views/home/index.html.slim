@@ -1,14 +1,11 @@
 .container.theme-showcase
   .jumbotron
-    .h1
-      | VaultyPass
-    p
-      | The easy way for keep all passwords always with you.
-    p
-      = link_to 'Sign Up', new_user_session_path, class: 'btn btn-primary btn-lg'
+    h1= t('home.title')
+    p= t('home.content')
+    p= link_to t('devise.shared.sign_up'), new_user_session_path, class: 'btn btn-primary btn-lg'
   hr
   footer#footer
     p.pull-right
-      a href="#top"
-        | Back to top
+      a href='#top'
+        = t('helpers.links.top')
     .links

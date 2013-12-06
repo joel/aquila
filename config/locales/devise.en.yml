@@ -5,11 +5,21 @@ en:
     shared:
       sign_up: Sign Up
       sign_in: Sign In
+      sign_out: Sign Out
+      password:
+        forgotten:
+          title: Forgot your password?
+          submit: Send me reset password instructions
+    links:
+      lock: Didn't receive unlock instructions?
     confirmations:
       confirmed: "Your account was successfully confirmed."
       confirmed_and_signed_in: "Your account was successfully confirmed. You are now signed in."
+      link: Didn't receive confirmation instructions?
       send_instructions: "You will receive an email with instructions about how to confirm your account in a few minutes."
       send_paranoid_instructions: "If your email address exists in our database, you will receive an email with instructions about how to confirm your account in a few minutes."
+      new:
+        submit: "Resend confirmation instructions"
     failure:
       already_authenticated: "You are already signed in."
       inactive: "Your account is not activated yet."

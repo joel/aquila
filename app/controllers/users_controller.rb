@@ -19,7 +19,7 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+        format.html { redirect_to @user, notice: I18n.t('controller.users.update.success') }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -33,9 +33,9 @@ class UsersController < ApplicationController
   def destroy
     begin
       @user.destroy
-      flash[:notice] = 'User removed'
+      flash[:notice] = I18n.t('controller.users.destroy.success')
     rescue
-      flash[:error] = 'You can not remove last user'
+      flash[:error] = I18n.t('controller.users.destroy.failure')
     end
     respond_to do |format|
       format.html { redirect_to users_url }

@@ -8,9 +8,10 @@ class Vault
 
   validates :subdomain, presence: true
   validates_uniqueness_of :subdomain, case_sensitive: true, allow_blank: false
-  validates_format_of :subdomain, with: /^[a-z0-9-]+$/, message: 'must be lowercase alphanumerics only', multiline: true
-  validates_length_of :subdomain, maximum: 32, message: 'exceeds maximum of 32 characters'
-  validates_exclusion_of :subdomain, in: ['www', 'mail', 'ftp'], message: 'is not available'
+  validates_format_of :subdomain, with: /^[a-z0-9-]+$/,
+    message: I18n.t('model.vault.validation.subdomain.format'), multiline: true
+  validates_length_of :subdomain, maximum: 32
+  validates_exclusion_of :subdomain, in: ['www', 'mail', 'ftp']
 
   def self.current_id=(id)
     Thread.current[:vault_id] = id
