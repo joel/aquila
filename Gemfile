@@ -7,13 +7,13 @@ gem 'rails', '4.0.1'
 # Use sqlite3 as the database for Active Record
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.0'
+gem 'sass-rails'
 
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '~>  1.3.0'
+gem 'uglifier'
 
 # Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.0.0'
+gem 'coffee-rails'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
@@ -25,7 +25,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 1.2'
+gem 'jbuilder'
 
   # bundle exec rake doc:rails generates the API under doc/api.
 
@@ -41,8 +41,8 @@ gem 'jbuilder', '~> 1.2'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem 'devise', '~>  3.2.1'
-gem 'devise_invitable', '~>  1.3.1'
+gem 'devise'
+gem 'devise_invitable'
 gem 'mandrill-api'
 # Mail CSS
 # gem 'roadie'
@@ -59,8 +59,8 @@ gem 'slim'
 # gem 'slim-rails'
 gem 'therubyracer', platform: :ruby
 # gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
-gem 'twitter-bootswatch-rails', '~> 3.0.0'
-gem 'twitter-bootswatch-rails-fontawesome', '~> 4.0'
+gem 'twitter-bootswatch-rails'
+gem 'twitter-bootswatch-rails-fontawesome'
 gem 'twitter-bootswatch-rails-helpers'
 
 gem 'mongoid', git: 'git://github.com/mongoid/mongoid.git'
@@ -75,12 +75,12 @@ gem 'coveralls', require: false
 group :development do
   gem 'i18n-one_sky'
   gem 'guard'
-  gem 'spork', '~> 1.0rc'
+  gem 'spork'
   gem 'guard-spork'
   gem 'guard-rspec', require: false
   gem 'haml-rails'
   gem 'haml2slim'
-  gem 'html2haml', '2.0.0.beta.1'
+  gem 'html2haml'
   gem 'hub', require: nil
   gem 'quiet_assets'
   gem 'rb-fchange', require: false
@@ -93,7 +93,7 @@ group :development do
   # Fetching git@github.com:sj26/mailcatcher.git
   # The authenticity of host 'github.com (192.30.252.130)' can't be established.
   # RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.
-  # Are you sure you want to continue connecting (yes/no)? 
+  # Are you sure you want to continue connecting (yes/no)?
   # gem 'mailcatcher', '~> 0.5.12' # Incompatible with Rails 4
 end
 
@@ -113,7 +113,7 @@ group :test do
   gem 'capybara'
   gem 'database_cleaner'
   gem 'email_spec'
-  gem 'mongoid-rspec', '~>  1.10.0', github: 'evansagge/mongoid-rspec'
+  gem 'mongoid-rspec', github: 'evansagge/mongoid-rspec'
   gem 'timecop'
 end
 
