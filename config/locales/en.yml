@@ -33,7 +33,7 @@ en:
     links:
       top: Back to top
       account: My Account
-      theme: 'Themes : %{current_theme}'
+      theme: 'Themes : %{theme}'
     submit:
       user:
         update:
