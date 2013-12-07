@@ -1,8 +1,8 @@
 GIT
   remote: git://github.com/evansagge/mongoid-rspec.git
-  revision: cd7fa1ff285f73d0948876fb1250842718716a2f
+  revision: 10f8b84ab9fb970b5fb56312b586324448b11f48
   specs:
-    mongoid-rspec (1.9.0)
+    mongoid-rspec (1.10.0)
       mongoid (>= 3.0.1)
       rake
       rspec (>= 2.14)
@@ -21,11 +21,11 @@ GIT
 
 GIT
   remote: git://github.com/mongoid/mongoid.git
-  revision: 3c0735a93bc63c109151c145fbbf5f07fb8da8e0
+  revision: bbc0df51f9c1fec19dd15e4c5d478d6474adefdc
   specs:
-    mongoid (4.0.0)
+    mongoid (4.0.0.alpha1)
       activemodel (~> 4.0.0)
-      moped (~> 2.0.beta3)
+      moped (~> 2.0.beta4)
       origin (~> 1.0)
       tzinfo (~> 0.3.37)
 
@@ -83,7 +83,7 @@ GEM
     arel (4.0.1)
     atomic (1.1.14)
     bcrypt-ruby (3.1.2)
-    bson (2.0.0.rc3)
+    bson (2.0.0)
     builder (3.1.4)
     capybara (2.2.0)
       mime-types (>= 1.16)
@@ -104,6 +104,7 @@ GEM
       execjs
     coffee-script-source (1.6.3)
     commonjs (0.2.7)
+    connection_pool (1.2.0)
     coveralls (0.7.0)
       multi_json (~> 1.3)
       rest-client
@@ -172,8 +173,8 @@ GEM
       nokogiri (~> 1.6.0)
       ruby_parser (~> 3.2.1)
     hub (1.10.6)
-    i18n (0.6.5)
-    jbuilder (1.5.2)
+    i18n (0.6.9)
+    jbuilder (1.5.3)
       activesupport (>= 3.0.0)
       multi_json (>= 1.2.0)
     jquery-rails (3.0.4)
@@ -205,13 +206,14 @@ GEM
     mime-types (1.25.1)
     mini_portile (0.5.2)
     minitest (4.7.5)
-    moped (2.0.0.beta3)
-      bson (~> 2.0.0.rc3)
-      optionable (~> 0.1.1)
+    moped (2.0.0.beta4)
+      bson (~> 2.0)
+      connection_pool (~> 1.2)
+      optionable (~> 0.2.0)
     multi_json (1.8.2)
     nokogiri (1.6.0)
       mini_portile (~> 0.5.0)
-    optionable (0.1.1)
+    optionable (0.2.0)
     origin (1.1.0)
     orm_adapter (0.5.0)
     polyglot (0.3.3)
@@ -298,7 +300,7 @@ GEM
       tilt (>= 1.3.3, < 2.1)
     slop (3.4.7)
     spork (1.0.0rc4)
-    sprockets (2.10.0)
+    sprockets (2.10.1)
       hike (~> 1.2)
       multi_json (~> 1.0)
       rack (~> 1.0)
@@ -328,9 +330,9 @@ GEM
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
-    turbolinks (1.3.1)
+    turbolinks (2.0.0)
       coffee-rails
-    twitter-bootswatch-rails (3.0.1.0)
+    twitter-bootswatch-rails (3.0.2.0)
       execjs (>= 1.4.0)
       less-rails (>= 2.3)
       railties (>= 3.1)
@@ -341,9 +343,9 @@ GEM
     twitter-bootswatch-rails-helpers (3.0.0.1)
       twitter-bootswatch-rails (~> 3.0.0)
     tzinfo (0.3.38)
-    uglifier (2.3.1)
+    uglifier (1.3.0)
       execjs (>= 0.3.0)
-      json (>= 1.8.0)
+      multi_json (~> 1.0, >= 1.0.2)
     unicorn (4.7.0)
       kgio (~> 2.6)
       rack
@@ -361,8 +363,8 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   coveralls
   database_cleaner
-  devise (>= 3.2.1)
-  devise_invitable (>= 1.3.1)
+  devise (~> 3.2.1)
+  devise_invitable (~> 1.3.1)
   email_spec
   factory_girl_rails
   figaro
@@ -380,7 +382,7 @@ DEPENDENCIES
   mailcatcher!
   mandrill-api
   mongoid!
-  mongoid-rspec (>= 1.6.0)!
+  mongoid-rspec (~> 1.10.0)!
   quiet_assets
   rails (= 4.0.1)
   rails3_serve_static_assets!
@@ -402,5 +404,5 @@ DEPENDENCIES
   twitter-bootswatch-rails (~> 3.0.0)
   twitter-bootswatch-rails-fontawesome (~> 4.0)
   twitter-bootswatch-rails-helpers
-  uglifier (>= 1.3.0)
+  uglifier (~> 1.3.0)
   unicorn

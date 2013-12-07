@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "goldbricks/show" do
+describe "goldbricks/show", pending: true do
   before(:each) do
     @goldbrick = assign(:goldbrick, stub_model(Goldbrick,
       :name => "Name",

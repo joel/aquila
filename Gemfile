@@ -10,7 +10,7 @@ gem 'rails', '4.0.1'
 gem 'sass-rails', '~> 4.0.0'
 
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
+gem 'uglifier', '~>  1.3.0'
 
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
@@ -41,8 +41,8 @@ gem 'jbuilder', '~> 1.2'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem 'devise', '>= 3.2.1'
-gem 'devise_invitable', '>= 1.3.1'
+gem 'devise', '~>  3.2.1'
+gem 'devise_invitable', '~>  1.3.1'
 gem 'mandrill-api'
 # Mail CSS
 # gem 'roadie'
@@ -54,7 +54,7 @@ gem 'sendgrid'
 # Waiting for this PR https://github.com/plataformatec/simple_form/pull/622 should accpeted
 # gem 'simple_form', git: 'https://github.com/stephenprater/simple_form.git', branch: 'classes_on_use'
 gem 'simple_form', git: 'git://github.com/stephenprater/simple_form.git', branch: 'classes_on_use'
-# gem 'simple_form', '>= 3.0.0.rc'
+# gem 'simple_form', '~>  3.0.0.rc'
 gem 'slim'
 # gem 'slim-rails'
 gem 'therubyracer', platform: :ruby
@@ -82,7 +82,7 @@ group :development do
   gem 'rb-fsevent', require: false
   gem 'rb-inotify', require: false
   # mailcatcher 0.5.12 May 30, 2013 (121 KB)
-  # mailcatcher (>= 0.5.12) ruby depends on
+  # mailcatcher (~>  0.5.12) ruby depends on
   #   activesupport (~> 3.0) ruby
   gem 'mailcatcher', git: 'git@github.com:sj26/mailcatcher.git'
 end
@@ -103,7 +103,7 @@ group :test do
   gem 'capybara'
   gem 'database_cleaner'
   gem 'email_spec'
-  gem 'mongoid-rspec', '>= 1.6.0', github: 'evansagge/mongoid-rspec'
+  gem 'mongoid-rspec', '~>  1.10.0', github: 'evansagge/mongoid-rspec'
   gem 'timecop'
 end
 
