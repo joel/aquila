@@ -68,7 +68,12 @@ gem 'mongoid', git: 'git://github.com/mongoid/mongoid.git'
 gem 'gemnasium'
 gem 'coveralls', require: false
 
+# group :development, :staging do
+#   gem 'i18n-one_sky'
+# end
+
 group :development do
+  gem 'i18n-one_sky'
   gem 'guard'
   gem 'spork', '~> 1.0rc'
   gem 'guard-spork'
@@ -84,7 +89,12 @@ group :development do
   # mailcatcher 0.5.12 May 30, 2013 (121 KB)
   # mailcatcher (~>  0.5.12) ruby depends on
   #   activesupport (~> 3.0) ruby
-  gem 'mailcatcher', git: 'git@github.com:sj26/mailcatcher.git'
+  # gem 'mailcatcher', git: 'git@github.com:sj26/mailcatcher.git' Travis can't grab code :
+  # Fetching git@github.com:sj26/mailcatcher.git
+  # The authenticity of host 'github.com (192.30.252.130)' can't be established.
+  # RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.
+  # Are you sure you want to continue connecting (yes/no)? 
+  # gem 'mailcatcher', '~> 0.5.12' # Incompatible with Rails 4
 end
 
 group :development, :test do

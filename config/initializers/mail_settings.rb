@@ -10,7 +10,8 @@ if Rails.env.production?
   ActionMailer::Base.delivery_method     = :smtp
 elsif Rails.env.development?
   ActionMailer::Base.delivery_method     = :smtp
-  ActionMailer::Base..smtp_settings      = { address: '127.0.0.1', port: 1025 }
+  # For Mailcatcher
+  # ActionMailer::Base..smtp_settings      = { address: '127.0.0.1', port: 1025 }
 elsif Rails.env.test?
   ActionMailer::Base.delivery_method     = :test
 end
