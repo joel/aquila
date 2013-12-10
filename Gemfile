@@ -73,7 +73,6 @@ gem 'coveralls', require: false
 # end
 
 group :development do
-  gem 'i18n-one_sky'
   gem 'guard'
   gem 'spork'
   gem 'guard-spork'
