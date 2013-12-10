@@ -1,0 +1,42 @@
+--- 
+fr: 
+  app: 
+    name: Aquila
+  home: 
+    title: CoffreFort
+    content: "La façon la plus simple de conserver vos mot de passe toujours avec vous !"
+  text: 
+    forbidden: 
+      title: Interdit
+      content: "Vous n'êtes pas autorisé a faire cela."
+  helpers: 
+    links: 
+      top: Remonter
+      account: "Mon compte"
+      theme: "Thèmes : %{theme}"
+    submit: 
+      user: 
+        update: 
+          password: "Changer mon mot de passe"
+  exception: 
+    forbidden: "Vous n'avez pas les droits nécessaire pour ce domaine."
+  controller: 
+    goldbricks: 
+      create: 
+        success: "Le trousseau d'accès a été crée avec succès."
+      update: 
+        success: "Le trousseau d'accès a été mit a jour avec succès."
+    users: 
+      update: 
+        success: "L'utilisateur a été mit a jour avec succès."
+      destroy: 
+        success: "Utilisateur supprimé."
+        failure: "Vous ne pouvez pas supprimer le dernier utilisateur"
+    vaults: 
+      create: 
+        success: "Le Coffre Fort a été crée avec succès."
+      update: 
+        success: "Le Coffre Fort a été mit a jour avec succès."
+  model: 
+    user: 
+      destroy: "Vous ne pouvez pas supprimer le dernier utilisateur"

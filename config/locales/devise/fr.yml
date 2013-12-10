@@ -1,0 +1,66 @@
+--- 
+fr: 
+  devise: 
+    shared: 
+      sign_up: Inscription
+      sign_in: Connection
+      sign_out: Déconnection
+      password: 
+        forgotten: 
+          title: "Mot de passe oublié ?"
+          submit: "Envoyer le mot de passe"
+    links: 
+      lock: "Renvoyer les instructions de déblocage ?"
+    confirmations: 
+      confirmed: "Votre compte a confirmé"
+      confirmed_and_signed_in: "Votre compte a été confirmé. Vous êtes connecté."
+      link: "Renvoyer les informations de confirmation ?"
+      send_instructions: "Vous allez recevoir un email afin de confirmer cotre compte dans quelques minutes."
+      send_paranoid_instructions: "Si votre adresse email est présente dans notre base vous recevrez un email de confirmation"
+      new: 
+        submit: "Renvoyer les instructions de confirmation"
+    failure: 
+      already_authenticated: "Vous êtes déjà connecté"
+      inactive: "Votre n'est pas encore activé"
+      invalid: "Mot de passe ou email invalide"
+      invalid_token: "Jeton invalide"
+      locked: "Votre compte est verrouillé"
+      not_found_in_database: "Mot de passe ou email invalide"
+      timeout: "Session expirée"
+      unauthenticated: "Vous devez vous connecté"
+      unconfirmed: "Vous devez confirmer votre compte"
+    mailer: 
+      confirmation_instructions: 
+        subject: "Instructions de confirmation"
+      reset_password_instructions: 
+        subject: "Instruction concernant le mot de passe"
+      unlock_instructions: 
+        subject: "Instruction concernant le vérrouillage"
+    omniauth_callbacks: 
+      failure: "Impossible de vous identifier depuis %{kind} a cause de %{reason}"
+      success: "Connecté depuis %{kind}"
+    passwords: 
+      no_token: "Vous devez venir de la page de ré-initialisation des mot de passe"
+      send_instructions: "Vous allez recevoir un email avec les instructions de votre mot de passe"
+      send_paranoid_instructions: "Vous allez recevoir un email avec les instructions de votre mot de passe"
+      updated: "Votre mot de passe a été mit a jour. Vous êtes connecté."
+      updated_not_active: "Votre mot de passe a été mit a jour"
+    registrations: 
+      destroyed: "Votre compte a été supprimé"
+      signed_up: "Bienvenue ! Merci de votre inscription"
+      signed_up_but_unconfirmed: "Un message de confirmation a été envoyé"
+      update_needs_confirmation: "Votre compte été mit a jour avec succès. Vous devez confirmer le compte."
+      updated: "Compte mit a jour"
+    sessions: 
+      signed_in: Connecté
+      signed_out: Deconnecté
+    unlocks: 
+      send_instructions: "Email de déverrouillage envoyé"
+  errors: 
+    messages: 
+      already_confirmed: "Vous êtes déjà confirmé. Connecté vous."
+      not_found: "pas trouvé"
+      not_locked: "n'est pas bloqué"
+      not_saved: 
+        one: "1 erreur empêche %{resource} d'être sauvegardée"
+        other: "%{count} erreurs empêche %{resource} d'être sauvegardée"

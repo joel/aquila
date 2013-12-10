@@ -1,0 +1,31 @@
+--- 
+fr: 
+  simple_form: 
+    ? "yes"
+    : Oui
+    ? "no"
+    : Non
+    required: 
+      text: Requis
+      mark: "*"
+    error_notification: 
+      default_message: "Corrigez les problèmes suivants :"
+    labels: 
+      defaults: 
+        password: "Mot de passe"
+      user: 
+        new: 
+          email: "email d'authentification"
+          password: "Nouveau mot de passe"
+          password_confirmation: Confirmez
+        edit: 
+          email: email
+    hints: 
+      defaults: 
+        username: "Nom d'utilisateur d'authentification"
+        password: "Les caractères spéciaux ne sont autorisés"
+    helpers: 
+      submit: 
+        user: 
+          create: "Ajouter %{model}"
+          update: Sauvegarder

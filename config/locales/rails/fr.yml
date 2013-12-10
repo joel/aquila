@@ -1,0 +1,26 @@
+--- 
+fr: 
+  activerecord: 
+    models: 
+      vault: "Coffre Fort"
+    attributes: 
+      subdomain: "sous domaine"
+    errors: 
+      models: 
+        user: 
+          attributes: 
+            name: Nom
+            email: Email
+        vault: 
+          attributes: 
+            subdomain: 
+              format: "doit être en minuscule"
+              length: "dépasse 32 caractères "
+              exclusion: "n'est pas valide"
+        goldbrick: 
+          attributes: 
+            name: Nom
+            link: Lien
+            login: Identifiant
+            password: "Mot de passe"
+            content: Contenu
