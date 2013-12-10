@@ -60,16 +60,3 @@ en:
   model:
     user:
      destroy: You can not remove last user
-  activerecord:
-    models:
-      vault: Vault
-    attributes:
-      subdomain: subdomain
-    errors:
-      models:
-        vault:
-          attributes:
-            subdomain:
-              format: must be lowercase alphanumerics only
-              length: exceeds maximum of 32 characters
-              exclusion: is not available
