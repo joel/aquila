@@ -43,6 +43,7 @@ gem 'jbuilder'
 
 gem 'devise'
 gem 'devise_invitable'
+gem 'devise-i18n'
 gem 'mandrill-api'
 # Mail CSS
 # gem 'roadie'
@@ -94,7 +95,14 @@ group :development do
   # RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.
   # Are you sure you want to continue connecting (yes/no)?
   # gem 'mailcatcher', '~> 0.5.12' # Incompatible with Rails 4
+
+  # gem 'rspec', '>= 2.4.0'
+  # gem 'bundler'
+  # gem 'jeweler', '> 1.6.4'
+  gem 'i18n-spec'
+  gem 'localeapp'
 end
+
 
 group :development, :test do
   gem 'factory_girl_rails'

@@ -78,4 +78,7 @@ pickle-email-*.html
 /config/application.yml
 
 # Gemnasium gem configuration file
+config/gemnasium.yml.localeapp
 config/gemnasium.yml
+
+.localeapp/config.rb
