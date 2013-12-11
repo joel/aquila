@@ -1,26 +1,28 @@
---- 
-en: 
-  activerecord: 
-    models: 
+---
+en:
+  mongoid:
+    models:
       vault: Vault
-    attributes: 
-      subdomain: subdomain
-    errors: 
-      models: 
-        user: 
-          attributes: 
-            name: Name
-            email: Email
-        vault: 
-          attributes: 
-            subdomain: 
+      goldbrick: Goldbrick
+    attributes:
+      vault:
+       subdomain: Subdomain
+      user:
+        attributes:
+          name: Name
+          email: Email
+      goldbrick:
+        attributes:
+          name: Name
+          link: Link
+          login: Login
+          password: Password
+          content: Content
+    errors:
+      models:
+        vault:
+          attributes:
+            subdomain:
               format: "must be lowercase alphanumerics only"
               length: "exceeds maximum of 32 characters"
               exclusion: "is not available"
-        goldbrick: 
-          attributes: 
-            name: Name
-            link: Link
-            login: Login
-            password: Password
-            content: Content

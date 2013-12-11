@@ -1,26 +1,30 @@
---- 
-fr: 
-  activerecord: 
-    models: 
+---
+fr:
+  mongoid:
+    models:
       vault: "Coffre Fort"
-    attributes: 
-      subdomain: "sous domaine"
-    errors: 
-      models: 
-        user: 
-          attributes: 
-            name: Nom
-            email: Email
-        vault: 
-          attributes: 
-            subdomain: 
+      goldbrick:
+        one: "Trousseau"
+        other: "Trousseaux"
+    attributes:
+      vault:
+       subdomain: "Sous Domaine"
+      user:
+        attributes:
+          name: Nom
+          email: Email
+      goldbrick:
+        attributes:
+          name: Nom
+          link: Lien
+          login: Identifiant
+          password: Mot de passe
+          content: Contenue
+    errors:
+      models:
+        vault:
+          attributes:
+            subdomain:
               format: "doit être en minuscule"
-              length: "dépasse 32 caractères "
+              length: "dépasse 32 caractères"
               exclusion: "n'est pas valide"
-        goldbrick: 
-          attributes: 
-            name: Nom
-            link: Lien
-            login: Identifiant
-            password: "Mot de passe"
-            content: Contenu
