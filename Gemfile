@@ -44,6 +44,7 @@ gem 'jbuilder'
 gem 'devise'
 gem 'devise_invitable'
 gem 'devise-i18n'
+# gem 'devise-i18n-views'
 gem 'mandrill-api'
 # Mail CSS
 # gem 'roadie'
@@ -99,7 +100,7 @@ group :development do
   # gem 'rspec', '>= 2.4.0'
   # gem 'bundler'
   # gem 'jeweler', '> 1.6.4'
-  gem 'i18n-spec'
+  # gem 'i18n-spec'
   gem 'localeapp'
 end
 
