@@ -1,31 +1,32 @@
---- 
-fr: 
-  simple_form: 
+---
+fr:
+  simple_form:
     ? "yes"
     : Oui
     ? "no"
     : Non
-    required: 
+    required:
       text: Requis
       mark: "*"
-    error_notification: 
+    error_notification:
       default_message: "Corrigez les problèmes suivants :"
-    labels: 
-      defaults: 
+    labels:
+      defaults:
         password: "Mot de passe"
-      user: 
-        new: 
-          email: "email d'authentification"
-          password: "Nouveau mot de passe"
+        email: "email"
+        link: "Lien"
+        login: Identifiant
+        content: Notes
+      user:
+        new:
           password_confirmation: Confirmez
-        edit: 
-          email: email
-    hints: 
-      defaults: 
+    hints:
+      defaults:
         username: "Nom d'utilisateur d'authentification"
-        password: "Les caractères spéciaux ne sont autorisés"
-    helpers: 
-      submit: 
-        user: 
-          create: "Ajouter %{model}"
-          update: Sauvegarder
+        password: "Les caractères spéciaux ne sont pas autorisés"
+    helpers:
+      submit:
+        create: "Ajouter %{model}"
+        update: Sauvegarder
+        goldbrick:
+          create: 'Foo'
