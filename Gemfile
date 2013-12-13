@@ -26,6 +26,7 @@ gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder'
+gem 'slim'
 
   # bundle exec rake doc:rails generates the API under doc/api.
 
@@ -74,7 +75,6 @@ gem 'mongoid', git: 'git://github.com/mongoid/mongoid.git'
 # end
 
 group :development do
-  gem 'slim'
   # gem 'slim-rails'
   gem 'therubyracer', platform: :ruby
   gem 'guard'

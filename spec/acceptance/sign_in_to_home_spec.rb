@@ -8,7 +8,7 @@ feature 'sign in/up' do
     fill_in 'user_vault_attributes_subdomain', with: user.vault.subdomain
     fill_in 'user_email',    with: user.email
     fill_in 'user_password', with: user.password
-    click_button I18n.t('devise.shared.sign_up')
+    click_button I18n.t('devise.registrations.new.sign_up')
     # current_path.should eql goldbricks_url(subdomain: user.vault.subdomain)
   end
 end
