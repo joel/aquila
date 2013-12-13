@@ -1,25 +1,31 @@
 ---
 fr:
+  errors:
+    messages:
+      not_saved: Sauvegarde a échoué
+
   mongoid:
+
     models:
       vault: "Coffre Fort"
       goldbrick:
         one: "Trousseau"
         other: "Trousseaux"
+
     attributes:
+      goldbrick:
+        name: Nom
+        link: Lien
+        login: Identifiant
+        password: Mot de passe
+        content: Contenu
+      user:
+        current_password: Mot de passe actuel
+        name: Nom
+        email: Email
       vault:
        subdomain: "Sous Domaine"
-      user:
-        attributes:
-          name: Nom
-          email: Email
-      goldbrick:
-        attributes:
-          name: Nom
-          link: Lien
-          login: Identifiant
-          password: Mot de passe
-          content: Contenue
+
     errors:
       models:
         vault:
@@ -28,3 +34,7 @@ fr:
               format: "doit être en minuscule"
               length: "dépasse 32 caractères"
               exclusion: "n'est pas valide"
+        user:
+          attributes:
+            current_password:
+              blank: Vous devez entrer votre mot de passe

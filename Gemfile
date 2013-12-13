@@ -44,7 +44,10 @@ gem 'jbuilder'
 gem 'devise'
 gem 'devise_invitable'
 gem 'devise-i18n'
-# gem 'devise-i18n-views'
+gem 'devise-i18n-views'
+
+gem 'rails-i18n'
+
 gem 'mandrill-api'
 # Mail CSS
 # gem 'roadie'
@@ -57,9 +60,7 @@ gem 'sendgrid'
 # gem 'simple_form', git: 'https://github.com/stephenprater/simple_form.git', branch: 'classes_on_use'
 gem 'simple_form', git: 'git://github.com/stephenprater/simple_form.git', branch: 'classes_on_use'
 # gem 'simple_form', '~>  3.0.0.rc'
-gem 'slim'
-# gem 'slim-rails'
-gem 'therubyracer', platform: :ruby
+
 # gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 gem 'twitter-bootswatch-rails'
 gem 'twitter-bootswatch-rails-fontawesome'
@@ -67,14 +68,15 @@ gem 'twitter-bootswatch-rails-helpers'
 
 gem 'mongoid', git: 'git://github.com/mongoid/mongoid.git'
 
-gem 'gemnasium'
-gem 'coveralls', require: false
 
 # group :development, :staging do
 #   gem 'i18n-one_sky'
 # end
 
 group :development do
+  gem 'slim'
+  # gem 'slim-rails'
+  gem 'therubyracer', platform: :ruby
   gem 'guard'
   gem 'spork'
   gem 'guard-spork'
@@ -97,15 +99,18 @@ group :development do
   # Are you sure you want to continue connecting (yes/no)?
   # gem 'mailcatcher', '~> 0.5.12' # Incompatible with Rails 4
 
+  # localeapp
   # gem 'rspec', '>= 2.4.0'
   # gem 'bundler'
   # gem 'jeweler', '> 1.6.4'
   # gem 'i18n-spec'
-  gem 'localeapp'
+  # gem 'localeapp'
 end
 
 
 group :development, :test do
+  gem 'gemnasium'
+  gem 'coveralls', require: false
   gem 'factory_girl_rails'
   gem 'rspec-rails'
 end

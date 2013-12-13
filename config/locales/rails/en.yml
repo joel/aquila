@@ -1,23 +1,29 @@
 ---
 en:
+  errors:
+    messages:
+      not_saved: Not Saved
+
   mongoid:
+
     models:
       vault: Vault
       goldbrick: Goldbrick
+
     attributes:
+      goldbrick:
+        name: Name
+        link: Link
+        login: Login
+        password: Password
+        content: Content
+      user:
+        current_password: Current Password
+        name: Name
+        email: Email
       vault:
        subdomain: Subdomain
-      user:
-        attributes:
-          name: Name
-          email: Email
-      goldbrick:
-        attributes:
-          name: Name
-          link: Link
-          login: Login
-          password: Password
-          content: Content
+
     errors:
       models:
         vault:
@@ -26,3 +32,7 @@ en:
               format: "must be lowercase alphanumerics only"
               length: "exceeds maximum of 32 characters"
               exclusion: "is not available"
+        user:
+          attributes:
+            current_password:
+              blank: "Current Password Can't be blank"

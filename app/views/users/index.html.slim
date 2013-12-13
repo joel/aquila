@@ -13,7 +13,7 @@ table.table.table-striped
         tr
           td= link_to user.name, user_path(user)
           td= link_to user.email, user_path(user)
-          td=l user.created_at
+          td= l user.created_at
           td
             = link_to t('.edit', default: t('helpers.links.edit')), edit_user_path(user), class: 'btn btn-mini'
             | &#xA0;

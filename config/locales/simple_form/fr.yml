@@ -12,6 +12,9 @@ fr:
       default_message: "Corrigez les problèmes suivants :"
     labels:
       defaults:
+        name: Nom
+        current_password: Mot de passe actuel
+        password_confirmation: Confirmer le mot de passe
         password: "Mot de passe"
         email: "email"
         link: "Lien"

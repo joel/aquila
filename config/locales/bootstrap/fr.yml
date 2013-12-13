@@ -1,15 +1,20 @@
---- 
-fr: 
-  helpers: 
+---
+fr:
+  helpers:
     actions: Actions
-    links: 
+    submit:
+      update: Mettre a jour
+      create: Créer
+      all: Validate
+    links:
       back: Retour
       cancel: Annuler
       confirm: "Êtes vous sûr ?"
       destroy: Supprimer
       new: Nouveau
       edit: Editer
-    titles: 
+      password: Mot de passe
+    titles:
       edit: "Editer %{model}"
       save: "Sauvegarder %{model}"
       new: "Nouveau %{model}"

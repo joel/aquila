@@ -2,6 +2,10 @@
 en: 
   helpers: 
     actions: Actions
+    submit:
+      update: Update
+      create: Create
+      all: Validate
     links: 
       back: Back
       cancel: Cancel
@@ -9,6 +13,7 @@ en:
       destroy: Delete
       new: New
       edit: Edit
+      password: Password
     titles: 
       edit: "Edit %{model}"
       save: "Save %{model}"
