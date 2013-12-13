@@ -1,14 +1,14 @@
-h2 Change your password
+h2= t('.change_your_password')
 = simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f|
   = f.error_notification
   = f.input :reset_password_token, as: :hidden
   = f.full_error :reset_password_token
   .form-inputs
     = f.input :password, required: true, autofocus: true
-    = f.input :password_confirmation, label: t('simple_form.labels.user.new.password_confirmation'), required: true
+    = f.input :password_confirmation, required: true
   .form-group
     .col-lg-offset-2.col-lg-10
-      = f.button :submit, t('helpers.submit.user.update.password')
+      = f.button :submit, t('.change_my_password')
 
 = render 'devise/shared/links'
 

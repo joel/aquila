@@ -1,10 +1,10 @@
-h2= t('devise.shared.password.forgotten.title')
+h2= t('.forgot_your_password')
 = simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
   = f.error_notification
   .form-inputs
     = f.input :email, require: true, autofocus: true
   .form-group
     .col-lg-offset-2.col-lg-10
-      = f.button :submit, t('devise.shared.password.forgotten.submit')
-      
-= render "devise/shared/links"
+      = f.button :submit, t('.send_me_reset_password_instructions')
+
+= render 'devise/shared/links'

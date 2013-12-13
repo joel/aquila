@@ -3,6 +3,7 @@ h2= t '.title', resource: resource_class.model_name.human
 = simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
   = f.error_notification
   = devise_error_messages!
+  
   .form-inputs
     = f.input :email, require: true, autofocus: true
     - if devise_mapping.confirmable? && resource.pending_reconfirmation?
@@ -13,6 +14,6 @@ h2= t '.title', resource: resource_class.model_name.human
     = f.input :current_password, hint: t('.we_need_your_current_password_to_confirm_your_changes'), require: true
   .form-group
     .col-lg-offset-2.col-lg-10
-      = f.button :submit, I18n.t('helpers.submit.update')
+      = f.button :submit, t('.update')
 
 = link_to t('helpers.links.back'), :back

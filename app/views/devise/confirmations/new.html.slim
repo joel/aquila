@@ -1,4 +1,4 @@
-h2 Resend confirmation instructions
+h2= t('.resend_confirmation_instructions')
 = simple_form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f|
   = f.error_notification
   = f.full_error :confirmation_token
@@ -6,6 +6,6 @@ h2 Resend confirmation instructions
     = f.input :email, required: true, autofocus: true
   .form-group
     .col-lg-offset-2.col-lg-10
-      = f.button :submit, t('.submit')
+      = f.button :submit, t('.resend_confirmation_instructions')
 
 = render 'devise/shared/links'

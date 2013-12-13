@@ -1,6 +1,6 @@
 .container
   .jumbotron
-    h2 Sign in
+    h2= t('.sign_up')
   = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
     = f.error_notification
     = f.simple_fields_for :vault, resource.vault do |vault_fields|
@@ -10,6 +10,6 @@
     = f.input :password_confirmation, as: :password
     .form-group
       .col-lg-offset-2.col-lg-10
-        = f.button :submit, I18n.t('helpers.sumbit.all')
+        = f.button :submit, t('.sign_up')
 
   = render 'devise/shared/links'

@@ -12,6 +12,7 @@ fr:
       default_message: "Corrigez les problèmes suivants :"
     labels:
       defaults:
+        remember_me: Se souvenir de moi
         name: Nom
         current_password: Mot de passe actuel
         password_confirmation: Confirmer le mot de passe
