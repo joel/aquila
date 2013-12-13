@@ -6,28 +6,31 @@ en:
     ? "no"
     : "No"
     required:
-      text: required
+      text: Required
       mark: "*"
     error_notification:
       default_message: "Please review the problems below:"
     labels:
       defaults:
+        remember_me: Remember me
+        name: Name
         current_password: Current Password
-        password_confirmation: Password Confirmation
+        password_confirmation: Password confirmation
         password: Password
+        email: Email
+        link: Link
+        login: Login
+        content: Content
       user:
         new:
-          email: "E-mail to sign in."
-          password: "New password"
-          password_confirmation: "Confirm your new password"
-        edit:
-          email: E-mail.
+          password_confirmation: Confirm Password
     hints:
       defaults:
         username: "User name to sign in."
         password: "No special characters, please."
     helpers:
       submit:
-        user:
-          create: "Add %{model}"
-          update: "Save Changes"
+        create: "Add %{model}"
+        update: Save
+        goldbrick:
+          create: 'Create Goldbrick'

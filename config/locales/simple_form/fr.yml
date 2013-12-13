@@ -33,4 +33,4 @@ fr:
         create: "Ajouter %{model}"
         update: Sauvegarder
         goldbrick:
-          create: 'Foo'
+          create: 'Ajouter le trousseau'

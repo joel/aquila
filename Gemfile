@@ -107,7 +107,6 @@ group :development do
   # gem 'localeapp'
 end
 
-
 group :development, :test do
   gem 'gemnasium'
   gem 'coveralls', require: false
@@ -128,5 +127,6 @@ group :test do
   gem 'email_spec'
   gem 'mongoid-rspec', github: 'evansagge/mongoid-rspec'
   gem 'timecop'
+  gem 'i18n-spec'
 end
 
