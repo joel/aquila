@@ -69,7 +69,8 @@ gem 'twitter-bootswatch-rails'
 gem 'twitter-bootswatch-rails-fontawesome'
 gem 'twitter-bootswatch-rails-helpers'
 
-gem 'mongoid', git: 'git://github.com/mongoid/mongoid.git'
+# gem 'mongoid', git: 'git://github.com/mongoid/mongoid.git'
+gem 'mongoid', '~> 4.0.0.alpha1'
 
 # group :development, :staging do
 #   gem 'i18n-one_sky'
