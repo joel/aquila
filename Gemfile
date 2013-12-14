@@ -71,7 +71,6 @@ gem 'twitter-bootswatch-rails-helpers'
 
 gem 'mongoid', git: 'git://github.com/mongoid/mongoid.git'
 
-
 # group :development, :staging do
 #   gem 'i18n-one_sky'
 # end
