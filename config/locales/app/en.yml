@@ -1,42 +1,43 @@
---- 
-en: 
-  app: 
+---
+en:
+  app:
     name: Aquila
-  home: 
+  home:
     title: VaultyPass
     content: "The easy way for keep all passwords always with you!"
-  text: 
-    forbidden: 
+  text:
+    forbidden:
       title: Forbidden
       content: "You are not authorized to perform that action."
-  helpers: 
-    links: 
+  helpers:
+    links:
       top: "Back to top"
       account: "My Account"
       theme: "Themes : %{theme}"
-    submit: 
-      user: 
-        update: 
+      locale: "Language : %{current_locale}"
+    submit:
+      user:
+        update:
           password: "Change my password"
-  exception: 
+  exception:
     forbidden: "You have not permitted to access on this subdomain"
-  controller: 
-    goldbricks: 
-      create: 
+  controller:
+    goldbricks:
+      create:
         success: "Goldbrick was successfully created."
-      update: 
+      update:
         success: "Goldbrick was successfully updated."
-    users: 
-      update: 
+    users:
+      update:
         success: "User was successfully updated."
-      destroy: 
+      destroy:
         success: "User removed"
         failure: "You can not remove last user"
-    vaults: 
-      create: 
+    vaults:
+      create:
         success: "Vault was successfully created.'"
-      update: 
+      update:
         success: "Vault was successfully updated."
-  model: 
-    user: 
+  model:
+    user:
       destroy: "You can not remove last user"

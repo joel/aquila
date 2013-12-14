@@ -48,6 +48,7 @@ gem 'devise-i18n'
 gem 'devise-i18n-views'
 
 gem 'rails-i18n'
+gem 'i18n-language-translations'
 
 gem 'mandrill-api'
 # Mail CSS

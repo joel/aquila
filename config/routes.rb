@@ -13,6 +13,7 @@ Aquila::Application.routes.draw do
   match 'flatly', to: 'pages#flatly', via: :get
 
   post 'themes/:theme' => 'themes#setting', as: :set_theme
+  post 'locales/:locale' => 'locales#setting', as: :set_locale
 
   constraints(Subdomain) do
     match '/' => 'goldbricks#index', via: [:get]

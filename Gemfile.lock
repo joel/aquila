@@ -160,6 +160,9 @@ GEM
       ruby_parser (~> 3.2.1)
     hub (1.10.6)
     i18n (0.6.9)
+    i18n-language-translations (0.0.2)
+      i18n (~> 0.5)
+      railties (>= 3.0.0)
     i18n-spec (0.4.0)
       iso
     iso (0.2.0)
@@ -357,6 +360,7 @@ DEPENDENCIES
   haml2slim
   html2haml
   hub
+  i18n-language-translations
   i18n-spec
   jbuilder
   jquery-rails

@@ -21,6 +21,14 @@
         ul.nav.navbar-nav.navbar-right
           li.dropdown
             a.dropdown-toggle data-toggle='dropdown' href='#'
+              = t('helpers.links.locale', current_locale: t("languages.#{current_locale}", locale: current_locale))
+              b.caret
+            ul.dropdown-menu
+              - I18n.available_locales.each do |locale|
+                li= link_to t("languages.#{locale}", current_locale: locale).capitalize,
+                  set_locale_path(locale: locale), method: :post
+          li.dropdown
+            a.dropdown-toggle data-toggle='dropdown' href='#'
               = t('helpers.links.theme', theme: current_theme)
               b.caret
             ul.dropdown-menu

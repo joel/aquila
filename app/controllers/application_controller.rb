@@ -25,6 +25,11 @@ class ApplicationController < ActionController::Base
     @themes ||= %w[cyborg readable cosmo flatly simplex]
   end
   helper_method :themes
+  
+  def current_locale
+    session[:locale] ||= I18n.locale
+  end
+  helper_method :current_locale
 
   def current_theme
     session[:theme] ||= 'cyborg'
