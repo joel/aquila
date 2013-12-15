@@ -30,13 +30,19 @@ namespace :sync do
     system cmd
   end
 
-  task :restore do |t, args|
-    cmd = "mongorestore -h paulo.mongohq.com:10031 " \
-      "-d app18709586 " \
-      "-u heroku " \
-      "-p #{ENV['MONGOHQ_PASSWORD']} " \
-      "#{file}"
-    system cmd
+  task :restore, :file do |t, args|
+    puts "keep fews secondes for considers your action, you are going to EREASE production database for restoring with your provided dump file, you are allright with this ? [Y,n]"
+
+    if $stdin.gets.chomp == 'Y'
+      cmd = "mongorestore -h paulo.mongohq.com:10031 " \
+        "-d app18709586 " \
+        "-u heroku " \
+        "-p #{ENV['MONGOHQ_PASSWORD']} " \
+        "#{args.file}"
+      system cmd
+    else
+      puts "Ok bye bye"
+    end
   end
 
 end
