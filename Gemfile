@@ -69,8 +69,8 @@ gem 'twitter-bootswatch-rails'
 gem 'twitter-bootswatch-rails-fontawesome'
 gem 'twitter-bootswatch-rails-helpers'
 
-# gem 'mongoid', git: 'git://github.com/mongoid/mongoid.git'
-gem 'mongoid', '~> 4.0.0.alpha1'
+gem 'mongoid', git: 'git://github.com/mongoid/mongoid.git'
+# gem 'mongoid', '~> 4.0.0.alpha1'
 
 # group :development, :staging do
 #   gem 'i18n-one_sky'
@@ -118,6 +118,7 @@ end
 group :production do
   # gem 'unicorn'
   gem 'thin'
+  # gem 'puma'
   gem 'rails_12factor'
   gem 'rails3_serve_static_assets', github: 'heroku/rails3_serve_static_assets'
   gem 'rails_log_stdout',           github: 'heroku/rails_log_stdout'
