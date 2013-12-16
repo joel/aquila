@@ -41,3 +41,8 @@ en:
   model:
     user:
       destroy: "You can not remove last user"
+  goldbricks:
+    index:
+      title:
+        one: Goldbrick
+        other: Goldbricks

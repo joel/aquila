@@ -41,3 +41,8 @@ fr:
   model:
     user:
       destroy: "Vous ne pouvez pas supprimer le dernier utilisateur"
+  goldbricks:
+    index:
+      title:
+        one: "Trousseau"
+        other: "Trousseaux"

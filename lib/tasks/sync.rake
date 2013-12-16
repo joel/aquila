@@ -46,4 +46,11 @@ namespace :sync do
     end
   end
 
+  task :console do
+    cmd = "mongo #{ENV['MONGOHQ_URL']}/#{ENV['MONGOHQ_DATABASE']} " \
+      "-u #{ENV['MONGOHQ_USERNAME']} " \
+      "-p #{ENV['MONGOHQ_PASSWORD']} "
+    system cmd
+  end
+
 end

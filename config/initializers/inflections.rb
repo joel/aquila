@@ -15,6 +15,6 @@
 #   inflect.acronym 'RESTful'
 # end
 
-# ActiveSupport::Inflector.inflections(:fr) do |inflect|
-#   inflect.irregular 'trousseau', 'trousseaux'
-# end
+ActiveSupport::Inflector.inflections(:fr) do |inflect|
+  inflect.irregular 'trousseau', 'trousseaux'
+end
