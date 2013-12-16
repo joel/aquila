@@ -30,13 +30,14 @@ namespace :sync do
     system cmd
   end
 
+  # rake sync:restore['tmp/mongodump.20131127/app18709586']
   task :restore, :file do |t, args|
     puts "keep fews secondes for considers your action, you are going to EREASE production database for restoring with your provided dump file, you are allright with this ? [Y,n]"
 
     if $stdin.gets.chomp == 'Y'
-      cmd = "mongorestore -h paulo.mongohq.com:10031 " \
-        "-d app18709586 " \
-        "-u heroku " \
+      cmd = "mongorestore -h #{ENV['MONGOHQ_URL']} " \
+        "-d #{ENV['MONGOHQ_DATABASE']} " \
+        "-u #{ENV['MONGOHQ_USERNAME']} " \
         "-p #{ENV['MONGOHQ_PASSWORD']} " \
         "#{args.file}"
       system cmd

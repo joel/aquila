@@ -1,5 +1,8 @@
 fr:
   devise:
+    sessions:
+      user:
+        signed_in: Connecté(e)
     shared:
       sign_in: Connection
       sign_out: Déconnecté(e)
