@@ -1,5 +1,7 @@
 ---
 en:
+  languages:
+    new: Add your language!
   app:
     name: Aquila
   home:

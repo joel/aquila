@@ -49,6 +49,9 @@ class User
 
   ## Extra Fields
   field :name, type: String, default: ''
+  field :theme, type: String, default: 'readable'
+  field :locale, type: String, default: 'en'
+  
 
   belongs_to :vault
   validates :vault, presence: true

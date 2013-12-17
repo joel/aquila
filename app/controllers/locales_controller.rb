@@ -4,7 +4,8 @@ class LocalesController < ApplicationController
 
    def setting
      session[:locale] = params[:locale]
-     I18n.locale = session[:locale]
+     I18n.locale = params[:locale]
+     current_user.update locale: params[:locale] if current_user
      redirect_to :back
    end
 

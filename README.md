@@ -1,4 +1,4 @@
-# Aquila
+# Aquila Vault
 
 [![Code Climate](https://codeclimate.com/github/joel/aquila.png)](https://codeclimate.com/github/joel/aquila)
 
@@ -8,19 +8,21 @@
 
 [![Coverage Status](https://coveralls.io/repos/joel/aquila/badge.png)](https://coveralls.io/r/joel/aquila)
 
-Aquila is a simple rails app that allows you to share passwords, notes with your team like [Roswell](https://github.com/blahed/roswell)
+Aquila is a simple rails app that allows you to share passwords, notes with your team like [Roswell](https://github.com/blahed/roswell) or like another awesome project [Swordfish](https://github.com/github/swordfish)
 
 Please use it on [vaultypass.com](http://www.vaultypass.com/)
 
-### Features
+<img src="https://f.cloud.github.com/assets/5789/1765071/89f73a90-6730-11e3-91ee-2818ba710aba.png" alt="ScreenShot" style="height: 400px; width: 600px;"/>
+
+## Features
 
 * Simple web accounts
 
-### How secure is Aquila it?
+## Is it secure?
 
 Not extremely secure, but more secure than a shared google spreadsheet. The `production` environment requires SSL, this is to ensure that cleartext passwords aren't sent/received over the wire.
 
-### How can it be more secure?
+## How can it be more secure?
 
 Really, we just needed something better than a spreadsheet.
 

@@ -27,6 +27,8 @@
               - I18n.available_locales.each do |locale|
                 li= link_to t("languages.#{locale}", current_locale: locale).capitalize,
                   set_locale_path(locale: locale), method: :post
+              li= link_to t("languages.new", current_locale: locale),
+                'http://www.localeapp.com/projects/6150', target: '_blank'
           li.dropdown
             a.dropdown-toggle data-toggle='dropdown' href='#'
               = t('helpers.links.theme', theme: current_theme)

@@ -25,14 +25,22 @@ class ApplicationController < ActionController::Base
     @themes ||= %w[cyborg readable cosmo flatly simplex]
   end
   helper_method :themes
-  
+
   def current_locale
-    session[:locale] ||= I18n.locale
+    if current_user
+      session[:locale] = current_user.locale
+    else
+      session[:locale] ||= I18n.locale
+    end
   end
   helper_method :current_locale
 
   def current_theme
-    session[:theme] ||= 'cyborg'
+    if current_user
+      session[:theme] = current_user.theme
+    else
+      session[:theme] ||= 'flatly'
+    end
   end
   helper_method :current_theme
 
