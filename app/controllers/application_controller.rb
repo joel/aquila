@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, :set_time_zone, :time_zone_for_moment
   before_filter :configure_permitted_parameters, if: :devise_controller?
 
   protected
@@ -25,6 +25,14 @@ class ApplicationController < ActionController::Base
     @themes ||= %w[cyborg readable cosmo flatly simplex]
   end
   helper_method :themes
+
+  def set_time_zone
+    Time.zone = current_user.time_zone if current_user
+  end
+
+  def time_zone_for_moment
+    gon.time_zone = current_user ? Time.zone.as_json : nil
+  end
 
   def current_locale
     if current_user

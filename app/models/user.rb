@@ -51,7 +51,7 @@ class User
   field :name, type: String, default: ''
   field :theme, type: String, default: 'readable'
   field :locale, type: String, default: 'en'
-  
+  field :time_zone, type: String, default: 'Europe/Paris'
 
   belongs_to :vault
   validates :vault, presence: true

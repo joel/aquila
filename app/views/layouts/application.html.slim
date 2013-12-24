@@ -26,4 +26,5 @@ html(lang='en')
       .page-header
       = yield
       = javascript_include_tag current_theme
+      = javascript_include_tag 'moment'
       = yield(:page_javascript) if content_for?(:page_javascript)
