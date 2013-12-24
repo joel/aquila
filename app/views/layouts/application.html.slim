@@ -22,9 +22,7 @@ html(lang='en')
   body
     .container
       = render partial: 'layouts/navbar'
-      .page-header
       = bootswatch_flash
-      .page-header
       = yield
       = javascript_include_tag current_theme
       = javascript_include_tag 'moment'
