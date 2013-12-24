@@ -144,6 +144,9 @@ GEM
       childprocess (>= 0.2.3)
       guard (>= 1.1)
       spork (>= 0.8.4)
+    guard-teaspoon (0.0.4)
+      guard (>= 1.6.1)
+      teaspoon (>= 0.5.3)
     haml (4.0.4)
       tilt
     haml-rails (0.4)
@@ -201,6 +204,8 @@ GEM
     mime-types (1.25.1)
     mini_portile (0.5.2)
     minitest (4.7.5)
+    momentjs-rails (2.4.0)
+      railties (>= 3.1)
     moped (2.0.0.beta4)
       bson (~> 2.0)
       connection_pool (~> 1.2)
@@ -211,6 +216,7 @@ GEM
     optionable (0.2.0)
     origin (2.0.0)
     orm_adapter (0.5.0)
+    phantomjs (1.9.2.1)
     polyglot (0.3.3)
     pry (0.9.12.3)
       coderay (~> 1.0)
@@ -299,6 +305,9 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (~> 2.8)
+    teaspoon (0.7.8)
+      phantomjs (>= 1.8.1.1)
+      railties (>= 3.2.5, < 5)
     temple (0.6.7)
     term-ansicolor (1.2.2)
       tins (~> 0.8)
@@ -356,6 +365,7 @@ DEPENDENCIES
   guard
   guard-rspec
   guard-spork
+  guard-teaspoon
   haml-rails
   haml2slim
   html2haml
@@ -366,6 +376,7 @@ DEPENDENCIES
   jquery-rails
   less-rails
   mandrill-api
+  momentjs-rails
   mongoid!
   mongoid-rspec!
   puma
@@ -385,6 +396,7 @@ DEPENDENCIES
   simple_form!
   slim
   spork
+  teaspoon
   therubyracer
   timecop
   turbolinks

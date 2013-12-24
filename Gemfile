@@ -84,6 +84,7 @@ group :development do
   gem 'spork'
   gem 'guard-spork'
   gem 'guard-rspec', require: false
+  gem 'guard-teaspoon'
   gem 'haml-rails'
   gem 'haml2slim'
   gem 'html2haml'
@@ -115,6 +116,7 @@ group :development, :test do
   gem 'coveralls', require: false
   gem 'factory_girl_rails'
   gem 'rspec-rails'
+  gem 'teaspoon'
 end
 
 group :production do

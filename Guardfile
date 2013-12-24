@@ -38,3 +38,11 @@ guard 'rspec',
   watch('app/controllers/application_controller.rb')  { "spec/controllers" }
   watch(%r{^app/views/(.+)/.*\.(erb|slim|rabl)$})     { |m| ["spec/controllers", "spec/requests/#{m[1]}_spec.rb"] }
 end
+
+guard :teaspoon do
+  # Implementation files
+  watch(%r{app/assets/javascripts/(.+).js}) { |m| "#{m[1]}_spec" }
+
+  # Specs / Helpers
+  watch(%r{spec/javascripts/(.*)})
+end
