@@ -7,11 +7,13 @@ table.table.table-striped
       th= model_class.human_attribute_name(:name)
       th= model_class.human_attribute_name(:login)
       th= model_class.human_attribute_name(:password)
+      th= model_class.human_attribute_name(:updated_at)
   tbody
     - @goldbricks.each do |goldbrick|
       tr
         td= link_to (goldbrick.name.blank? ? 'undefined' : goldbrick.name), goldbrick_path(goldbrick)
         td= link_to goldbrick.login, goldbrick.link, target: '_blank'
         td= goldbrick.password
+        td= goldbrick.updated_at
 
 = link_to t('.new', default: t('helpers.links.new')), new_goldbrick_path, class: 'btn btn-primary'
