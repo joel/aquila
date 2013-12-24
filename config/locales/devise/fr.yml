@@ -1,5 +1,8 @@
 fr:
   devise:
+    failure:
+      user:
+        unauthenticated: Vous devez vous connecter
     sessions:
       user:
         signed_in: Connecté(e)

@@ -1,5 +1,8 @@
 en:
   devise:
+    failure:
+      user:
+        unauthenticated: You must be authenticated!
     sessions:
       user:
         signed_in: Signed In
