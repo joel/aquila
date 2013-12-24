@@ -19,11 +19,12 @@ html(lang='en')
     = favicon_link_tag 'favicon.ico', rel: 'shortcut icon'
 
 
-  body
+  body data-view=controller.controller_name data-action=controller.action_name
     .container
       = render partial: 'layouts/navbar'
       = bootswatch_flash
       = yield
+      = include_gon(:init => true)
       = javascript_include_tag current_theme
       = javascript_include_tag 'moment'
       = yield(:page_javascript) if content_for?(:page_javascript)
