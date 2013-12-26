@@ -27,4 +27,6 @@ html(lang='en')
       = include_gon(:init => true)
       = javascript_include_tag current_theme
       = javascript_include_tag 'moment'
+      javascript:
+        window.locale = "#{I18n.locale.to_s}"
       = yield(:page_javascript) if content_for?(:page_javascript)

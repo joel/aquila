@@ -8,6 +8,9 @@ p
 p
   strong= model_class.human_attribute_name(:email) + ' : '
   = @user.email
+p
+  strong= model_class.human_attribute_name(:time_zone) + ' : '
+  = @user.time_zone
 
 .form-actions
   = link_to t('.back', default: t('helpers.links.back')), users_path, class:  'btn'

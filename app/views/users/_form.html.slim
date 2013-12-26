@@ -1,6 +1,7 @@
 = simple_form_for @user, html: { class: 'form-horizontal' } do |f|
   = f.input :name
   = f.input :email
+  = f.input :time_zone
   .form-group
     .col-lg-offset-2.col-lg-10
       = f.button :submit, I18n.t('helpers.submit.all'), class: 'btn-primary'

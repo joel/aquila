@@ -14,6 +14,7 @@ Aquila::Application.routes.draw do
 
   post 'themes/:theme' => 'themes#setting', as: :set_theme
   post 'locales/:locale' => 'locales#setting', as: :set_locale
+  post 'time_zones/:time_zone' => 'time_zones#setting', constraints: { time_zone: /.*/ }, as: :set_time_zone
 
   constraints(Subdomain) do
     match '/' => 'goldbricks#index', via: [:get]

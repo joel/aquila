@@ -11,7 +11,4 @@
 # about supported directives.
 
 #= require time_zone_detection
-#= require moment
 
-# $ ->
-#   tz = new Time_zone_detection().detect()

@@ -21,6 +21,14 @@
         ul.nav.navbar-nav.navbar-right
           li.dropdown
             a.dropdown-toggle data-toggle='dropdown' href='#'
+              = 'Time Zone'
+              b.caret
+            ul.dropdown-menu
+              - Timezone::Zone.list.each do |time_zone|
+                li= link_to "#{time_zone[:title]} (GMT#{time_zone[:utc_offset]})",
+                  set_time_zone_path(time_zone: time_zone[:zone]), method: :post
+          li.dropdown
+            a.dropdown-toggle data-toggle='dropdown' href='#'
               = t('helpers.links.locale', current_locale: t("languages.#{current_locale}", locale: current_locale))
               b.caret
             ul.dropdown-menu
