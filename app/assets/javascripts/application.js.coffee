@@ -10,5 +10,11 @@
 # Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 # about supported directives.
 
-#= require time_zone_detection
+#= require moment_js
+#= require moment_js_date
 
+$ ->
+  time_zone = window.time_zone
+  moment.lang window.locale
+  $('date').each -> rendermoment @, time_zone
+  $('.tzinfo').text(time_zone)

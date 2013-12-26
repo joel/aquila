@@ -17,6 +17,7 @@ en:
         login: Login
         password: Password
         content: Content
+        updated_at: Updated At
       user:
         current_password: Current Password
         name: Name

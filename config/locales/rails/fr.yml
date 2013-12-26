@@ -19,6 +19,7 @@ fr:
         login: Identifiant
         password: Mot de passe
         content: Contenu
+        updated_at: Mise à jour le
       user:
         current_password: Mot de passe actuel
         name: Nom

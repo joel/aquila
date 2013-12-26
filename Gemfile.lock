@@ -128,9 +128,6 @@ GEM
       rails (>= 3, < 5)
     formatador (0.2.4)
     gemnasium (2.0.1)
-    gon (4.1.1)
-      actionpack (>= 2.3.0)
-      json
     guard (2.2.4)
       formatador (>= 0.2.4)
       listen (~> 2.1)
@@ -365,7 +362,6 @@ DEPENDENCIES
   factory_girl_rails
   figaro
   gemnasium
-  gon
   guard
   guard-rspec
   guard-spork

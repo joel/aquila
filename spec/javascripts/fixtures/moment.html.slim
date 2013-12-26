@@ -1,0 +1,14 @@
+date#date1
+  | 2010-07-09 16:03:25 +0200
+date#date2 data-value='2010-07-09 16:03:25 +0200'
+  | some content
+date#date3 data-method='from'
+  | 2010-07-09 16:03:25 +0200
+date#date4
+  | Non valid date
+date#date5 data-method='format' data-value='2010-07-09 16:03:25 +0000' data-format='lll'
+  | content
+#expected5= "Jul 9 2010 6:03 PM"
+date#date6 data-method='format' data-value='2010-07-09 16:03:25 +0000' data-format='lll'
+  | content
+#expected6= "Jul 9 2010 12:03 PM"
