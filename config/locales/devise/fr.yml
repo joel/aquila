@@ -1,5 +1,8 @@
 fr:
   devise:
+    registrations:
+      user:
+        signed_up_but_unconfirmed: En attente de confirmation
     failure:
       user:
         unauthenticated: Vous devez vous connecter

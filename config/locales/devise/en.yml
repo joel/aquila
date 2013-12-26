@@ -1,5 +1,8 @@
 en:
   devise:
+    registrations:
+      user:
+        signed_up_but_unconfirmed: Waiting for confirmation
     failure:
       user:
         unauthenticated: You must be authenticated!
