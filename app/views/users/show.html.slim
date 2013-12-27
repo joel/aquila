@@ -10,7 +10,7 @@ p
   = @user.email
 p
   strong= model_class.human_attribute_name(:time_zone) + ' : '
-  = @user.time_zone.to_s
+  = I18n.t(@user.time_zone, scope: :timezones, default: @user.time_zone)
 
 .form-actions
   = link_to t('.back', default: t('helpers.links.back')), users_path, class:  'btn'
