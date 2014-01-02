@@ -4,7 +4,7 @@ class GoldbricksController < ApplicationController
   # GET /goldbricks
   # GET /goldbricks.json
   def index
-    @goldbricks = current_vault.goldbricks.all
+    @goldbricks = current_vault.goldbricks
   end
 
   # GET /goldbricks/1
