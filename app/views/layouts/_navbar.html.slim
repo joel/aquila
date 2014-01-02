@@ -29,12 +29,11 @@
                   set_time_zone_path(time_zone: time_zone[:zone]), method: :post
           li.dropdown
             a.dropdown-toggle data-toggle='dropdown' href='#'
-              = t('helpers.links.locale', current_locale: t("languages.#{current_locale}", locale: current_locale))
+              = formatted_locale
               b.caret
             ul.dropdown-menu
-              - I18n.available_locales.each do |locale|
-                li= link_to t("languages.#{locale}", current_locale: locale).capitalize,
-                  set_locale_path(locale: locale), method: :post
+              - i18n_helper_link.each do |link|
+                li= link
               li= link_to t("languages.new", current_locale: locale),
                 'http://www.localeapp.com/projects/6150', target: '_blank'
           li.dropdown

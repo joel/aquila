@@ -52,6 +52,9 @@ gem 'devise-i18n-views'
 gem 'rails-i18n'
 gem 'i18n-language-translations'
 
+# gem 'i18n_helper', path: '.../i18n_helper'
+gem 'i18n_helper', '>= 0.0.2'
+
 gem 'mandrill-api'
 # Mail CSS
 # gem 'roadie'

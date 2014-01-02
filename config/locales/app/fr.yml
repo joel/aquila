@@ -16,7 +16,7 @@ fr:
       top: Remonter
       account: "Mon compte"
       theme: "Thèmes : %{theme}"
-      locale: "Langue : %{current_locale}"
+
     submit:
       user:
         update:

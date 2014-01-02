@@ -16,7 +16,6 @@ en:
       top: "Back to top"
       account: "My Account"
       theme: "Themes : %{theme}"
-      locale: "Language : %{current_locale}"
     submit:
       user:
         update:
