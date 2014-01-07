@@ -1,23 +1,17 @@
 - model_class = Goldbrick
 .page-header
   h1= t '.title.other'
-table.table.table-striped
-  thead
-    tr
-      th= model_class.human_attribute_name(:name)
-      th= model_class.human_attribute_name(:login)
-      th= model_class.human_attribute_name(:password)
-      th= model_class.human_attribute_name(:updated_at)
-  tbody
-    - @goldbricks.each do |goldbrick|
-      tr
-        td= link_to (goldbrick.name.blank? ? 'undefined' : goldbrick.name), goldbrick_path(goldbrick)
-        td= link_to goldbrick.login, goldbrick.link, target: '_blank'
-        td= goldbrick.password
-        td
-          date data-format='lll' data-method='format'
-            = goldbrick.updated_at
-          .tzinfo
-            | Unknow
+.row
+  .span12
+    .col-md-12
+      table.table.table-striped.table-hover.table-condensed.table-responsive.goldbricks
+        thead
+          tr
+            th= model_class.human_attribute_name(:name)
+            th= model_class.human_attribute_name(:login)
+            th= model_class.human_attribute_name(:password)
+            th= model_class.human_attribute_name(:updated_at)
+        tbody
+          = render @goldbricks
 
-= link_to t('.new', default: t('helpers.links.new')), new_goldbrick_path, class: 'btn btn-primary'
+      = link_to t('.new', default: t('helpers.links.new')), new_goldbrick_path, class: 'btn btn-primary'

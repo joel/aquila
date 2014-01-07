@@ -12,6 +12,7 @@
 
 #= require moment_js
 #= require moment_js_date
+#= require goldbricks
 
 $ ->
   time_zone = window.time_zone

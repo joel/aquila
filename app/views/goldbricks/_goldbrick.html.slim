@@ -1,0 +1,12 @@
+tr id="#{goldbrick.id}"
+  td
+    = link_to (goldbrick.name.blank? ? 'undefined' : goldbrick.name), goldbrick_path(goldbrick)
+    = link_to '#', data: { id: goldbrick.id, path: goldbrick_path(goldbrick) }, class: 'goldbrick-delete-link' do
+      span.glyphicon.glyphicon-minus-sign
+  td= link_to goldbrick.login, goldbrick.link, target: '_blank'
+  td= goldbrick.password
+  td
+    date data-format='lll' data-method='format'
+      = goldbrick.updated_at
+    .tzinfo
+      | Unknow

@@ -57,7 +57,7 @@ class GoldbricksController < ApplicationController
     @goldbrick.destroy
     respond_to do |format|
       format.html { redirect_to goldbricks_url }
-      format.json { head :no_content }
+      format.json { render nothing: true, status: 200 }
     end
   end
 
