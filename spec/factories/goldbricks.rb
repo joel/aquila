@@ -3,9 +3,10 @@
 FactoryGirl.define do
   factory :goldbrick do
     association :vault, strategy: :build
-    name "MyString"
-    login "MyString"
-    password "MyString"
-    content "MyText"
+    sequence(:name) { |n| "name-#{n}-#{rand(10000 * n)}" }
+    sequence(:link) { |n| "link-#{n}-#{rand(10000 * n)}" }
+    sequence(:login) { |n| "login-#{n}-#{rand(10000 * n)}" }
+    sequence(:password) { |n| "password-#{n}-#{rand(10000 * n)}" }
+    sequence(:content) { |n| "content-#{n}-#{rand(10000 * n)}" }
   end
 end
