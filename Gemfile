@@ -135,6 +135,7 @@ end
 
 group :test do
   gem 'capybara'
+  gem 'poltergeist'
   gem 'database_cleaner'
   gem 'email_spec'
   gem 'mongoid-rspec', github: 'evansagge/mongoid-rspec'
