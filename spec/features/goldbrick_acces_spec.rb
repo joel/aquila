@@ -6,7 +6,7 @@ feature 'sign in/up' do
   let!(:legitime_goldbrick)  { create :goldbrick, name: 'legitime_goldbrick', vault: legitime_user.vault }
   let!(:forbidden_goldbrick) { create :goldbrick, name: 'forbidden_goldbrick', vault: forbidden_user.vault }
 
-  before { login_as legitime_user }
+  before { sign_in legitime_user }
 
   scenario 'should have acces to your own goldbricks' do
     visit goldbricks_url(subdomain: legitime_user.vault.subdomain)
