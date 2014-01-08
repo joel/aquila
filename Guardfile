@@ -15,8 +15,9 @@ guard 'spork', :rspec_env => { 'RAILS_ENV' => 'test' },
   watch(%r{^lib/(.+)\.rb$})
   watch(%r{^config/locales/(.+)\.yml$})
   watch(%r{^spec/factories/(.+)\.rb$})
-  # watch(%r{^app/models/(.+)\.rb$})
-  watch(%r{^app/lib/(.+)\.rb$})
+  watch(%r{^(app/)?lib/(.+)\.rb$})
+  watch(%r{^spec/support/(.+)\.rb$})
+  watch('spec/spec_helper.rb')
 end
 
 guard 'rspec',
@@ -28,12 +29,10 @@ guard 'rspec',
   watch(%r{^spec/.+_spec\.rb$})
   watch(%r{^spec/fixtures/(.+)/.*\.xml$})             { |m| "spec/#{m[1]}_spec.rb" }
   watch(%r{^app/(.+)\.rb$})                           { |m| "spec/#{m[1]}_spec.rb" }
-  watch(%r{^lib/(.+)\.rb$})                           { "spec" }
   watch(%r{^app/models/.*/(.+)_helper\.rb$})          { |m| "spec/#{m[1]}_spec.rb" }
-  watch(%r{^(app/)?lib/(.+)\.rb$})                    { "spec" }
-  watch(%r{^app/controllers/(.+)_(controller)\.rb$})  { |m| ["spec/routing/#{m[1]}_routing_spec.rb", "spec/#{m[2]}s/#{m[1]}_#{m[2]}_spec.rb", "spec/acceptance/#{m[1]}_spec.rb"] }
-  watch(%r{^spec/support/(.+)\.rb$})                  { "spec" }
-  watch('spec/spec_helper.rb')                        { "spec" }
+  watch(%r{^app/controllers/(.+)_(controller)\.rb$})  { |m| "spec/routing/#{m[1]}_routing_spec.rb" }
+  watch(%r{^app/controllers/(.+)_(controller)\.rb$})  { |m| "spec/#{m[2]}s/#{m[1]}_#{m[2]}_spec.rb" }
+  watch(%r{^app/controllers/(.+)_(controller)\.rb$})  { |m| "spec/features/#{m[1]}_spec.rb" }
   watch('config/routes.rb')                           { "spec/routing" }
   watch('app/controllers/application_controller.rb')  { "spec/controllers" }
   watch(%r{^app/views/(.+)/.*\.(erb|slim|rabl)$})     { |m| ["spec/controllers", "spec/requests/#{m[1]}_spec.rb"] }
