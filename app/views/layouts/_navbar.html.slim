@@ -1,46 +1,45 @@
-.container
-  /! Fixed navbar
-  .navbar.navbar-inverse.navbar-fixed-top
-    .container
-      .navbar-header
-        button.navbar-toggle data-target='.navbar-collapse' data-toggle='collapse' type='button'
-          span.icon-bar
-          span.icon-bar
-          span.icon-bar
-        = link_to t('app.name'), root_path, class: 'navbar-brand'
-      .navbar-collapse.collapse
-        - if current_user
-          ul.nav.navbar-nav
-            li.dropdown
-              a.dropdown-toggle data-toggle='dropdown' href='#'
-                = t('helpers.links.account')
-                b.caret
-              ul.dropdown-menu
-                li= link_to current_user.email, user_path(current_user)
-                li= link_to t('devise.shared.sign_out'), destroy_user_session_path, method: :delete
-        ul.nav.navbar-nav.navbar-right
+/! Fixed navbar
+.navbar.navbar-inverse.navbar-fixed-top
+  .container
+    .navbar-header
+      button.navbar-toggle data-target='.navbar-collapse' data-toggle='collapse' type='button'
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      = link_to t('app.name'), root_path, class: 'navbar-brand'
+    .navbar-collapse.collapse
+      - if current_user
+        ul.nav.navbar-nav
           li.dropdown
             a.dropdown-toggle data-toggle='dropdown' href='#'
-              = 'Time Zone'
+              = t('helpers.links.account')
               b.caret
             ul.dropdown-menu
-              - Timezone::Zone.list.each do |time_zone|
-                li= link_to "#{time_zone[:title]} (GMT#{time_zone[:utc_offset]})",
-                  set_time_zone_path(time_zone: time_zone[:zone]), method: :post
-          li.dropdown
-            a.dropdown-toggle data-toggle='dropdown' href='#'
-              = formatted_locale
-              b.caret
-            ul.dropdown-menu
-              - i18n_helper_link.each do |link|
-                li= link
-              li= link_to t("languages.new", current_locale: locale),
-                'http://www.localeapp.com/projects/6150', target: '_blank'
-          li.dropdown
-            a.dropdown-toggle data-toggle='dropdown' href='#'
-              = t('helpers.links.theme', theme: current_theme)
-              b.caret
-            ul.dropdown-menu
-              - themes.each do |theme|
-                li= link_to theme.capitalize, set_theme_path(theme: theme), method: :post
-      /! /.nav-collapse
+              li= link_to current_user.email, user_path(current_user)
+              li= link_to t('devise.shared.sign_out'), destroy_user_session_path, method: :delete
+      ul.nav.navbar-nav.navbar-right
+        li.dropdown
+          a.dropdown-toggle data-toggle='dropdown' href='#'
+            = 'Time Zone'
+            b.caret
+          ul.dropdown-menu
+            - Timezone::Zone.list.each do |time_zone|
+              li= link_to "#{time_zone[:title]} (GMT#{time_zone[:utc_offset]})",
+                set_time_zone_path(time_zone: time_zone[:zone]), method: :post
+        li.dropdown
+          a.dropdown-toggle data-toggle='dropdown' href='#'
+            = formatted_locale
+            b.caret
+          ul.dropdown-menu
+            - i18n_helper_link.each do |link|
+              li= link
+            li= link_to t("languages.new", current_locale: locale),
+              'http://www.localeapp.com/projects/6150', target: '_blank'
+        li.dropdown
+          a.dropdown-toggle data-toggle='dropdown' href='#'
+            = t('helpers.links.theme', theme: current_theme)
+            b.caret
+          ul.dropdown-menu
+            - themes.each do |theme|
+              li= link_to theme.capitalize, set_theme_path(theme: theme), method: :post
+    /! /.nav-collapse
