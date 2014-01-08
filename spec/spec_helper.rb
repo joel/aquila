@@ -15,6 +15,9 @@ Spork.prefork do
   # require 'codeclimate-test-reporter'
   require 'coveralls'
 
+  # require 'capybara/rails'
+  # require 'capybara/rspec'
+  # require 'capybara/poltergeist'
   Coveralls.wear!
   # CodeClimate::TestReporter.start
 
