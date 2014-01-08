@@ -2,24 +2,36 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-jQuery ->
 
-  $('table.goldbricks tr').hover (->
-    $(this).find('.goldbrick-delete-link').fadeIn(100)
-  ), ->
-    $(this).find('.goldbrick-delete-link').fadeOut(500)
+window.linkableDestroy = (link_tag) ->
+  link = $(link_tag)
 
-  $('a.goldbrick-delete-link').click (event) ->
+  link.click (event) ->
     event.preventDefault()
-    link = $(this)
+
     id = link.data 'id'
     path = link.data 'path'
     data = { 'id': id }
+
     $.ajax
       url: (path + '.json')
       type: 'DELETE'
       dataType: 'json'
       data: data
+
       statusCode:
         200: ->
           link.closest('tr').hide()
+
+window.HoverableTr = (tr_tag) ->
+  tr = $(tr_tag)
+
+  tr.hover ->
+    tr.find('.goldbrick-delete-link').fadeIn(100)
+  , ->
+    tr.find('.goldbrick-delete-link').fadeOut(500)
+
+jQuery ->
+
+  $('table.goldbricks tr').each -> HoverableTr @
+  $('a.goldbrick-delete-link').each -> linkableDestroy @

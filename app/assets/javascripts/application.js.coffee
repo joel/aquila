@@ -15,6 +15,7 @@
 #= require goldbricks
 
 $ ->
+
   time_zone = window.time_zone
   moment.lang window.locale
   $('date').each -> rendermoment @, time_zone
