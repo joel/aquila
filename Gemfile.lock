@@ -286,11 +286,17 @@ GEM
       rspec-mocks (~> 2.14.0)
     ruby_parser (3.2.2)
       sexp_processor (~> 4.1)
+    rubyzip (1.1.0)
     sass (3.2.12)
     sass-rails (4.0.1)
       railties (>= 4.0.0, < 5.0)
       sass (>= 3.1.10)
       sprockets-rails (~> 2.0.0)
+    selenium-webdriver (2.39.0)
+      childprocess (>= 0.2.5)
+      multi_json (~> 1.0)
+      rubyzip (~> 1.0)
+      websocket (~> 1.0.4)
     sendgrid (1.2.0)
       json
     sexp_processor (4.4.0)
@@ -352,6 +358,7 @@ GEM
       json (>= 1.8.0)
     warden (1.2.3)
       rack (>= 1.0)
+    websocket (1.0.7)
     websocket-driver (0.3.2)
     xpath (2.0.0)
       nokogiri (~> 1.3)
@@ -405,6 +412,7 @@ DEPENDENCIES
   rolify
   rspec-rails
   sass-rails
+  selenium-webdriver
   sendgrid
   simple_form!
   slim

@@ -18,6 +18,15 @@ feature 'normal way' do
     page.should have_link I18n.t('helpers.links.edit')
   end
 
+  # scenario 'should ...', js: true, focused: true do
+  #   Capybara.current_driver = :selenium
+  #   visit goldbrick_url(subdomain: me.vault.subdomain, id: goldbrick)
+  #   save_and_open_page
+  #   expect(page).to have_content goldbrick.name
+  #   page.should have_link I18n.t('helpers.links.edit')
+  #   # save_and_open_page
+  # end
+
   scenario 'should create new one goldbrick' do
     session = Capybara::Session.new(:rack_test, Aquila::Application)
     session.visit new_goldbrick_url(subdomain: me.vault.subdomain)
