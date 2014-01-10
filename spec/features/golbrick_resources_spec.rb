@@ -5,7 +5,6 @@ feature 'normal way' do
   let(:me)         { create :user, vault: vault }
   let!(:goldbrick) { create :goldbrick, name: 'My Goldbrick', vault: me.vault }
 
-  # before { sign_in me }
   background { sign_in me }
 
   scenario 'should render list of goldbricks' do
@@ -20,14 +19,28 @@ feature 'normal way' do
   end
 
   scenario 'should create new one goldbrick' do
+    session = Capybara::Session.new(:rack_test, Aquila::Application)
+    session.visit new_goldbrick_url(subdomain: me.vault.subdomain)
+    expect(session).to have_content 'New Goldbrick'
+    session.current_url.should == new_goldbrick_url(subdomain: me.vault.subdomain)
+    attributes_for(:goldbrick).each do |key, value|
+      session.fill_in "goldbrick[#{key}]", with: value
+    end
+    session.click_button I18n.t('helpers.submit.create')
+    # expect( session ).to have_content(
+    #   I18n.t('controller.goldbricks.create.success')
+    # )
+  end
+
+  scenario 'should updated goldbrick' do
     visit edit_goldbrick_url(subdomain: me.vault.subdomain, id: goldbrick)
-    expect(page).to have_content 'New Goldbrick'
+    # save_and_open_page
+    expect(page).to have_content 'Edit Goldbrick'
     current_url.should == edit_goldbrick_url(subdomain: me.vault.subdomain, id: goldbrick)
     attributes_for(:goldbrick).each do |key, value|
       fill_in "goldbrick[#{key}]", with: value
     end
     click_button 'Update'
-    # save_and_open_page
     # expect( page ).to have_content(
     #   I18n.t('controller.goldbricks.update.success')
     # )

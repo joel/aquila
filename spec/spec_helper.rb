@@ -20,7 +20,21 @@ Spork.prefork do
   # require 'capybara/poltergeist'
 
   Capybara.javascript_driver = :poltergeist # :webkit_debug
-  Capybara.asset_host = 'http://localhost:3000'
+  # Capybara.register_driver :rack_test
+  Capybara.current_driver = :rack_test # :selenium
+
+  # Capybara.register_driver :selenium_chrome do |app|
+  #   Capybara::Selenium::Driver.new(app, browser: :chrome)
+  # end
+  # Capybara.current_driver = :selenium_chrome
+  # Capybara.asset_host = 'http://lvh.me:3000'
+  # Capybara.app_host = 'http://lvh.me:3000'
+  # Capybara.asset_host = 'http://www.example.com'
+  # Capybara.app_host = 'http://www.example.com'
+  # Capybara.asset_host = 'http://www.example.org'
+  # Capybara.app_host = 'http://www.example.org'
+  # Capybara.default_host = "http://example.org"
+  # Capybara.run_server = true
   Capybara.default_wait_time = 5
 
   Coveralls.wear!
