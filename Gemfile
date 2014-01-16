@@ -86,8 +86,6 @@ gem 'i18n-timezones'
 group :development do
   # gem 'slim-rails'
   gem 'guard'
-  gem 'spork'
-  gem 'guard-spork'
   gem 'guard-rspec', require: false
   gem 'guard-teaspoon'
   gem 'haml-rails'
