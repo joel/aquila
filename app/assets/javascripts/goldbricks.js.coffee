@@ -123,6 +123,47 @@ jQuery ->
   $('table.goldbricks tr').each -> HoverableTr @
   $('a.goldbrick-delete-link').each -> linkableDestroy @
 
+  $('form.new_goldbrick').on 'submit', (event) ->
+    event.preventDefault();
+    $.ajax
+      url: '/goldbricks'
+      # url: (path + '.json')
+      type: 'POST'
+      dataType: 'json'
+      # contentType: 'application/json'
+      data: $(this).serialize()
+
+      success: (response) ->
+        console.log('success')
+        $('#myModal').modal('hide')
+        tr = $('<tr id=' + response.id + '></tr>')
+        td = $('<td></td>')
+        td.append $('<a href=/goldbricks/' + response.id + '>' + response.name + '</a>')
+        td.append $('<a class=goldbrick-delete-link data-id=' + response.id + ' data-path=/goldbricks/' + response.id + ' href=#>')
+        td.append $('<span class=glyphicon glyphicon-minus-sign></span></a>')
+        tr.append td
+        td = $('<td></td>')
+        td.append $('<a href=' + response.link + 'target=_blank>' + response.login + '</a>')
+        tr.append td
+        td = $('<td></td>')
+        td.append response.password
+        tr.append td
+        td = $('<td></td>')
+        td.append $('<date data-format=lll data-method=format>' + response.created_at + '</date>')
+        td.append $('<div class=tzinfo>Unknow</div>')
+        tr.append td
+        $('table.goldbricks').find('tbody').detach().append(tr).appendTo($('table.goldbricks'))
+
+
+  # $('#myModal').find('.modal-footer').append('<p>foo</p>')
+
+# new_goldbrick
+  # $('form.new_goldbrick').on 'ajax:success', (event, data, status, xhr) ->
+  #   $('#myModal').modal('hide')
+  #   $('table tbody').append('<tr><td>' + data.title + '</td><td>' + data.content + '</td></tr>')
+
+
+
   # $('a.goldbrick-delete-link').each (index) ->
   #   console.log index + '. ' + $(@).data('id') + ' : ' + $(@).data('path')
   #   link = $(@)
