@@ -69,7 +69,7 @@ gem 'simple_form', git: 'git://github.com/stephenprater/simple_form.git', branch
 # gem 'simple_form', '~>  3.0.0.rc'
 
 # gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
-gem 'twitter-bootswatch-rails'
+gem 'twitter-bootswatch-rails', '3.0.2.0'
 gem 'twitter-bootswatch-rails-fontawesome'
 gem 'twitter-bootswatch-rails-helpers'
 
