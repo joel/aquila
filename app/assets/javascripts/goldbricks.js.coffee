@@ -21,7 +21,11 @@ window.linkableDestroy = (link_tag) ->
 
       statusCode:
         200: ->
-          link.closest('tr').hide()
+          link.off().closest('tr').fadeOut()
+
+      # success: (response) ->
+      #   link.off().closest('tr').fadeOut()
+
 
 window.HoverableTr = (tr_tag) ->
   tr = $(tr_tag)
@@ -94,10 +98,43 @@ window.HoverableTr = (tr_tag) ->
 #     , ->
 #       @tr.find('.goldbrick-delete-link').fadeOut(500)
 
+# window.Link =
+#   remove: ->
+#     link = $(this)
+#     promise = new $.Deferre()
+#     $.ajax
+#       url: link.data('path') + '.json'
+#       type: 'DELETE'
+#       dataType: 'json'
+#       contentType: 'application/json'
+#       data:
+#         id: link.data('id')
+#
+#       success: (response) ->
+#         promise.resolve response
+#
+#       error: (response) ->
+#         promise.reject response
+#
+#     promise
+
 jQuery ->
 
   $('table.goldbricks tr').each -> HoverableTr @
   $('a.goldbrick-delete-link').each -> linkableDestroy @
+
+  # $('a.goldbrick-delete-link').each (index) ->
+  #   console.log index + '. ' + $(@).data('id') + ' : ' + $(@).data('path')
+  #   link = $(@)
+  #   linkPromise = Link.remove(link)
+  #   linkPromise.done (response) ->
+  #     link.parent('tr').hide()
+  #   ,fail (response) ->
+  #     console.log 'fail:' + response
+
+
+
+
   # $('table.goldbricks tr').each -> new HoverableTr(@).hoverize()
   # $('a.goldbrick-delete-link').each -> new LinkableDestroy(@).bindLink()
   # $('table.goldbricks').find('tr').each ->

@@ -14,4 +14,9 @@
         tbody
           = render @goldbricks
 
-      = link_to t('.new', default: t('helpers.links.new')), new_goldbrick_path, class: 'btn btn-primary'
+      / = link_to t('.new', default: t('helpers.links.new')), new_goldbrick_path, class: 'btn btn-primary'
+
+      button.btn.btn-primary data-toggle='modal' data-target='#myModal'
+        = t('.new', default: t('helpers.links.new'))
+
+= render 'modal'

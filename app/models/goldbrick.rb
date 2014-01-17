@@ -10,4 +10,7 @@ class Goldbrick
   belongs_to :vault
   validates :vault, :login, presence: true
   validates_associated :vault
+
+  # validates :name, presence: true
+  # validates_uniqueness_of :name, case_sensitive: true, allow_blank: false
 end

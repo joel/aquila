@@ -13,7 +13,7 @@
           "dbconsole": []
         },
         "test_environment": {
-          "test_helper": {"test": ["bundle exec rspec"]}
+          "test_helper": {"test": ["rspec"]}
         }
       }
     }

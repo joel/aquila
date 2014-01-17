@@ -1,0 +1,24 @@
+- model_class = Goldbrick
+/! Modal
+#myModal.modal.fade aria-hidden='true' aria-labelledby='myModalLabel' role='dialog' tabindex='-1'
+  .modal-dialog
+    .modal-content
+      = simple_form_for current_vault.goldbricks.new do |f|
+        .modal-header
+          button.close aria-hidden='true' data-dismiss='modal' type='button'
+            | ×
+          h4#myModalLabel.modal-title
+            = t('helpers.titles.new', model: model_class.model_name.human)
+        .modal-body
+          = f.input :name, autofocus: true
+          = f.input :link
+          = f.input :login
+          = f.input :password, as: :string
+          = f.input :content, as: :string
+        .modal-footer
+          button.btn.btn-default data-dismiss='modal' type='button'
+            = t('.cancel', default: t('helpers.links.cancel'))
+          = f.button :submit, class: 'btn btn-primary'
+    /! /.modal-content
+  /! /.modal-dialog
+/! /.modal

@@ -1,7 +1,7 @@
 #! ruby
 
 guard 'rspec',
-  cmd: 'zeus rspec',
+  cmd: 'zeus test spec',
   spec_paths: ['spec'],
   failed_mode: :keep,
   all_after_pass: true,

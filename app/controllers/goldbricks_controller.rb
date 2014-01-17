@@ -28,7 +28,11 @@ class GoldbricksController < ApplicationController
 
     respond_to do |format|
       if @goldbrick.save
-        format.html { redirect_to @goldbrick, notice: I18n.t('controller.goldbricks.create.success') }
+        format.html do
+          flash[:notice] = I18n.t('controller.goldbricks.create.success')
+          redirect_to goldbricks_url
+        end
+        # format.html { redirect_to @goldbrick, notice: I18n.t('controller.goldbricks.create.success') }
         format.json { render action: 'show', status: :created, location: @goldbrick }
       else
         format.html { render action: 'new' }
