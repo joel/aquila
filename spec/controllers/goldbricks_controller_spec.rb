@@ -61,7 +61,7 @@ describe GoldbricksController do
 
       it 'redirects to the created goldbrick' do
         post :create, {:goldbrick => valid_attributes}
-        response.should redirect_to(Goldbrick.last)
+        response.should redirect_to(goldbricks_url)
       end
     end
 
