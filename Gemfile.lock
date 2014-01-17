@@ -337,7 +337,7 @@ GEM
       polyglot (>= 0.3.1)
     turbolinks (2.2.0)
       coffee-rails
-    twitter-bootswatch-rails (3.0.2.0)
+    twitter-bootswatch-rails (3.0.3.0)
       execjs (>= 1.4.0)
       less-rails (>= 2.3)
       railties (>= 3.1)
