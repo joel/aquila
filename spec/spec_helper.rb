@@ -9,6 +9,7 @@ ENV['RAILS_ENV'] = 'test'
 # need to restart spork for it take effect.
 
 require 'rspec/rails'
+require 'timecop'
 require 'coveralls'
 
 # require 'capybara/rails'
