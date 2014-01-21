@@ -16,9 +16,10 @@ require 'coveralls'
 # require 'capybara/rspec'
 require 'capybara/poltergeist'
 
-Capybara.javascript_driver = :poltergeist # :webkit_debug
+Capybara.javascript_driver = :poltergeist # :webkit_debug # For js true option
 # Capybara.register_driver :rack_test
 Capybara.current_driver = :rack_test # :selenium
+# Capybara.current_driver = :poltergeist
 
 # Capybara.register_driver :selenium_chrome do |app|
 #   Capybara::Selenium::Driver.new(app, browser: :chrome)
