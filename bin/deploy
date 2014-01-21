@@ -36,11 +36,6 @@ class Deploy
     system "heroku ps:scale web=0 -a #{stack}"
     system "heroku ps:scale worker=0 -a #{stack}"
 
-    puts   'copy Gemfile.lock on public directory'
-    system 'cp -fv Gemfile.lock public/'
-    puts   'add Gemfile.lock on versionning repository'
-    system "git commit -m \"Add Gemfile.lock for bundlewatcher.com at #{Time.now}\" public/Gemfile.lock"
-
     puts   'deployment !'
     puts   "git push #{REMOTE[stack]} #{branch}:master #{force}"
     sleep 1
