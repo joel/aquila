@@ -33,6 +33,8 @@ module Aquila
     config.app_generators.stylesheet_engine :less
     # config.app_generators.template_engine :slim
 
+    config.assets.paths << Rails.root.join('vendor', 'assets', 'bower_components')
+
     config.generators do |g|
 
       g.test_framework :rspec, fixture: true

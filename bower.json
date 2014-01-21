@@ -1,0 +1,19 @@
+{
+  "name": "aquila",
+  "version": "0.0.1",
+  "homepage": "https://github.com/joel/aquila",
+  "authors": [
+    "Joel AZEMAR <joel.azemar@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery-touchswipe": "~1.6.4"
+  }
+}
