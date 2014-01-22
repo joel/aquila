@@ -84,3 +84,4 @@ config/gemnasium.yml
 .localeapp/config.rb
 
 bower_components/*
+vendor/assets/bower_components/*
