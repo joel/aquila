@@ -34,9 +34,11 @@ class GoldbricksController < ApplicationController
         end
         # format.html { redirect_to @goldbrick, notice: I18n.t('controller.goldbricks.create.success') }
         format.json { render action: 'show', status: :created, location: @goldbrick }
+        format.js {}
       else
         format.html { render action: 'new' }
-        format.json { render json: @goldbrick.errors, status: :unprocessable_entity }
+        format.json { render json: { errors: @goldbrick.errors }, status: :unprocessable_entity }
+        format.js {}
       end
     end
   end
@@ -62,6 +64,7 @@ class GoldbricksController < ApplicationController
     respond_to do |format|
       format.html { redirect_to goldbricks_url }
       format.json { render nothing: true, status: 200 }
+      format.js {}
     end
   end
 

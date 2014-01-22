@@ -10,15 +10,10 @@
 table.goldbricks {
   tr {
     td {
-      position: relative;
       a.goldbrick-delete-link {
-        display: none;
-        color: red;
-        position: absolute;
-        left: -20px;
-        width: 20px;
         &:hover {
           text-decoration: none;
+          color: red;
         }
       }
     }

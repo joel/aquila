@@ -2,7 +2,7 @@
 h1= t '.title.other'
 .row
   .span12
-    .col-md-12
+    .col-md-12.goldbrick-table-container
       .table-responsive
         table.table.table-striped.table-hover.table-condensed.goldbricks
           thead
@@ -11,6 +11,7 @@ h1= t '.title.other'
               th= model_class.human_attribute_name(:login)
               th= model_class.human_attribute_name(:password)
               th.hidden-xs= model_class.human_attribute_name(:updated_at)
+              th.hidden-xs
           tbody
             = render @goldbricks
 

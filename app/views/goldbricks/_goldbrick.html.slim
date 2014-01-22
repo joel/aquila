@@ -1,8 +1,6 @@
 tr id="#{goldbrick.id}"
   td
     = link_to (goldbrick.name.blank? ? 'undefined' : goldbrick.name), goldbrick_path(goldbrick)
-    = link_to '#', data: { id: goldbrick.id.to_s, path: goldbrick_path(goldbrick) }, class: 'goldbrick-delete-link' do
-      span.glyphicon.glyphicon-minus-sign
   td= link_to goldbrick.login, goldbrick.link, target: '_blank'
   td= goldbrick.password
   td.hidden-xs
@@ -10,3 +8,6 @@ tr id="#{goldbrick.id}"
       = goldbrick.updated_at
     .tzinfo
       | Unknow
+  td.hidden-xs
+    = link_to goldbrick_path(goldbrick), method: :delete, class: 'goldbrick-delete-link', remote: true do
+      span.glyphicon.glyphicon-minus-sign

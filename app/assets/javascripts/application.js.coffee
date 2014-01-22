@@ -14,7 +14,7 @@
 #= require moment_js_date
 #= require goldbricks
 
-$ ->
+jQuery ->
 
   time_zone = window.time_zone
   moment.lang window.locale
