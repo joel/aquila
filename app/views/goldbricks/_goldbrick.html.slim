@@ -5,7 +5,7 @@ tr id="#{goldbrick.id}"
       span.glyphicon.glyphicon-minus-sign
   td= link_to goldbrick.login, goldbrick.link, target: '_blank'
   td= goldbrick.password
-  td
+  td.hidden-xs
     date data-format='lll' data-method='format'
       = goldbrick.updated_at
     .tzinfo

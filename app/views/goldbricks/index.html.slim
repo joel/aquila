@@ -1,18 +1,18 @@
 - model_class = Goldbrick
-.page-header
-  h1= t '.title.other'
+h1= t '.title.other'
 .row
   .span12
     .col-md-12
-      table.table.table-striped.table-hover.table-condensed.table-responsive.goldbricks
-        thead
-          tr
-            th= model_class.human_attribute_name(:name)
-            th= model_class.human_attribute_name(:login)
-            th= model_class.human_attribute_name(:password)
-            th= model_class.human_attribute_name(:updated_at)
-        tbody
-          = render @goldbricks
+      .table-responsive
+        table.table.table-striped.table-hover.table-condensed.goldbricks
+          thead
+            tr
+              th= model_class.human_attribute_name(:name)
+              th= model_class.human_attribute_name(:login)
+              th= model_class.human_attribute_name(:password)
+              th.hidden-xs= model_class.human_attribute_name(:updated_at)
+          tbody
+            = render @goldbricks
 
       / = link_to t('.new', default: t('helpers.links.new')), new_goldbrick_path, class: 'btn btn-primary'
 

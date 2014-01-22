@@ -25,6 +25,7 @@ html(lang='en')
       = render partial: 'layouts/navbar'
       = bootswatch_flash
       = yield
+      .page-header
       = javascript_include_tag current_theme
       = javascript_include_tag 'application'
       = javascript_include_tag '/assets/jquery-mobile/js/jquery.mobile.js'
