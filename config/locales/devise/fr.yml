@@ -4,6 +4,7 @@ fr:
       user:
         signed_up_but_unconfirmed: En attente de confirmation
     failure:
+      already_authenticated: Vous êtes déjà connecté
       user:
         unauthenticated: Vous devez vous connecter
     sessions:

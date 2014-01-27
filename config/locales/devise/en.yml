@@ -4,6 +4,7 @@ en:
       user:
         signed_up_but_unconfirmed: Waiting for confirmation
     failure:
+      already_authenticated: You are already authenticated!
       user:
         unauthenticated: You must be authenticated!
     sessions:
