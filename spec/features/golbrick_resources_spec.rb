@@ -1,7 +1,7 @@
 require File.dirname(__FILE__) + '/acceptance_helper'
 
 feature 'normal way' do
-  let(:vault)      { create :vault, subdomain: 'me'}
+  let(:vault)      { create :vault, subdomain: 'me' }
   let(:me)         { create :user, vault: vault }
   let!(:goldbrick) { create :goldbrick, name: 'My Goldbrick', vault: me.vault }
 
