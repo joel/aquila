@@ -59,7 +59,7 @@ gem 'mandrill-api'
 # Mail CSS
 # gem 'roadie'
 
-gem 'figaro'
+gem 'figaro', '1.0.0.rc1'
 gem 'less-rails'
 gem 'rolify'
 gem 'sendgrid'
