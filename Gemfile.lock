@@ -252,7 +252,7 @@ GEM
     rb-fchange (0.0.6)
       ffi
     rb-fsevent (0.9.4)
-    rb-inotify (0.9.2)
+    rb-inotify (0.9.5)
       ffi (>= 0.5.0)
     ref (1.0.5)
     rest-client (1.6.7)
