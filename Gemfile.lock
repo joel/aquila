@@ -14,12 +14,6 @@ GIT
     rails3_serve_static_assets (0.0.1)
 
 GIT
-  remote: git://github.com/heroku/rails_log_stdout.git
-  revision: 01b5bcc572e3baed1618f4068920dd83bd491fb2
-  specs:
-    rails_log_stdout (0.0.1)
-
-GIT
   remote: git://github.com/mongoid/mongoid.git
   revision: e3a55c2a68895723f876dd1daaa86ec39b085d38
   specs:
@@ -66,7 +60,7 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.37)
     addressable (2.3.5)
-    arel (4.0.1)
+    arel (4.0.2)
     bcrypt (3.1.7)
     bson (2.0.0)
     builder (3.1.4)
@@ -85,10 +79,10 @@ GEM
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
-    coffee-script (2.2.0)
+    coffee-script (2.3.0)
       coffee-script-source
       execjs
-    coffee-script-source (1.6.3)
+    coffee-script-source (1.7.1)
     commonjs (0.2.7)
     connection_pool (1.2.0)
     coveralls (0.7.0)
@@ -162,15 +156,15 @@ GEM
     i18n-language-translations (0.0.2)
       i18n (~> 0.5)
       railties (>= 3.0.0)
-    i18n-spec (0.4.0)
+    i18n-spec (0.5.2)
       iso
-    i18n-timezones (1.3.1)
+    i18n-timezones (1.3.2)
       i18n (~> 0.5)
       rails (>= 4.0.0)
     i18n_helper (0.0.2)
       i18n-language-translations (~> 0.0)
       rails (~> 4.0)
-    iso (0.2.0)
+    iso (0.2.1)
       i18n
     jbuilder (2.0.2)
       activesupport (>= 3.0.0)
@@ -305,7 +299,7 @@ GEM
       temple (~> 0.6.6)
       tilt (>= 1.3.3, < 2.1)
     slop (3.4.7)
-    sprockets (2.10.1)
+    sprockets (2.12.1)
       hike (~> 1.2)
       multi_json (~> 1.0)
       rack (~> 1.0)
@@ -328,12 +322,12 @@ GEM
     tilt (1.4.1)
     timecop (0.6.3)
     timers (1.1.0)
-    timezone (0.3.1)
+    timezone (0.3.2)
     tins (0.13.1)
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
-    turbolinks (2.2.0)
+    turbolinks (2.2.2)
       coffee-rails
     twitter-bootswatch-rails (3.0.2.0)
       execjs (>= 1.4.0)
@@ -345,7 +339,7 @@ GEM
       twitter-bootswatch-rails
     twitter-bootswatch-rails-helpers (3.0.0.1)
       twitter-bootswatch-rails (~> 3.0.0)
-    tzinfo (0.3.40)
+    tzinfo (0.3.41)
     uglifier (2.5.3)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
@@ -397,7 +391,6 @@ DEPENDENCIES
   rails-i18n
   rails3_serve_static_assets!
   rails_12factor
-  rails_log_stdout!
   rb-fchange
   rb-fsevent
   rb-inotify
