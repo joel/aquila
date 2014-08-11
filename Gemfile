@@ -91,7 +91,7 @@ group :development do
   # gem 'haml-rails'
   # gem 'haml2slim'
   # gem 'html2haml'
-  gem 'hub', require: nil
+  # gem 'hub', require: nil
   gem 'quiet_assets'
   gem 'rb-fchange', require: false
   gem 'rb-fsevent', require: false
