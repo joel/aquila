@@ -88,9 +88,9 @@ group :development do
   # gem 'guard'
   # gem 'guard-rspec', require: false
   # gem 'guard-teaspoon'
-  gem 'haml-rails'
-  gem 'haml2slim'
-  gem 'html2haml'
+  # gem 'haml-rails'
+  # gem 'haml2slim'
+  # gem 'html2haml'
   gem 'hub', require: nil
   gem 'quiet_assets'
   gem 'rb-fchange', require: false
