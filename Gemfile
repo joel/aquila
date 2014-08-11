@@ -73,8 +73,8 @@ gem 'twitter-bootswatch-rails', '3.0.2.0'
 gem 'twitter-bootswatch-rails-fontawesome'
 gem 'twitter-bootswatch-rails-helpers'
 
-gem 'mongoid', git: 'git://github.com/mongoid/mongoid.git'
-# gem 'mongoid', '~> 4.0.0.alpha1'
+# gem 'mongoid', git: 'git://github.com/mongoid/mongoid.git'
+gem 'mongoid', '~> 4.0.0.alpha1'
 
 gem 'timezone'
 gem 'i18n-timezones'
@@ -137,7 +137,7 @@ group :test do
   gem 'poltergeist'
   gem 'database_cleaner'
   gem 'email_spec'
-  gem 'mongoid-rspec', github: 'evansagge/mongoid-rspec'
+  # gem 'mongoid-rspec', github: 'evansagge/mongoid-rspec'
   gem 'timecop'
   gem 'i18n-spec'
 end
