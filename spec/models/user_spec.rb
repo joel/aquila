@@ -18,7 +18,7 @@ describe User do
 
     describe 'testing validations' do
       it { should be_valid }
-      it { subject.save.should be_true }
+      it { subject.save.should be_truthy }
 
       context 'attributes_for' do
         it { expect { attributes_for(:user) }.to_not raise_error }

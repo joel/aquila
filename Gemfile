@@ -118,7 +118,8 @@ group :development, :test do
   gem 'gemnasium'
   gem 'coveralls', require: false
   gem 'factory_girl_rails'
-  gem 'rspec-rails'
+  gem 'rspec-rails', '2.99.0'
+  # gem 'rspec-activemodel-mocks'
   gem 'teaspoon'
 end
 
