@@ -18,7 +18,7 @@ describe User do
 
     describe 'testing validations' do
       it { should be_valid }
-      it { subject.save.should be_truthy }
+      it { expect(subject.save).to be_truthy }
 
       context 'attributes_for' do
         it { expect { attributes_for(:user) }.to_not raise_error }
@@ -35,7 +35,7 @@ describe User do
 
     context 'with only one remained user' do
       it 'should not remove user' do
-        user.vault.users.count.should eql 1
+        expect(user.vault.users.count).to eql 1
         expect {
           user.vault.users.first.destroy
         }.to raise_error
@@ -45,7 +45,7 @@ describe User do
     context 'with one more one user' do
       it 'should be remove user' do
         user.vault.users << create(:user)
-        user.vault.users.count.should eql 2
+        expect(user.vault.users.count).to eql 2
         expect {
           user.vault.users.first.destroy
         }.to change(User, :count).by(-1)

@@ -6,7 +6,7 @@ describe GoldbricksController do
 
   before do
     sign_in create(:user)
-    controller.stub current_vault: vault
+    allow(controller).to receive(:current_vault).and_return(vault)
   end
 
   # This should return the minimal set of attributes required to create a valid
@@ -18,7 +18,7 @@ describe GoldbricksController do
     it 'assigns all goldbricks as @goldbricks' do
       goldbrick = vault.goldbricks.create! valid_attributes
       get :index, {}
-      assigns(:goldbricks).should eq([goldbrick])
+      expect(assigns(:goldbricks)).to eq([goldbrick])
     end
   end
 
@@ -26,14 +26,14 @@ describe GoldbricksController do
     it 'assigns the requested goldbrick as @goldbrick' do
       goldbrick = vault.goldbricks.create! valid_attributes
       get :show, {:id => goldbrick.to_param}
-      assigns(:goldbrick).should eq(goldbrick)
+      expect(assigns(:goldbrick)).to eq(goldbrick)
     end
   end
 
   describe 'GET new' do
     it 'assigns a new goldbrick as @goldbrick' do
       get :new, {}
-      assigns(:goldbrick).should be_a_new(Goldbrick)
+      expect(assigns(:goldbrick)).to be_a_new(Goldbrick)
     end
   end
 
@@ -41,7 +41,7 @@ describe GoldbricksController do
     it 'assigns the requested goldbrick as @goldbrick' do
       goldbrick = vault.goldbricks.create! valid_attributes
       get :edit, {:id => goldbrick.to_param}
-      assigns(:goldbrick).should eq(goldbrick)
+      expect(assigns(:goldbrick)).to eq(goldbrick)
     end
   end
 
@@ -55,29 +55,29 @@ describe GoldbricksController do
 
       it 'assigns a newly created goldbrick as @goldbrick' do
         post :create, {:goldbrick => valid_attributes}
-        assigns(:goldbrick).should be_a(Goldbrick)
-        assigns(:goldbrick).should be_persisted
+        expect(assigns(:goldbrick)).to be_a(Goldbrick)
+        expect(assigns(:goldbrick)).to be_persisted
       end
 
       it 'redirects to the created goldbrick' do
         post :create, {:goldbrick => valid_attributes}
-        response.should redirect_to(goldbricks_url)
+        expect(response).to redirect_to(goldbricks_url)
       end
     end
 
     describe 'with invalid params' do
       it 'assigns a newly created but unsaved goldbrick as @goldbrick' do
         # Trigger the behavior that occurs when invalid params are submitted
-        Goldbrick.any_instance.stub(:save).and_return(false)
+        allow_any_instance_of(Goldbrick).to receive(:save).and_return(false)
         post :create, {:goldbrick => { 'name' => 'invalid value' }}
-        assigns(:goldbrick).should be_a_new(Goldbrick)
+        expect(assigns(:goldbrick)).to be_a_new(Goldbrick)
       end
 
       it 're-renders the \'new\' template' do
         # Trigger the behavior that occurs when invalid params are submitted
-        Goldbrick.any_instance.stub(:save).and_return(false)
+        allow_any_instance_of(Goldbrick).to receive(:save).and_return(false)
         post :create, {:goldbrick => { 'name' => 'invalid value' }}
-        response.should render_template('new')
+        expect(response).to render_template('new')
       end
     end
   end
@@ -90,20 +90,20 @@ describe GoldbricksController do
         # specifies that the Goldbrick created on the previous line
         # receives the :update_attributes message with whatever params are
         # submitted in the request.
-        Goldbrick.any_instance.should_receive(:update).with({ 'name' => 'MyString' })
+        allow_any_instance_of(Goldbrick).to receive(:update).and_return({ 'name' => 'MyString' })
         put :update, {:id => goldbrick.to_param, :goldbrick => { 'name' => 'MyString' }}
       end
 
       it 'assigns the requested goldbrick as @goldbrick' do
         goldbrick = vault.goldbricks.create! valid_attributes
         put :update, {:id => goldbrick.to_param, :goldbrick => valid_attributes}
-        assigns(:goldbrick).should eq(goldbrick)
+        expect(assigns(:goldbrick)).to eq(goldbrick)
       end
 
       it 'redirects to the goldbrick' do
         goldbrick = vault.goldbricks.create! valid_attributes
         put :update, {:id => goldbrick.to_param, :goldbrick => valid_attributes}
-        response.should redirect_to(goldbrick)
+        expect(response).to redirect_to(goldbrick)
       end
     end
 
@@ -111,17 +111,17 @@ describe GoldbricksController do
       it 'assigns the goldbrick as @goldbrick' do
         goldbrick = vault.goldbricks.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
-        Goldbrick.any_instance.stub(:save).and_return(false)
+        allow_any_instance_of(Goldbrick).to receive(:save).and_return(false)
         put :update, {:id => goldbrick.to_param, :goldbrick => { 'name' => 'invalid value' }}
-        assigns(:goldbrick).should eq(goldbrick)
+        expect(assigns(:goldbrick)).to eq(goldbrick)
       end
 
       it 're-renders the \'edit\' template' do
         goldbrick = vault.goldbricks.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
-        Goldbrick.any_instance.stub(:save).and_return(false)
+        allow_any_instance_of(Goldbrick).to receive(:save).and_return(false)
         put :update, {:id => goldbrick.to_param, :goldbrick => { 'name' => 'invalid value' }}
-        response.should render_template('edit')
+        expect(response).to render_template('edit')
       end
     end
   end
@@ -137,7 +137,7 @@ describe GoldbricksController do
     it 'redirects to the goldbricks list' do
       goldbrick = vault.goldbricks.create! valid_attributes
       delete :destroy, {:id => goldbrick.to_param}
-      response.should redirect_to(goldbricks_url)
+      expect(response).to redirect_to(goldbricks_url)
     end
   end
 

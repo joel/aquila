@@ -12,7 +12,7 @@ describe "goldbricks/index" do
         :login => "Login"
       )
     ])
-    view.stub(:current_vault).and_return(create(:vault))
+    allow(view).to receive(:current_vault).and_return(create(:vault))
   end
 
   it "renders a list of goldbricks" do

@@ -10,8 +10,8 @@ feature 'sign in/up' do
 
   scenario 'should have acces to your own goldbricks' do
     visit goldbricks_url(subdomain: legitime_user.vault.subdomain)
-    page.should have_link legitime_goldbrick.name
-    page.should_not have_link forbidden_goldbrick.name
+    expect(page).to have_link legitime_goldbrick.name
+    expect(page).to_not have_link forbidden_goldbrick.name
   end
 
   scenario 'should not have acces to foreigner goldbricks' do
