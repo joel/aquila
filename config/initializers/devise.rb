@@ -106,6 +106,9 @@ Devise.setup do |config|
   # When invite_for is 0 (the default), the invitation won't expire.
   config.invite_for = 2.weeks
 
+   # Invalidates all the remember me tokens when the user signs out.
+   config.expire_all_remember_me_on_sign_out = true
+
   # Number of invitations users can send.
   # - If invitation_limit is nil, there is no limit for invitations, users can
   # send unlimited invitations, invitation_limit column is not used.
