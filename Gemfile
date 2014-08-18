@@ -66,6 +66,7 @@ gem 'sendgrid'
 # Waiting for this PR https://github.com/plataformatec/simple_form/pull/622 should accpeted
 # gem 'simple_form', git: 'https://github.com/stephenprater/simple_form.git', branch: 'classes_on_use'
 gem 'simple_form', git: 'git://github.com/stephenprater/simple_form.git', branch: 'classes_on_use'
+# gem 'simple_form', '3.1.0.rc2'
 # gem 'simple_form', '~>  3.0.0.rc'
 
 # gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
