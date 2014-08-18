@@ -239,7 +239,7 @@ GEM
       multi_json
       simplecov-html (~> 0.8.0)
     simplecov-html (0.8.0)
-    slim (2.0.2)
+    slim (2.0.3)
       temple (~> 0.6.6)
       tilt (>= 1.3.3, < 2.1)
     sprockets (2.12.1)
@@ -253,7 +253,7 @@ GEM
       sprockets (~> 2.8)
     teaspoon (0.8.0)
       railties (>= 3.2.5, < 5)
-    temple (0.6.7)
+    temple (0.6.8)
     term-ansicolor (1.2.2)
       tins (~> 0.8)
     therubyracer (0.12.1)
