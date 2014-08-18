@@ -1,0 +1,25 @@
+bundle exec rails g bootswatch:install cyborg -f
+bundle exec rails g bootswatch:import  cyborg -f
+bundle exec rails g bootswatch:fontawesome:install cyborg -f
+
+bundle exec rails g bootswatch:install readable -f
+bundle exec rails g bootswatch:import  readable -f
+bundle exec rails g bootswatch:fontawesome:installreadable -f
+
+bundle exec rails g bootswatch:install simplex -f
+bundle exec rails g bootswatch:import  simplex -f
+bundle exec rails g bootswatch:fontawesome:installsimplex -f
+
+bundle exec rails g bootswatch:install cosmo -f
+bundle exec rails g bootswatch:import  cosmo -f
+bundle exec rails g bootswatch:fontawesome:install cosmo -f
+
+bundle exec rails g bootswatch:install cerulean -f
+bundle exec rails g bootswatch:import  cerulean -f
+bundle exec rails g bootswatch:fontawesome:install cerulean -f
+
+bundle exec rails g bootswatch:install flatly -f
+bundle exec rails g bootswatch:import  flatly -f
+bundle exec rails g bootswatch:fontawesome:install flatly -f
+  
+rm -rfv tmp/*

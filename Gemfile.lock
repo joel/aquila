@@ -271,7 +271,7 @@ GEM
       polyglot (>= 0.3.1)
     turbolinks (2.2.2)
       coffee-rails
-    twitter-bootswatch-rails (3.0.2.0)
+    twitter-bootswatch-rails (3.2.0.0)
       execjs (>= 1.4.0)
       less-rails (>= 2.3)
       railties (>= 3.1)
@@ -279,8 +279,8 @@ GEM
       less-rails (>= 2.3)
       railties (>= 3.1)
       twitter-bootswatch-rails
-    twitter-bootswatch-rails-helpers (3.0.0.1)
-      twitter-bootswatch-rails (~> 3.0.0)
+    twitter-bootswatch-rails-helpers (3.2.0.0)
+      twitter-bootswatch-rails (~> 3.2.0)
     tzinfo (0.3.41)
     uglifier (2.5.3)
       execjs (>= 0.3.0)
@@ -341,7 +341,7 @@ DEPENDENCIES
   timecop
   timezone
   turbolinks
-  twitter-bootswatch-rails (= 3.0.2.0)
+  twitter-bootswatch-rails (= 3.2.0.0)
   twitter-bootswatch-rails-fontawesome
-  twitter-bootswatch-rails-helpers
+  twitter-bootswatch-rails-helpers (= 3.2.0.0)
   uglifier
