@@ -85,3 +85,6 @@ config/gemnasium.yml
 
 bower_components/*
 vendor/assets/bower_components/*
+
+/Gemfile.lock
+/gemfiles/*.gemfile.lock
