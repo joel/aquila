@@ -1,11 +1,6 @@
 language: ruby
 env:
-  - DOMAIN=.example.com
-  - APP_MAILER_FROM=me@example.com
-  - BASE_URL=localhost.local
-  - APP_MAILER_FROM=john@example.com
-  - APP_MAILER_RETURN_PATH=john@example.com
-  - COVERALLS_REPO_TOKEN=CV3tGg1C0E7otBaxvTY3gQ7i10cFAo9f7
+  - DOMAIN=.example.com APP_MAILER_FROM=me@example.com BASE_URL=localhost.local APP_MAILER_FROM=john@example.com APP_MAILER_RETURN_PATH=john@example.comCOVERALLS_REPO_TOKEN=CV3tGg1C0E7otBaxvTY3gQ7i10cFAo9f7
 gemfile:
   - gemfiles/Gemfile.rails-head
 matrix:
