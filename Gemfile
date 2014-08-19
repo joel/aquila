@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 ruby '2.1.2'
 
-gem 'rails', '4.0.2'
+gem 'rails', '4.1.5'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '4.0.3'
@@ -76,7 +76,7 @@ group :development do
   gem 'rb-fchange', require: false
   gem 'rb-fsevent', require: false
   gem 'rb-inotify', require: false
-  # gem 'spring'
+  gem 'spring'
 end
 
 group :development, :test do
@@ -91,7 +91,6 @@ end
 group :production do
   gem 'puma'
   gem 'rails_12factor'
-  gem 'rails3_serve_static_assets', github: 'heroku/rails3_serve_static_assets'
 end
 
 group :test do
