@@ -12,7 +12,7 @@ require File.expand_path("../../config/environment", __FILE__)
 #
 # teaspoon --driver=selenium --suppress-log
 # rake teaspoon DRIVER=selenium SUPPRESS_LOG=false
-Teaspoon.setup do |config|
+Teaspoon.configure do |config|
   # Driver / Server
   #config.driver              = "phantomjs" # available: phantomjs, selenium
   #config.server              = nil # defaults to Rack::Server
