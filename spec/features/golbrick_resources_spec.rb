@@ -1,7 +1,7 @@
 require File.dirname(__FILE__) + '/acceptance_helper'
 
 feature 'normal way' do
-  let(:vault)      { create :vault, subdomain: 'me'}
+  let(:vault)      { create :vault, subdomain: 'me' }
   let(:me)         { create :user, vault: vault }
   let!(:goldbrick) { create :goldbrick, name: 'My Goldbrick', vault: me.vault }
 
@@ -9,13 +9,13 @@ feature 'normal way' do
 
   scenario 'should render list of goldbricks' do
     visit goldbricks_url(subdomain: me.vault.subdomain)
-    page.should have_link goldbrick.name
+    expect(page).to have_link goldbrick.name
   end
 
   scenario 'should render show goldbrick information' do
     visit goldbrick_url(subdomain: me.vault.subdomain, id: goldbrick)
     expect(page).to have_content goldbrick.name
-    page.should have_link I18n.t('helpers.links.edit')
+    expect(page).to have_link I18n.t('helpers.links.edit')
   end
 
   # scenario 'should ...', js: true, focused: true do
@@ -23,7 +23,7 @@ feature 'normal way' do
   #   visit goldbrick_url(subdomain: me.vault.subdomain, id: goldbrick)
   #   save_and_open_page
   #   expect(page).to have_content goldbrick.name
-  #   page.should have_link I18n.t('helpers.links.edit')
+  #   expect(page).to have_link I18n.t('helpers.links.edit')
   #   # save_and_open_page
   # end
 
@@ -31,7 +31,7 @@ feature 'normal way' do
     session = Capybara::Session.new(:rack_test, Aquila::Application)
     session.visit new_goldbrick_url(subdomain: me.vault.subdomain)
     expect(session).to have_content 'New Goldbrick'
-    session.current_url.should == new_goldbrick_url(subdomain: me.vault.subdomain)
+    expect(session.current_url).to eq new_goldbrick_url(subdomain: me.vault.subdomain)
     attributes_for(:goldbrick).each do |key, value|
       session.fill_in "goldbrick[#{key}]", with: value
     end
@@ -45,7 +45,7 @@ feature 'normal way' do
     visit edit_goldbrick_url(subdomain: me.vault.subdomain, id: goldbrick)
     # save_and_open_page
     expect(page).to have_content 'Edit Goldbrick'
-    current_url.should == edit_goldbrick_url(subdomain: me.vault.subdomain, id: goldbrick)
+    expect(current_url).to eq edit_goldbrick_url(subdomain: me.vault.subdomain, id: goldbrick)
     attributes_for(:goldbrick).each do |key, value|
       fill_in "goldbrick[#{key}]", with: value
     end

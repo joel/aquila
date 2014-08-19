@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
-ruby '2.1.2'
+gemspec path: '..'
 
-gem 'rails', '4.0.2'
+gem 'rails', github: 'rails/rails'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '4.0.3'
@@ -66,17 +66,6 @@ gem 'mongoid', '~> 4.0.0.alpha1'
 gem 'timezone'
 gem 'i18n-timezones'
 
-# group :development, :staging do
-#   gem 'i18n-one_sky'
-# end
-
-group :development do
-  gem 'quiet_assets'
-  gem 'rb-fchange', require: false
-  gem 'rb-fsevent', require: false
-  gem 'rb-inotify', require: false
-end
-
 group :development, :test do
   gem 'gemnasium'
   gem 'coveralls', require: false
@@ -84,15 +73,6 @@ group :development, :test do
   gem 'rspec-rails', '3.0.2'
   gem 'rspec-activemodel-mocks'
   gem 'teaspoon'
-end
-
-group :production do
-  gem 'puma'
-  gem 'rails_12factor'
-  gem 'rails3_serve_static_assets', github: 'heroku/rails3_serve_static_assets'
-end
-
-group :test do
   gem 'capybara'
   gem 'selenium-webdriver'
   gem 'poltergeist'

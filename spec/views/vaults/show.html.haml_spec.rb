@@ -10,6 +10,6 @@ describe "vaults/show" do
   it "renders attributes in <p>" do
     render
     # Run the generator again with the --webrat flag if you want to use webrat matchers
-    rendered.should match(/Subdomain/)
+    expect(rendered).to match(/Subdomain/)
   end
 end

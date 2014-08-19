@@ -24,7 +24,7 @@ describe UsersController do
 
   before do
     sign_in create(:user)
-    controller.stub current_vault: vault
+    allow(controller).to receive(:current_vault) { vault }
   end
 
   # This should return the minimal set of attributes required to create a valid
@@ -41,7 +41,7 @@ describe UsersController do
   describe "GET index" do
     it "assigns all users as @users" do
       get :index, {}, valid_session
-      assigns(:users).should eq([user])
+      expect(assigns(:users)).to eq([user])
     end
   end
 
@@ -49,7 +49,7 @@ describe UsersController do
     it "assigns the requested user as @user" do
       user = vault.users.create! valid_create_attributes
       get :show, { :id => user.to_param }, valid_session
-      assigns(:user).should eq(user)
+      expect(assigns(:user)).to eq(user)
     end
   end
 
@@ -57,7 +57,7 @@ describe UsersController do
     it "assigns the requested user as @user" do
       user = vault.users.create! valid_create_attributes
       get :edit, {:id => user.to_param}, valid_session
-      assigns(:user).should eq(user)
+      expect(assigns(:user)).to eq(user)
     end
   end
 
@@ -69,20 +69,20 @@ describe UsersController do
         # specifies that the User created on the previous line
         # receives the :update_attributes message with whatever params are
         # submitted in the request.
-        User.any_instance.should_receive(:update).with({ "name" => "MyString" })
+        allow_any_instance_of(User).to receive(:update).and_return({ "name" => "MyString" })
         put :update, {:id => user.to_param, :user => { "name" => "MyString" }}, valid_session
       end
 
       it "assigns the requested user as @user" do
         user = vault.users.create! valid_create_attributes
         put :update, {:id => user.to_param, :user => valid_attributes}, valid_session
-        assigns(:user).should eq(user)
+        expect(assigns(:user)).to eq(user)
       end
 
       it "redirects to the user" do
         user = vault.users.create! valid_create_attributes
         put :update, {:id => user.to_param, :user => valid_attributes}, valid_session
-        response.should redirect_to(user)
+        expect(response).to redirect_to(user)
       end
     end
 
@@ -90,17 +90,17 @@ describe UsersController do
       it "assigns the user as @user" do
         user = vault.users.create! valid_create_attributes
         # Trigger the behavior that occurs when invalid params are submitted
-        User.any_instance.stub(:save).and_return(false)
+        allow_any_instance_of(User).to receive(:save).and_return(false)
         put :update, {:id => user.to_param, :user => { "name" => "invalid value" }}, valid_session
-        assigns(:user).should eq(user)
+        expect(assigns(:user)).to eq(user)
       end
 
       it "re-renders the 'edit' template" do
         user = vault.users.create! valid_create_attributes
         # Trigger the behavior that occurs when invalid params are submitted
-        User.any_instance.stub(:save).and_return(false)
+        allow_any_instance_of(User).to receive(:save).and_return(false)
         put :update, {:id => user.to_param, :user => { "name" => "invalid value" }}, valid_session
-        response.should render_template("edit")
+        expect(response).to render_template("edit")
       end
     end
   end
@@ -108,7 +108,7 @@ describe UsersController do
   describe "DELETE destroy" do
 
     it 'forbidden remove last user' do
-      vault.users.count.should eql 1
+      expect(vault.users.count).to eql 1
       expect {
         delete :destroy, { :id => user.to_param }, valid_session
       }.to_not change(User, :count)
@@ -124,7 +124,7 @@ describe UsersController do
     it "redirects to the users list" do
       user = vault.users.create! valid_create_attributes
       delete :destroy, {:id => user.to_param}, valid_session
-      response.should redirect_to(users_url)
+      expect(response).to redirect_to(users_url)
     end
   end
 

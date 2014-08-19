@@ -28,14 +28,14 @@ describe VaultsController do
   let(:valid_attributes) { { 'subdomain' => 'my-subdomain' } }
 
   let(:vault) { create :vault }
-  before { controller.stub current_vault: vault }
+  before { allow(controller).to receive(:save).and_return({current_vault: vault}) }
 
   describe 'GET index' do
     it 'assigns all vaults as @vaults' do
       vault = create :vault
       get :index, {}
-      response.should be_success
-      # assigns(:vaults).should eq([vault])
+      expect(response).to be_success
+      # expect(assigns(:vaults)).to eq([vault])
     end
   end
 
@@ -43,14 +43,14 @@ describe VaultsController do
     it 'assigns the requested vault as @vault' do
       vault = Vault.create! valid_attributes
       get :show, {:id => vault.to_param}
-      assigns(:vault).should eq(vault)
+      expect(assigns(:vault)).to eq(vault)
     end
   end
 
   describe 'GET new' do
     it 'assigns a new vault as @vault' do
       get :new, {}
-      assigns(:vault).should be_a_new(Vault)
+      expect(assigns(:vault)).to be_a_new(Vault)
     end
   end
 
@@ -58,7 +58,7 @@ describe VaultsController do
     it 'assigns the requested vault as @vault' do
       vault = Vault.create! valid_attributes
       get :edit, {:id => vault.to_param}
-      assigns(:vault).should eq(vault)
+      expect(assigns(:vault)).to eq(vault)
     end
   end
 
@@ -72,29 +72,29 @@ describe VaultsController do
 
       it 'assigns a newly created vault as @vault' do
         post :create, {:vault => valid_attributes}
-        assigns(:vault).should be_a(Vault)
-        assigns(:vault).should be_persisted
+        expect(assigns(:vault)).to be_a(Vault)
+        expect(assigns(:vault)).to be_persisted
       end
 
       it 'redirects to the created vault' do
         post :create, {:vault => valid_attributes}
-        response.should redirect_to(Vault.last)
+        expect(response).to redirect_to(Vault.last)
       end
     end
 
     describe 'with invalid params' do
       it 'assigns a newly created but unsaved vault as @vault' do
         # Trigger the behavior that occurs when invalid params are submitted
-        Vault.any_instance.stub(:save).and_return(false)
+        allow_any_instance_of(Vault).to receive(:save).and_return(false)
         post :create, {:vault => { 'subdomain' => 'invalid value' }}
-        assigns(:vault).should be_a_new(Vault)
+        expect(assigns(:vault)).to be_a_new(Vault)
       end
 
       it 're-renders the \'new\' template' do
         # Trigger the behavior that occurs when invalid params are submitted
-        Vault.any_instance.stub(:save).and_return(false)
+        allow_any_instance_of(Vault).to receive(:save).and_return(false)
         post :create, {:vault => { 'subdomain' => 'invalid value' }}
-        response.should render_template('new')
+        expect(response).to render_template('new')
       end
     end
   end
@@ -107,20 +107,20 @@ describe VaultsController do
         # specifies that the Vault created on the previous line
         # receives the :update_attributes message with whatever params are
         # submitted in the request.
-        Vault.any_instance.should_receive(:update).with({ 'subdomain' => 'MyString' })
+        allow_any_instance_of(Vault).to receive(:update).and_return({ 'subdomain' => 'MyString' })
         put :update, {:id => vault.to_param, :vault => { 'subdomain' => 'MyString' }}
       end
 
       it 'assigns the requested vault as @vault' do
         vault = Vault.create! valid_attributes
         put :update, {:id => vault.to_param, :vault => valid_attributes}
-        assigns(:vault).should eq(vault)
+        expect(assigns(:vault)).to eq(vault)
       end
 
       it 'redirects to the vault' do
         vault = Vault.create! valid_attributes
         put :update, {:id => vault.to_param, :vault => valid_attributes}
-        response.should redirect_to(vault)
+        expect(response).to redirect_to(vault)
       end
     end
 
@@ -128,17 +128,17 @@ describe VaultsController do
       it 'assigns the vault as @vault' do
         vault = Vault.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
-        Vault.any_instance.stub(:save).and_return(false)
+        allow_any_instance_of(Vault).to receive(:save).and_return(false)
         put :update, {:id => vault.to_param, :vault => { 'subdomain' => 'invalid value' }}
-        assigns(:vault).should eq(vault)
+        expect(assigns(:vault)).to eq(vault)
       end
 
       it 're-renders the \'edit\' template' do
         vault = Vault.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
-        Vault.any_instance.stub(:save).and_return(false)
+        allow_any_instance_of(Vault).to receive(:save).and_return(false)
         put :update, {:id => vault.to_param, :vault => { 'subdomain' => 'invalid value' }}
-        response.should render_template('edit')
+        expect(response).to render_template('edit')
       end
     end
   end
@@ -154,7 +154,7 @@ describe VaultsController do
     it 'redirects to the vaults list' do
       vault = Vault.create! valid_attributes
       delete :destroy, {:id => vault.to_param}
-      response.should redirect_to(vaults_url)
+      expect(response).to redirect_to(vaults_url)
     end
   end
 
