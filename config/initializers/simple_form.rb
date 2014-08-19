@@ -12,39 +12,45 @@ SimpleForm.setup do |config|
     # given input by passing: `f.input EXTENSION_NAME => false`.
     # You can make any of these extensions optional by
     # renaming `b.use` to `b.optional`.
-  
+
     # Determines whether to use HTML5 (:email, :url, ...)
     # and required attributes
     b.use :html5
-  
+
     # Calculates placeholders automatically from I18n
     # You can also pass a string as f.input placeholder: "Placeholder"
     b.use :placeholder
-  
+
     ## Optional extensions
-    # They are disabled unless you pass `f.input EXTENSION_NAME => :lookup`
+    # They are disabled unless you pass `f.input EXTENSION_NAME => true`
     # to the input. If so, they will retrieve the values from the model
-    # if any exists. If you want to enable the lookup for any of those
+    # if any exists. If you want to enable any of those
     # extensions by default, you can change `b.optional` to `b.use`.
-  
+
     # Calculates maxlength from length validations for string inputs
     b.optional :maxlength
-  
+
     # Calculates pattern from format validations for string inputs
     b.optional :pattern
-  
+
     # Calculates min and max from length validations for numeric inputs
     b.optional :min_max
-  
+
     # Calculates readonly automatically from readonly attributes
     b.optional :readonly
-  
+
     ## Inputs
     b.use :label_input
     b.use :hint,  wrap_with: { tag: :span, class: :hint }
     b.use :error, wrap_with: { tag: :span, class: :error }
+
+    ## full_messages_for
+    # If you want to display the full error message for the attribute, you can
+    # use the component :full_error, like:
+    #
+    # b.use :full_error, wrap_with: { tag: :span, class: :error }
   end
-  
+
   # The default wrapper to be used by the FormBuilder.
   config.default_wrapper = :default
 
@@ -52,7 +58,7 @@ SimpleForm.setup do |config|
   # Defaults to :nested for bootstrap config.
   #   inline: input + label
   #   nested: label > input
-  config.boolean_style = :inline
+  config.boolean_style = :nested
 
   # Default class for buttons
   config.button_class = 'btn'
@@ -66,7 +72,7 @@ SimpleForm.setup do |config|
   config.error_notification_tag = :div
 
   # CSS class to add for error notification helper.
-  config.error_notification_class = 'alert alert-error'
+  config.error_notification_class = 'error_notification'
 
   # ID to add for error notification helper.
   # config.error_notification_id = nil
@@ -92,15 +98,13 @@ SimpleForm.setup do |config|
   # config.item_wrapper_class = nil
 
   # How the label text should be generated altogether with the required text.
-  # config.label_text = lambda { |label, required| "#{required} #{label}" }
+  # config.label_text = lambda { |label, required, explicit_label| "#{required} #{label}" }
 
   # You can define the class to use on all labels. Default is nil.
-  # config.label_class = 'col-lg-2 control-label'
+  # config.label_class = 'col-lg-2'
 
   # You can define the class to use on all forms. Default is simple_form.
   # config.form_class = :simple_form
-  # https://github.com/plataformatec/simple_form/wiki/Simple-Form-with-Devise
-  config.form_class = 'simple_form form-horizontal'
 
   # You can define which elements should obtain additional classes
   # config.generate_additional_classes_for = [:wrapper, :label, :input]
@@ -125,7 +129,11 @@ SimpleForm.setup do |config|
 
   # Custom wrappers for input types. This should be a hash containing an input
   # type as key and the wrapper that will be used for all inputs with specified type.
-  # config.wrapper_mappings = { checkbox: :checkbox_wrapper, email: :text_wrapper }
+  # config.wrapper_mappings = { string: :prepend }
+
+  # Namespaces where SimpleForm should look for custom input classes that
+  # override default inputs.
+  # config.custom_inputs_namespaces << "CustomInputs"
 
   # Default priority for time_zone inputs.
   # config.time_zone_priority = nil
@@ -143,5 +151,15 @@ SimpleForm.setup do |config|
   # config.cache_discovery = !Rails.env.development?
 
   # Default class for inputs
-  # config.input_class = 'form-control'
+  # config.input_class = nil
+
+  # Define the default class of the input wrapper of the boolean input.
+  config.boolean_label_class = 'checkbox'
+
+  # Defines if the default input wrapper class should be included in radio
+  # collection wrappers.
+  # config.include_default_input_wrapper_class = true
+
+  # Defines which i18n scope will be used in Simple Form.
+  # config.i18n_scope = 'simple_form'
 end

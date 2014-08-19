@@ -1,14 +1,13 @@
 .container
   .jumbotron
     h1= t('.sign_in')
-  = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+  = simple_form_for(resource, as: resource_name, url: session_path(resource_name),
+      html: { class: 'form-horizontal' }, wrapper: :horizontal_form) do |f|
     = f.input :email, autofocus: true, as: :email
     = f.input :password, as: :password
     = f.input :remember_me, as: :boolean
     .form-group
-      .col-lg-offset-2.col-lg-10
+      .col-lg-offset-2.col-sm-9
         = f.button :submit, t('.sign_in')
 
   = render 'devise/shared/links'
-
-
