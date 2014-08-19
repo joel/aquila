@@ -32,7 +32,7 @@ gem 'slim'
 gem 'devise'
 gem 'devise_invitable'
 gem 'devise-i18n'
-gem 'devise-i18n-views'
+gem 'devise-i18n-views' #, git: 'git@github.com:mcasimir/devise-i18n-views.git'
 
 gem 'rails-i18n'
 gem 'i18n-language-translations'
@@ -86,6 +86,7 @@ group :development, :test do
   gem 'rspec-rails', '3.0.2'
   gem 'rspec-activemodel-mocks'
   gem 'teaspoon'
+  gem 'pry', require: false
 end
 
 group :production do
