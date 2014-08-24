@@ -46,6 +46,10 @@ Then just start your choice of server (you'll wanna put it behind SSL).
 * Ruby 2.1
 * MongoDB
 
+## Testing
+
+  RAILS_ENV=test bundle exec rspec spec
+
 ## Contributing
 
 1. Fork it
