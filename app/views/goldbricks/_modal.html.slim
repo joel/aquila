@@ -3,7 +3,8 @@
 #myModal.modal.fade aria-hidden='true' aria-labelledby='myModalLabel' role='dialog' tabindex='-1'
   .modal-dialog
     .modal-content
-      = simple_form_for current_vault.goldbricks.new, remote: true do |f|
+      = simple_form_for current_vault.goldbricks.new, html: { class: 'form-horizontal' },
+        wrapper: :horizontal_form, remote: true do |f|
         .modal-header
           button.close aria-hidden='true' data-dismiss='modal' type='button'
             | ×

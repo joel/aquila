@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 ruby '2.1.2'
 
-gem 'rails', '4.0.2'
+gem 'rails', '4.1.5'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '4.0.3'
@@ -32,7 +32,7 @@ gem 'slim'
 gem 'devise'
 gem 'devise_invitable'
 gem 'devise-i18n'
-gem 'devise-i18n-views'
+gem 'devise-i18n-views' #, git: 'git@github.com:mcasimir/devise-i18n-views.git'
 
 gem 'rails-i18n'
 gem 'i18n-language-translations'
@@ -51,9 +51,10 @@ gem 'sendgrid'
 
 # Waiting for this PR https://github.com/plataformatec/simple_form/pull/622 should accpeted
 # gem 'simple_form', git: 'https://github.com/stephenprater/simple_form.git', branch: 'classes_on_use'
-gem 'simple_form', git: 'git://github.com/stephenprater/simple_form.git', branch: 'classes_on_use'
-# gem 'simple_form', '3.1.0.rc2'
+# gem 'simple_form', git: 'git://github.com/stephenprater/simple_form.git', branch: 'classes_on_use'
+gem 'simple_form', '3.1.0.rc2'
 # gem 'simple_form', '~>  3.0.0.rc'
+# gem 'simple_form', '3.0.2'
 
 # gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 gem 'twitter-bootswatch-rails', '3.2.0.0'
@@ -75,6 +76,7 @@ group :development do
   gem 'rb-fchange', require: false
   gem 'rb-fsevent', require: false
   gem 'rb-inotify', require: false
+  gem 'spring'
 end
 
 group :development, :test do
@@ -84,12 +86,12 @@ group :development, :test do
   gem 'rspec-rails', '3.0.2'
   gem 'rspec-activemodel-mocks'
   gem 'teaspoon'
+  gem 'pry', require: false
 end
 
 group :production do
   gem 'puma'
   gem 'rails_12factor'
-  gem 'rails3_serve_static_assets', github: 'heroku/rails3_serve_static_assets'
 end
 
 group :test do

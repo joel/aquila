@@ -22,6 +22,10 @@ class StartMongodb
     system cmd
   end
 
+  # clean
+  # mongo aquila_development --eval "db.dropDatabase()"
+  # mongo aquila_test --eval "db.dropDatabase()"
+
 end
 
 if ARGV.length != 1 or !['start', 'stop'].include?(ARGV[0])
@@ -33,4 +37,3 @@ end
 
 start_mongodb = StartMongodb.new
 start_mongodb.send ARGV[0].to_sym
-

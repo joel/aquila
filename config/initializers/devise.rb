@@ -100,14 +100,14 @@ Devise.setup do |config|
   # Setup a pepper to generate the encrypted password.
   # config.pepper = '92da742a8272d265290bba152be95b3cf0441bf308c62f05ba32325bd1d2483c90683ef8601d67dcfa4f61f9275ea6154df3e8f36add4e63af3ab5e95bfa5b1c'
 
+  # Invalidates all the remember me tokens when the user signs out.
+  config.expire_all_remember_me_on_sign_out = true
+
   # ==> Configuration for :invitable
   # The period the generated invitation token is valid, after
   # this period, the invited resource won't be able to accept the invitation.
   # When invite_for is 0 (the default), the invitation won't expire.
-  config.invite_for = 2.weeks
-
-   # Invalidates all the remember me tokens when the user signs out.
-   config.expire_all_remember_me_on_sign_out = true
+  # config.invite_for = 2.weeks
 
   # Number of invitations users can send.
   # - If invitation_limit is nil, there is no limit for invitations, users can
@@ -117,7 +117,7 @@ Devise.setup do |config|
   # You can change invitation_limit column for some users so they can send more
   # or less invitations, even with global invitation_limit = 0
   # Default: nil
-  config.invitation_limit = 5
+  # config.invitation_limit = 5
 
   # The key to be used to check existing users when sending an invitation
   # and the regexp used to test it when validate_on_invite is not set.
@@ -126,7 +126,7 @@ Devise.setup do |config|
 
   # Flag that force a record to be valid before being actually invited
   # Default: false
-  config.validate_on_invite = true
+  # config.validate_on_invite = true
 
   # Resend invitation if user with invited status is invited again
   # Default: true
