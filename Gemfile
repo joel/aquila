@@ -71,6 +71,8 @@ gem 'i18n-timezones'
 #   gem 'i18n-one_sky'
 # end
 
+gem 'bower-rails' #, '~> 0.8.3'
+
 group :development do
   gem 'quiet_assets'
   gem 'rb-fchange', require: false

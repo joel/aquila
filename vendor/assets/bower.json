@@ -1,0 +1,6 @@
+{
+  "name": "dsl-generated dependencies",
+  "dependencies": {
+    "jquery-mobile": "~1.4.3"
+  }
+}

@@ -30,6 +30,7 @@ GEM
     addressable (2.3.6)
     arel (5.0.1.20140414130214)
     bcrypt (3.1.7)
+    bower-rails (0.8.3)
     bson (2.3.0)
     builder (3.2.2)
     capybara (2.4.1)
@@ -297,6 +298,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bower-rails
   capybara
   coffee-rails
   coveralls
