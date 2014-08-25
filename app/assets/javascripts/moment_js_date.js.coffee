@@ -4,7 +4,7 @@ window.rendermoment = (date_tag, time_zone = null) ->
   method = $(date_tag).data('method') || 'calendar'
   format = $(date_tag).data('format') || null
 
-  my_moment = moment(date)
+  my_moment = moment(new Date(date))
 
   if my_moment.isValid()
 
