@@ -14,15 +14,18 @@ namespace :seeds do
     end
 
     vault = Vault.create!({subdomain: 'demo'})
-    if (request = User.where({email: 'demo@example.com'})).exists?
-      request.first.destroy
+
+    unless (request = User.where({email: 'demo@example.com'})).exists?
+      conditions = {email: 'demo@example.com', password: 'secret', password_confirmation: 'secret', vault: vault}
+      User.create!(conditions).tap { |user| user.confirm! }
     end
 
-    conditions = {email: 'demo@example.com', password: 'secret', password_confirmation: 'secret', vault: vault}
-    User.create!(conditions).tap { |user| user.confirm! }
+    user = request.first
+    user.vault = vault
+    user.save!
 
     ['facebook.com', 'twitter', 'linkedin'].each do |name|
-      conditions = {name: name, link: "http://www.#{name}", login: 'demo@example.com', password: SecureRandom.uuid}
+      conditions = { name: name, link: "http://www.#{name}", login: 'demo@example.com', password: SecureRandom.uuid }
       vault.goldbricks.create!(conditions)
     end
   end
