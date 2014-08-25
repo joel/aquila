@@ -7,6 +7,7 @@ en:
   home:
     title: VaultyPass
     content: "The easy way for keep all passwords always with you!"
+    demo: "Try live demo!"
   text:
     forbidden:
       title: Forbidden

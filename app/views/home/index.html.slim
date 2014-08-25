@@ -3,6 +3,8 @@
     h1= t('home.title')
     p= t('home.content')
     p= link_to t('devise.shared.sign_up'), new_user_registration_path, class: 'btn btn-primary btn-lg'
+    p
+      = link_to t('home.demo'), url_for(subdomain: 'demo'), class: 'btn btn-default btn-lg'
   hr
   footer#footer
     p.pull-right

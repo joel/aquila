@@ -7,6 +7,7 @@ fr:
   home:
     title: CoffreFort
     content: "La façon la plus simple de conserver vos mot de passe toujours avec vous !"
+    demo: "Essayez la démo !"
   text:
     forbidden:
       title: Interdit
