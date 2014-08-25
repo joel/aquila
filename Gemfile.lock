@@ -269,7 +269,7 @@ GEM
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
-    turbolinks (2.2.2)
+    turbolinks (2.3.0)
       coffee-rails
     twitter-bootswatch-rails (3.2.0.0)
       execjs (>= 1.4.0)
