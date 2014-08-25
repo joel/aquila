@@ -14,7 +14,7 @@ You can play with [demo](http://demo.vaultypass.com/) demo@example.com / secret
 
 or simply use it on [vaultypass.com](http://www.vaultypass.com/)
 
-<img src="https://f.cloud.github.com/assets/5789/1765071/89f73a90-6730-11e3-91ee-2818ba710aba.png" alt="ScreenShot" style="height: 400px; width: 600px;"/>
+<img src="https://cloud.githubusercontent.com/assets/5789/4032621/f25ffa20-2c71-11e4-82ee-2680f4afaa54.png" alt="ScreenShot" style="height: 400px; width: 600px;"/>
 
 ## Features
 
