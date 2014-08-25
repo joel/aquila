@@ -37,8 +37,8 @@ gem 'devise-i18n-views' #, git: 'git@github.com:mcasimir/devise-i18n-views.git'
 gem 'rails-i18n'
 gem 'i18n-language-translations'
 
-# gem 'i18n_helper', path: '.../i18n_helper'
-gem 'i18n_helper', '>= 0.0.2'
+# gem 'i18n_helper', path: '../../Gems/i18n_helper'
+gem 'i18n_helper', '>= 0.0.3'
 
 gem 'mandrill-api'
 # Mail CSS
@@ -86,6 +86,7 @@ group :development, :test do
   gem 'coveralls', require: false
   gem 'factory_girl_rails'
   gem 'rspec-rails', '3.0.2'
+  gem 'its'
   gem 'rspec-activemodel-mocks'
   gem 'teaspoon'
   gem 'pry', require: false
