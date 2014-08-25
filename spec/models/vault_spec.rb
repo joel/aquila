@@ -19,4 +19,17 @@ describe Vault do
       end
     end
   end
+
+  context 'with user' do
+    let(:vault) { create :vault }
+    let!(:user) { create :user, vault: vault }
+
+    specify('can be remove last user') do
+      expect { vault.destroy }.to_not change(User, :count)
+    end
+
+    specify('can remove all users') do
+      expect { vault.remove_all_users! }.to change(User, :count).by(-1)
+    end
+  end
 end

@@ -21,4 +21,11 @@ class Vault
   def self.current_id
     Thread.current[:vault_id]
   end
+
+  def remove_all_users!
+    self.users.each do |user|
+      user.vault_removing = true
+      user.destroy
+    end
+  end
 end
