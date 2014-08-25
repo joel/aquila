@@ -60,6 +60,9 @@ class User
 
   before_destroy :protect_last_user
 
+  attr_accessor :vault_removing
+  skip_callback :destroy, :before, :protect_last_user, if: -> { self.vault_removing }
+
   private
 
   def protect_last_user
