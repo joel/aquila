@@ -3,7 +3,7 @@ fixture.preload("moment")
 describe 'moment method calls', ->
 
   beforeEach () ->
-    moment.lang 'en'
+    moment.locale 'en'
 
     window.momentspy = moment()
     spyOn(momentspy, 'from').andReturn ''

@@ -18,7 +18,7 @@
 application_ready = ->
 
   time_zone = window.time_zone
-  moment.lang window.locale
+  moment.locale window.locale
   $('date').each -> rendermoment @, time_zone
   $('.tzinfo').text(time_zone)
 
