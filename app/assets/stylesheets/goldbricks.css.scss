@@ -19,3 +19,12 @@ table.goldbricks {
     }
   }
 }
+
+.btn-reduce {
+}
+
+@media screen and (max-width: 768px) {
+  .btn-reduce {
+    padding: 1px 5px;
+  }
+}
