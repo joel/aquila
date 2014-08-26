@@ -83,7 +83,7 @@ group :development do
 end
 
 group :development, :test do
-  gem 'gemnasium'
+  # gem 'gemnasium'
   gem 'coveralls', require: false
   gem 'factory_girl_rails'
   gem 'rspec-rails', '3.0.2'

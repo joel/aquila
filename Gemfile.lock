@@ -91,7 +91,6 @@ GEM
     figaro (1.0.0.rc1)
       rails (>= 3, < 5)
       thor (~> 0.14)
-    gemnasium (3.2.0)
     hike (1.2.3)
     i18n (0.6.11)
     i18n-language-translations (0.0.2)
@@ -322,7 +321,6 @@ DEPENDENCIES
   email_spec
   factory_girl_rails
   figaro (= 1.0.0.rc1)
-  gemnasium
   i18n-language-translations
   i18n-spec
   i18n-timezones

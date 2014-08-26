@@ -88,3 +88,5 @@ vendor/assets/bower_components/*
 
 /Gemfile.lock
 /gemfiles/*.gemfile.lock
+
+bin/autoupdate
