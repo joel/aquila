@@ -26,6 +26,7 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder'
 gem 'slim'
+gem 'cells'
 
 # bundle exec rake doc:rails generates the API under doc/api.
 
@@ -82,10 +83,11 @@ group :development do
 end
 
 group :development, :test do
-  gem 'gemnasium'
+  # gem 'gemnasium'
   gem 'coveralls', require: false
   gem 'factory_girl_rails'
   gem 'rspec-rails', '3.0.2'
+  gem 'rspec-cells'
   gem 'its'
   gem 'rspec-activemodel-mocks'
   gem 'teaspoon'

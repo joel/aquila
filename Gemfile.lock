@@ -39,6 +39,10 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    cells (3.11.2)
+      actionpack (>= 3.0)
+      railties (>= 3.0)
+      uber (~> 0.0.8)
     childprocess (0.5.3)
       ffi (~> 1.0, >= 1.0.11)
     cliver (0.3.2)
@@ -87,7 +91,6 @@ GEM
     figaro (1.0.0.rc1)
       rails (>= 3, < 5)
       thor (~> 0.14)
-    gemnasium (3.2.0)
     hike (1.2.3)
     i18n (0.6.11)
     i18n-language-translations (0.0.2)
@@ -203,6 +206,10 @@ GEM
       activemodel (>= 3.0)
       activesupport (>= 3.0)
       rspec-mocks (>= 2.99, < 4.0)
+    rspec-cells (0.2.2)
+      cells (>= 3.4.0)
+      railties (>= 3.0)
+      rspec-rails (>= 2.14)
     rspec-core (3.0.3)
       rspec-support (~> 3.0.0)
     rspec-expectations (3.0.3)
@@ -286,6 +293,7 @@ GEM
       twitter-bootswatch-rails (~> 3.2.0)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
+    uber (0.0.8)
     uglifier (2.5.3)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
@@ -302,6 +310,7 @@ PLATFORMS
 DEPENDENCIES
   bower-rails
   capybara
+  cells
   coffee-rails
   coveralls
   database_cleaner
@@ -312,7 +321,6 @@ DEPENDENCIES
   email_spec
   factory_girl_rails
   figaro (= 1.0.0.rc1)
-  gemnasium
   i18n-language-translations
   i18n-spec
   i18n-timezones
@@ -336,6 +344,7 @@ DEPENDENCIES
   rb-inotify
   rolify
   rspec-activemodel-mocks
+  rspec-cells
   rspec-rails (= 3.0.2)
   sass-rails (= 4.0.3)
   selenium-webdriver
