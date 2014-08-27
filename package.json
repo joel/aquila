@@ -6,7 +6,7 @@
     "npm": "1.3.x"
   },
   "dependencies": {
-    "bower": "1.2.x"
+    "bower": "1.3.9"
   },
   "scripts": {
     "postinstall": "bash bin/prepare_bower.sh"
