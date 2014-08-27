@@ -8,7 +8,7 @@
 
 [![Coverage Status](https://coveralls.io/repos/joel/aquila/badge.png)](https://coveralls.io/r/joel/aquila)
 
-Aquila is a simple rails app that allows you to share passwords, notes with your team like [Roswell](https://github.com/blahed/roswell) or like another awesome project [Swordfish](https://github.com/github/swordfish)
+Aquila is a simple rails app that allows you to share passwords, notes with your team like [Roswell](https://github.com/blahed/roswell) or like another awesome project [Swordfish](https://github.com/github/swordfish), [Last Pass](https://lastpass.com/how-it-works), and so on...
 
 You can play with [demo](http://demo.vaultypass.com/) demo@example.com / secret
 
