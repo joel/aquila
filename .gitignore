@@ -90,3 +90,5 @@ vendor/assets/bower_components/*
 /gemfiles/*.gemfile.lock
 
 bin/autoupdate
+
+personal.notes.md
