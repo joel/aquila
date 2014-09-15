@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 ruby '2.1.2'
 
-gem 'rails', '<= 4.1.6', '>= 4.1.5'
+gem 'rails', '>= 4.1.5', '<= 4.1.6'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '4.0.3'
@@ -86,7 +86,7 @@ group :development, :test do
   # gem 'gemnasium'
   gem 'coveralls', require: false
   gem 'factory_girl_rails'
-  gem 'rspec-rails', '<= 3.1.0', '>= 3.0.2'
+  gem 'rspec-rails', '>= 3.0.2', '<= 3.1.0'
   gem 'rspec-cells'
   gem 'its'
   gem 'rspec-activemodel-mocks'
